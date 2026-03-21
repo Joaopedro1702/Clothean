@@ -1,0 +1,125 @@
+header{
+    background-color: #F8F8FF;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    text-decoration: none;
+    color: #33D21E;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img{
+    max-height: 140px;
+    width: auto;
+    display: block;
+}
+
+.container{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.acao{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5%;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    border-radius: 25px;
+    
+}
+
+.acao button{
+    display: inline-block;
+    background-color: #BDFFA6;
+    color: #3420E6;
+    transition: all 0.3s ease;
+
+}
+
+button:hover{
+    background-color: #3420E6;
+    color: #BDFFA6;
+}
+.acao a{
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+
+}
+
+.acao a:hover{
+    background-color: #3420E6;
+    color: #BDFFA6;
+}
+
+/*Parte principal*/
+
+h1{
+    color: white;
+}
+
+.hero{
+    background-color: #67B0E5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px;
+    border-radius: 20px;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* Container da imagem */
+.banner-mulher {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+/* Forma verde (blob) */
+.blob {
+    position: absolute;
+    width: 420px;
+    height: 320px;
+    background-color: #7CFC6B;
+
+    /* formato parecido com a imagem */
+    border-radius: 50% 40% 50% 40%;
+
+    /* centraliza atrás da mulher */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+/* Mulher */
+.mulher {
+    position: relative;
+    z-index: 2;
+
+    max-width: 420px;
+    height: auto;
+
+    display: block;
+}
