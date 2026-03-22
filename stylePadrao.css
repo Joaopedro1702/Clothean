@@ -86,117 +86,6 @@ button:hover{
     color: #BDFFA6;
 }
 
-/*Parte principal*/
-
-h1{
-    color: white;
-}
-
-.hero{
-    background-color: #67B0E5;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 60px;
-    border-radius: 20px;
-}
-
-h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-}
-
-/* Container da imagem */
-.banner-mulher {
-    position: relative;
-    width: 500px;
-    height: 500px;
-}
-
-/* Forma verde (blob) */
-.blob {
-    position: absolute;
-    width: 420px;
-    height: 320px;
-    background-color: #7CFC6B;
-
-    /* formato parecido com a imagem */
-    border-radius: 50% 40% 50% 40%;
-
-    /* centraliza atrás da mulher */
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: 1;
-}
-
-/* Mulher */
-.mulher {
-    position: relative;
-    z-index: 2;
-
-    max-width: 420px;
-    height: auto;
-
-    display: block;
-}
-
-/*cards*/
-.container-vantagens{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-top: 40px;
-    
-}
-
-.card-vantagem{
-    color: white;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-}
-
-
-.card-vantagem img{
-    height: 120px;
-    width: 120px;
-    height: auto;
-    margin-bottom: 0;
-    object-fit: contain;
-    padding: 20px;
-    background-color: white;
-    padding: 3%;
-    border-radius:50% ; /* Formato de domo para cada um */                    /* Largura fixa para ficarem iguais */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-/*parte do meio*/
-.blob-verde{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #7CBF5C;
-    border-radius: 40px;
-    padding: 40px 40px 0 40px;
-}
-.muier-verde{
-    align-self: flex-end
-}
-.muier-verde img{
-    margin-top: 50px;
-    max-width: 105%;
-}
-.conteudo-esquedot h1{
-    max-width: 450px;
- }
 
 /*footer*/
 footer{
@@ -205,12 +94,6 @@ footer{
     text-align: center;
     align-items: center;
     border-radius: 10px;
-}
-
-.img-logo{
-    max-height: 140px;
-    width: auto;
-    display: block;
 }
 
 .footer-container{
