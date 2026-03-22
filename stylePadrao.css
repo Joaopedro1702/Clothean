@@ -141,3 +141,155 @@ h2{
 
     display: block;
 }
+
+/*cards*/
+.container-vantagens{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    
+}
+
+.card-vantagem{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+
+.card-vantagem img{
+    height: 120px;
+    width: 120px;
+    height: auto;
+    margin-bottom: 0;
+    object-fit: contain;
+    padding: 20px;
+    background-color: white;
+    padding: 3%;
+    border-radius:50% ; /* Formato de domo para cada um */                    /* Largura fixa para ficarem iguais */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/*parte do meio*/
+.blob-verde{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7CBF5C;
+    border-radius: 40px;
+    padding: 40px 40px 0 40px;
+}
+.muier-verde{
+    align-self: flex-end
+}
+.muier-verde img{
+    margin-top: 50px;
+    max-width: 105%;
+}
+.conteudo-esquedot h1{
+    max-width: 450px;
+ }
+
+/*footer*/
+footer{
+    padding: 2%;
+    background-color: #BDFFA6;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.img-logo{
+    max-height: 140px;
+    width: auto;
+    display: block;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-col h3{
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+
+}
+
+.social-icons{
+    display: flex;
+    height: auto;
+}
+
+.footer-col img {
+    width: 35px; 
+    height: auto;
+}
+
+/*Contatos*/
+.footer-contato{
+    padding-left: 0;   /* Remove o espaço interno da caixa de contato */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-contato address{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-style: normal;
+}
+
+.contato{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contato img{
+    width: 20px;
+    height: auto;
+}
+.email img{
+   width: 20px;
+    height: auto; 
+}
+
+.contato a{
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.email a{
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-contato h3{
+    margin-left: 0;
+    text-align: left;
+
+}
+
