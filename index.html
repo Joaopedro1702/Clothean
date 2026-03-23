@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clothean</title>
     <link rel="stylesheet" href="stylePadrao.css">
+    <link rel="stylesheet" href="styleResposivo.css">
 
     <style>
         /*Parte principal*/
@@ -18,8 +19,8 @@ h1{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 60px;
-    border-radius: 20px;
+    padding: 5%;
+    border-radius: 30px;
 }
 
 h2{
@@ -35,22 +36,7 @@ h2{
 }
 
 /* Forma verde (blob) */
-.blob {
-    position: absolute;
-    width: 420px;
-    height: 320px;
-    background-color: #7CFC6B;
 
-    /* formato parecido com a imagem */
-    border-radius: 50% 40% 50% 40%;
-
-    /* centraliza atrás da mulher */
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: 1;
-}
 
 /* Mulher */
 .mulher {
@@ -108,6 +94,7 @@ h2{
     border-radius: 40px;
     padding: 40px 40px 0 40px;
 }
+
 .muier-verde{
     align-self: flex-end
 }
@@ -117,6 +104,48 @@ h2{
 }
 .conteudo-esquedot h1{
     max-width: 450px;
+ }
+
+.lista-servicos{
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+ .servicos{
+    background-color: #2BA2DD;
+    color: white;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+ }
+
+ .card-servicos{
+    width: 260px;
+    
+    overflow: hidden;
+    text-align: center;
+ }
+
+ .card-servicos img{
+    border-radius: 16px 16px 16px 16px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+ }
+
+ .card-servicos h3{
+    padding: 12px 0;
+ }
+
+ .servicos h2{
+    text-align: center;
+ }
+
+ ul{
+    display: flex;
+   
  }
     </style>
 </head>
@@ -130,15 +159,25 @@ h2{
         </a>
     </div>
 
-    <nav>
+
+
+    <button class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="navMenu">
         <ul class="container">
             <li><a href="#">Como funcionamos</a></li>
             <li><a href="#">Preços e Serviços</a></li>
             <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Login</a></li>
+            <li><button>Reservar</button></li>
         </ul>
     </nav>
 
-    <div class="acao">
+    <div class="acao" id="acaoMenu">
         <a href="#">Login</a>
         <button>Reservar</button>
     </div>
@@ -175,10 +214,8 @@ h2{
 
     <div class="banner-mulher">
         <div class="blob"></div>
-        <img src="image/roupa-removebg-preview.png" alt="Mulher com roupas limpas" class="mulher">
-        <img src="image/bolha.png" class="bolha b1" alt="">
-        <img src="image/bolha.png" class="bolha b2" alt="">
-        <img src="image/bolha.png" class="bolha b3" alt="">
+        <img src="image/mucheirando4.png" alt="Mulher com roupas limpas" class="mulher">
+        
     </div>
 
 </section>
@@ -193,6 +230,22 @@ h2{
             <img src="image/muie2.0-removebg-preview.png" alt="">
         </div>
     </div>
+</section>
+
+<section class="servicos">
+    <h2>Serviços</h2>
+
+    <ul class="lista-servicos">
+        <li class="card-servicos">
+            <img src="image/lava-e-seca.jpg" alt="Homem de cabelos preto olhando para sua roupa dentro da máquina de lavar">
+            <h3>Lava e Seca</h3>
+        </li>
+
+        <li class="card-servicos">
+            <img src="image/passando.jpg" alt="Pessoa passando roups">
+            <h3>Passamento de roupa</h3>
+        </li>
+    </ul>
 </section>
 
     <footer>

@@ -1,0 +1,87 @@
+@media (max-width: 900px){
+    .hero{
+        flex-direction: column;
+        padding: 40px 28px;
+        text-align: center;
+    }
+
+
+    .mulher{
+        max-width: 240px;
+        width: 100%;
+    }
+
+    .bloco-verde{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media(max-width: 600px){
+    nav{display: none;}
+    nav.aberto{display: flex; flex-direction: column; display: 100%;}
+    .menu-toggler{display: flex;}
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .hero{
+        padding: 24px 16px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .blob{
+        width: 190px;
+        height: 150px;
+    }
+
+    .container-vantagens{
+        justify-content: center;
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    .blob-verde{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 16px 0 16px;
+    }
+
+    .muier-verde img{
+        max-width: 220px;
+    }
+
+    
+
+    h1{font-size: 1.4rem;}
+    h2{font-size: 1rem;}
+
+    .banner-mulher{
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .card-vantagem img{
+        width: 70px;
+        height: 70px;
+        
+    }
+
+    /*parte de baixo antes do footer*/
+
+    .lista-servicos{
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .card-servicos{
+        width: 45%;
+        
+    }
+}
