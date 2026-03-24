@@ -11,6 +11,7 @@ header {
     z-index: 1000;    /* fica acima de tudo */
     padding: 5px 5%;
     box-sizing: border-box;
+    height: 5%;
 }
 
 /*A header tá um pouco grande, aquela função que diminui a tela ao rolar para baixo é feita no JavaScript*/
@@ -34,7 +35,7 @@ header a{
 }
 
 .logo img{
-    max-height: 140px;
+    max-height: 80px;
     width: auto;
     display: block;
 }

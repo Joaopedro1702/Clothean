@@ -161,24 +161,24 @@ h2{
 
 
 
-    <button class="menu-toggle" id="menu-toggle">
+    <button class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <nav class="navMenu">
+    <nav id="navMenu">
         <ul class="container">
             <li><a href="#">Como funcionamos</a></li>
             <li><a href="#">Preços e Serviços</a></li>
             <li><a href="#">Sobre nós</a></li>
-            <li><a href="#">Login</a></li>
-            <li><button>Reservar</button></li>
+            <li><a href="#" class="nav-login">Login</a></li>
+            <li><button class="nav-reservar">Reservar</button></li>
         </ul>
     </nav>
 
     <div class="acao" id="acaoMenu">
-        <a href="#">Login</a>
+        <a href="#" class="menuLogin">Login</a>
         <button>Reservar</button>
     </div>
 </header>
@@ -279,6 +279,17 @@ h2{
         <small>© 2026 Clothean</small>
     </section>
 </footer>
+
+<script>
+    const toggle = document.getElementById('menuToggle')
+    const nav = document.getElementById('navMenu')
+    const acao = document.getElementById('acaoMenu')
+
+        toggle.addEventListener('click', function(){
+            nav.classList.toggle('aberto')
+            acao.classList.toggle('aberto')
+        })
+</script>
 
 </body>
 </html>
