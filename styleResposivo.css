@@ -29,6 +29,7 @@
 
     .menu-toggle{
         display: flex;
+        padding: 10px;
         
     }
 
@@ -40,6 +41,7 @@
         
         color: #67B0E5;
         display: block;
+        padding: 10px;
     }
     
     nav.aberto{
@@ -51,8 +53,8 @@
 
     nav a:hover{
         background-color: white;
-        padding: 10px;
         border-radius: 25px;
+        display: inline-block;
         
     }
 
@@ -77,8 +79,13 @@
         color: white;
     }
 
+    a.nav-login, a.nav-reservar{
+        display: none;
+    }
     
-
+    .menu-toggle:hover{
+        background-color: transparent;
+    }
     .hero{
         padding: 24px 16px;
         overflow: hidden;
