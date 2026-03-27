@@ -196,3 +196,37 @@ footer{
 
 }
 
+/*Menu*/
+
+.offcanvas-body{
+    flex-direction: column;
+    background-color: #c4ffaf3b;
+    
+}
+
+.offcanvas-body ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.offcanvas-body li{
+    display: block;
+    margin-bottom: 15px;
+    
+}
+
+.offcanvas-body a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.navbar{
+
+    flex-direction: column;
+    
+}
+
+

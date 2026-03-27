@@ -6,6 +6,9 @@
     <title>Clothean</title>
     <link rel="stylesheet" href="stylePadrao.css">
     <link rel="stylesheet" href="styleResposivo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <style>
         /*Parte principal*/
@@ -93,6 +96,9 @@ h2{
     background-color: #7CBF5C;
     border-radius: 40px;
     padding: 40px 40px 0 40px;
+    overflow: hidden;
+    gap: 24px;
+    align-items: stretch;
 }
 
 .muier-verde{
@@ -152,33 +158,110 @@ h2{
  a.nav-login, button.nav-reservar{
         display: none;
     }
+
+.card{
+    border-radius: 45px 45px 45px 45px;
+    background-color: #2BA2DD;
+    color: white;
+    overflow: hidden;
+    border-radius: 45px;
+    
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    
+}
+
+.btnReservar{
+    width: 90px;
+    background-color: #7CBF5C;
+    color: white;
+    border-radius: 50px;
+}
+
+.btnReservar:hover{
+    background-color: #2BA2DD;
+    color: white;
+}
+
+
+.btnpreco{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+}
+
+.btnpreco p{
+    color: white;
+    font-weight: bold;
+}
+
+.offcanvas-body{
+
+    flex-direction: column;
+}
+
+.offcanvas-body ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.offcanvas-body li{
+    
+    margin-bottom: 15px;
+}
+
+.offcanvas-body a{
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.navbar{
+    
+    flex-direction: column;
+}
+
+
     </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">
+
+ <div class="logo">
         <a href="index.html">
             <img src="image/logo.png" alt="Logo da Clothean">
         </a>
     </div>
 
-    <button class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Menu</button>
 
-    <nav id="navMenu">
-        <ul class="container">
-            <li><a href="#">Como funcionamos</a></li>
-            <li><a href="#">Preços e Serviços</a></li>
-            <li><a href="#">Sobre nós</a></li>
-            <li><a href="#" class="nav-login">Login</a></li>
-            <li><button class="nav-reservar">Reservar</button></li>
-        </ul>
-    </nav>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar">
+        <li class="nav-item"><a class="nav-link" href="#">Como funcionamos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Sobre nós</a></li>
+        <li class="nav-item"><a class="nav-link nav-login" href="#">Login</a></li>
+        <li class="nav-item mt-3">
+            <button class="btn-reservar w-100">Reservar</button>
+        </li>
+    </ul>
+  </div>
+</div>
 
     <div class="acao" id="acaoMenu">
         <a href="login.html" class="menuLogin">Login</a>
@@ -250,6 +333,48 @@ h2{
         </li>
     </ul>
 </section>
+
+<section>
+    <article class="blob-verde">
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="image/homemSegurandoRoupa.png" class="img-fluid rounded-start" alt="Homem segurando Roupas limpas e secas.">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Lava e Seca</h5>
+        <p class="card-text">Serviço de lavagem de roupa e seca</p>
+
+       <div class="btnpreco">
+            <p class="card-text"><small>R$ 30,00</small></p>
+            <button class="btnReservar">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="image/entrega1.png" class="img-fluid rounded-start" alt="Homem entregando roupas para uma mulher">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Entrega rápida</h5>
+        <p class="card-text">Recebas suas roupas em sua casa.</p>
+        <div class="btnpreco">
+            <p class="card-text"><small>R$ 5,00</small></p>
+            <button class="btnReservar">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+    </section>
 
     <footer>
     <div class="footer-container">

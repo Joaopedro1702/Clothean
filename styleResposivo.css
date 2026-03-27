@@ -144,5 +144,87 @@
         
     }
 
+        /* Seção serviços */
+    .servicos {
+        padding: 16px;
+        height: auto;
+    }
+
+    .lista-servicos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-servicos {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* Seção meio */
+    .blob-verde {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 16px 0 16px;
+    }
+
+    .muier-verde img {
+        max-width: 200px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    /* Banner mulher */
+    .banner-mulher {
+        height: auto;
+    }
+
+    /*Preços*/
+    .card .row{
+        flex-direction: column;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .card img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .btnReservar{
+        width: 100%;
+    }
+
+    .btnpreco{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .card{
+        flex-direction: column;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .card img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .btnReservar{
+        width: 100%;
+    }
+
+    .btnpreco{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
     
 }
