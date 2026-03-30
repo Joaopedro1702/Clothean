@@ -1,0 +1,233 @@
+@media (max-width: 900px){
+    .hero{
+        flex-direction: column;
+        padding: 40px 28px;
+        text-align: center;
+    }
+
+
+    .mulher{
+        max-width: 240px;
+        width: 100%;
+    }
+
+    .bloco-verde{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/*Mobile*/
+@media(max-width: 600px){
+    nav{display: none;}
+    nav.aberto{display: flex; flex-direction: column;}
+    .menu-toggler{display: flex;}
+
+    header{
+        position: relative;
+    }
+
+    .menu-toggle{
+        display: flex;
+        padding: 10px;
+        
+    }
+
+    .menuLogin{
+        background-color: white;
+    }
+
+    nav a{
+        
+        color: #67B0E5;
+        display: block;
+        padding: 10px;
+    }
+    
+    nav.aberto{
+        width: 100%;
+        position: absolute;
+        top: 100px;
+        left: 0;
+    }
+
+    nav a:hover{
+        background-color: white;
+        border-radius: 25px;
+        display: inline-block;
+        
+    }
+
+    nav.aberto ul{
+        width: 100%;
+        height: 50%;
+        border-radius: 5%;
+        text-align: left;
+        background-color: #BDFFA6;
+        color: white;
+        flex-direction: column;
+    }   
+
+    nav button{
+        background-color: white;
+        color: #67B0E5;
+        border: none;
+    }
+
+    nav button:hover{
+        background-color: #67B0E5;
+        color: white;
+    }
+
+    a.nav-login, a.nav-reservar{
+        display: none;
+    }
+    
+    .menu-toggle:hover{
+        background-color: transparent;
+    }
+    .hero{
+        padding: 24px 16px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .blob{
+        width: 190px;
+        height: 150px;
+    }
+
+    .container-vantagens{
+        justify-content: center;
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    .blob-verde{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 16px 0 16px;
+    }
+
+    .muier-verde img{
+        max-width: 220px;
+    }
+
+    
+
+    h1{font-size: 1.4rem;}
+    h2{font-size: 1rem;}
+
+    .banner-mulher{
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .card-vantagem img{
+        width: 70px;
+        height: 70px;
+        
+    }
+
+    /*parte de baixo antes do footer*/
+
+    .lista-servicos{
+        display: flex;
+        
+    }
+    .card-servicos{
+        width: 45%;
+        
+    }
+
+        /* Seção serviços */
+    .servicos {
+        padding: 16px;
+        height: auto;
+    }
+
+    .lista-servicos {
+        flex-direction: row;
+        gap: 24px;        
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card-servicos {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* Seção meio */
+    .blob-verde {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 16px 0 16px;
+    }
+
+    .muier-verde img {
+        max-width: 200px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    /* Banner mulher */
+    .banner-mulher {
+        height: auto;
+    }
+
+    /*Preços*/
+    .card .row{
+        flex-direction: column;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .card img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .btnReservar{
+        width: 100%;
+    }
+
+    .btnpreco{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .card{
+        flex-direction: column;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .card img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .btnReservar{
+        width: 100%;
+    }
+
+    .btnpreco{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+}

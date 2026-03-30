@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothean</title>
+    <link rel="stylesheet" href="stylePadrao.css">
+    <link rel="stylesheet" href="styleResposivo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <style>
+        /*Parte principal*/
+
+h1{
+    color: white;
+}
+
+.hero{
+    background-color: #67B0E5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+    border-radius: 30px;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* Container da imagem */
+.banner-mulher {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+/* Forma verde (blob) */
+
+
+/* Mulher */
+.mulher {
+    position: relative;
+    z-index: 2;
+
+    max-width: 420px;
+    height: auto;
+
+    display: block;
+}
+
+/*cards*/
+.container-vantagens{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    
+}
+
+.card-vantagem{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+
+.card-vantagem img{
+    height: 120px;
+    width: 120px;
+    height: auto;
+    margin-bottom: 0;
+    object-fit: contain;
+    padding: 20px;
+    background-color: white;
+    padding: 3%;
+    border-radius:50% ; /* Formato de domo para cada um */                    /* Largura fixa para ficarem iguais */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/*parte do meio*/
+.blob-verde{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7CBF5C;
+    border-radius: 40px;
+    padding: 40px 40px 0 40px;
+    overflow: hidden;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.muier-verde{
+    align-self: flex-end
+}
+.muier-verde img{
+    margin-top: 50px;
+    max-width: 105%;
+}
+.conteudo-esquedot h1{
+    max-width: 450px;
+ }
+
+.lista-servicos{
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+ .servicos{
+    background-color: #2BA2DD;
+    color: white;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    
+ }
+
+ .card-servicos{
+    width: 260px;
+    
+    overflow: hidden;
+    text-align: center;
+ }
+
+ .card-servicos img{
+    border-radius: 16px 16px 16px 16px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+ }
+
+ .card-servicos h3{
+    padding: 12px 0;
+ }
+
+ .servicos h2{
+    text-align: center;
+ }
+
+ ul{
+    display: flex;
+   
+ }
+ a.nav-login, button.nav-reservar{
+        display: none;
+    }
+
+.card{
+    border-radius: 45px 45px 45px 45px;
+    background-color: #2BA2DD;
+    color: white;
+    overflow: hidden;
+    border-radius: 45px;
+    
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    
+}
+
+.btnReservar{
+    width: 90px;
+    background-color: #7CBF5C;
+    color: white;
+    border-radius: 50px;
+}
+
+.btnReservar:hover{
+    background-color: #2BA2DD;
+    color: white;
+}
+
+
+.btnpreco{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+}
+
+.btnpreco p{
+    color: white;
+    font-weight: bold;
+}
+
+.offcanvas-body{
+
+    flex-direction: column;
+}
+
+.offcanvas-body ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.offcanvas-body li{
+    
+    margin-bottom: 15px;
+}
+
+.offcanvas-body a{
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.navbar{
+    
+    flex-direction: column;
+}
+
+.container-formatos {
+    gap: 15px;
+    padding: 20px;
+    display: flex;
+    background-color: #7CBF5C;
+    border-radius: 35px;
+}
+
+.formato {
+    width: 50%;
+    text-align: center;
+    object-fit: cover;
+    padding: 10px;
+    background-color: #2BA2DD;
+    border-radius: 40px;
+}
+
+.formato img {
+    width: 100%;
+
+}
+
+.formato p{
+    color: white;
+}
+
+.formatos{
+    background-color: #7CBF5C;
+    border-radius: 35px;
+    padding: 40px;
+}
+
+.formato h3{
+    color: white;
+}
+
+.formatos h2{
+    text-align: center;
+    color: white;
+}
+
+.formato h4{
+    color: white;
+}
+
+.sobre{
+    background-color: rgb(180, 245, 236);
+    font-size: 26px;
+    padding: 40px;
+    border-radius: 35px;
+}
+
+.sobre h1{
+    color: #01579B;
+    text-align: center;
+}
+.sobre p{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+    color: #01579B;
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú</h5>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar">
+            <li class="nav-item"><a class="nav-link" href="#">Como funcionamos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item mt-3">
+                <a href="reserva.html">
+                <button class="btn-reservar w-100">Reservar</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+ <div class="logo">
+        <a href="index.html">
+            <img src="image/logo.png" alt="Logo da Clothean">
+        </a>
+    </div>
+
+    
+    <div class="acao" id="acaoMenu">
+        <a href="login.html" class="menuLogin">Login</a>
+        <button>Reservar</button>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+
+    <div class="conteudo-esquerdo">
+        <div class="texto">
+            <h1>Lavanderia com entrega em até 24 horas</h1>
+            <h2>Rápido, prático e do jeito que você precisa</h2>
+        </div>
+
+        <div class="blob-branco">
+            <div class="container-vantagens">
+                <article class="card-vantagem">
+                    <img src="image/verify.png" alt="Simobolo de verificado">
+                    <p>Qualidade</p>
+                </article>
+
+                <article class="card-vantagem">
+                    <img src="image/hour.png" alt="Rapidez" class="relogio">
+                    <p>Rapidez</p>
+                </article>
+
+                <article class="card-vantagem">
+                    <img src="image/dollar.png" alt="Preço justo" class="moeda">
+                    <p>Preço justo</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-mulher">
+        <div class="blob"></div>
+        <img src="image/muiecheirando4.png" alt="Mulher com roupas limpas" class="mulher">
+        
+    </div>
+
+</section>
+
+<section class="meio">
+    <div class="blob-verde">
+        <div class="conteudo-esquerdot">
+            <h1>O lugar que deixa suas roupas tão brilhantes quanto seu sorriso</h1>
+        </div>
+
+        <div class="muier-verde">
+            <img src="image/muie2.0-removebg-preview.png" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="servicos">
+    <h2>Serviços</h2>
+
+    <ul class="lista-servicos">
+        <li class="card-servicos">
+            <img src="image/lava-e-seca.jpg" alt="Homem de cabelos preto olhando para sua roupa dentro da máquina de lavar">
+            <h3>Lava e Seca</h3>
+        </li>
+
+        <li class="card-servicos">
+            <img src="image/passando.jpg" alt="Pessoa passando roups">
+            <h3>Passamento de roupa</h3>
+        </li>
+    </ul>
+</section>
+
+
+<!-- tipo -->
+
+<section class="sobre" id="sobre">
+    <h1>Sobre nós</h1>
+    <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto</p>
+</section>
+
+<section class="formatos">
+    <h2>Formatos</h2>
+    <div class="container-formatos">
+         
+        <article class="formato">
+            <h3>Loja fisica</h3>
+            <img src="image/lojafisica.png" alt="Lavanderia fisica da Clothean">
+            <h4>Endereço:</h4>
+            <p>rua lilas, lavanda, SP</p>
+
+        </article>
+
+        <article class="formato">
+            <h3>Entrega</h3>
+            <img src="image/entregahome.png" alt="">
+            <h4>Veiculos:</h4>
+            <p>Motocicleta ou Bicicleta</p>
+        </article>
+    </div>
+</section>
+
+<section>
+    <article class="blob-verde">
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="image/homemSegurandoRoupa.png" class="img-fluid rounded-start" alt="Homem segurando Roupas limpas e secas.">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Lava e Seca</h5>
+        <p class="card-text">Serviço de lavagem de roupa e seca</p>
+
+       <div class="btnpreco">
+            <p class="card-text"><small>R$ 30,00</small></p>
+            <button class="btnReservar">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="image/entrega1.png" class="img-fluid rounded-start" alt="Homem entregando roupas para uma mulher">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Entrega rápida</h5>
+        <p class="card-text">Recebas suas roupas em sua casa.</p>
+        <div class="btnpreco">
+            <p class="card-text"><small>R$ 5,00</small></p>
+            <button class="btnReservar">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+    </section>
+
+    <section class="localizacao">
+        <h2>Onde nos encontrar</h2>
+        <div class="loc-grid">
+            <div class="mapa-container">
+                <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="420" height="320" fill="#dceee8"/>
+                    <rect x="0" y="60"  width="420" height="12" fill="#c8dfd6"/>
+                    <rect x="0" y="130" width="420" height="12" fill="#c8dfd6"/>
+                    <rect x="0" y="200" width="420" height="12" fill="#c8dfd6"/>
+                    <rect x="55"  y="0" width="12" height="320" fill="#c8dfd6"/>
+                    <rect x="150" y="0" width="12" height="320" fill="#c8dfd6"/>
+                    <rect x="250" y="0" width="12" height="320" fill="#c8dfd6"/>
+                    <rect x="10"  y="10" width="40" height="45" rx="4" fill="#b5cfcb"/>
+                    <rect x="75"  y="10" width="70" height="45" rx="4" fill="#b5cfcb"/>
+                    <rect x="170" y="10" width="75" height="45" rx="4" fill="#b5cfcb"/>
+                    <rect x="75"  y="80" width="70" height="45" rx="4" fill="#b5cfcb"/>
+                    <rect x="170" y="150" width="75" height="45" rx="4" fill="#b5cfcb"/>
+                    <rect x="170" y="80" width="75" height="45" rx="4" fill="#7CBF5C" opacity="0.7"/>
+                    <text x="110" y="57" font-size="9" fill="#8aada6" text-anchor="middle">Rua das Lavandas</text>
+                    <text x="62"  y="100" font-size="8" fill="#8aada6" text-anchor="middle" transform="rotate(-90, 62, 100)">R. Lírio</text>
+                </svg>
+                <div class="pin-label">Clothean Lavanderia
+
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>Clothean Lavanderia</h3>
+                <div class="info-linha">
+                    <div class="icone">📍</div>
+                    <div><p class="info-label">Endereço</p>
+                        <p class="info-valor"> Ruas das Lavandas, 247 - SP</p>
+                    </div>
+                </div>
+                <a href="#" class="btn-mapa">Abrir no Google Maps</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer>
+    <div class="footer-container">
+        <section class="footer-contato">
+            <h3>Fale conosco</h3>
+            <address>
+                <div class="contato">
+                    <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                    <a href="11999999999">(11) 99999-9999</a>
+                </div>
+                <div class="email">
+                    <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
+                    <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
+                </div>
+            </address>
+        </section>
+
+        <nav class="footer-col" aria-label="Nossas redes sociais">
+            <h3>Nos Siga</h3>
+            <div class="social-icons">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo facebook" class="face"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn"></a>
+            </div>
+        </nav>
+
+    </div>
+
+    <section class="footer-barra-final">
+        <small>© 2026 Clothean</small>
+    </section>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() { 
+    document.querySelectorAll('.offcanvas a').forEach(item => { 
+        item.addEventListener('click', () => {
+            const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+            const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+            offcanvas.hide()
+        })
+    })
+
+    document.querySelector('.btn-reservar').addEventListener('click', () => {
+        const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+        const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+        offcanvas.hide()
+    })
+    <!-- Parei aqui -->
+})
+</script>
+
+</body>
+</html>
