@@ -26,6 +26,9 @@
     header{
         position: relative;
     }
+    main {
+    margin-top: 20px;
+}
 
     .menu-toggle{
         display: flex;
@@ -178,8 +181,17 @@
     /* Footer */
     .footer-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 24px;
+        text-align: center;
+    }
+
+    .footer-contato{
+        align-items: center;
+    }
+
+    .footer-contato h3{
+        text-align: center;
     }
 
     /* Banner mulher */
