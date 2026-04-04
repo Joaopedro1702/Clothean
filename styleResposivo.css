@@ -25,9 +25,11 @@
 
     header{
         position: relative;
+        margin-bottom: 0;
     }
     main {
-    margin-top: 20px;
+    margin-top: 0;
+    gap: 32px;
 }
 
     .menu-toggle{

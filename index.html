@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="stylePadrao.css">
     <link rel="stylesheet" href="styleResposivo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <link rel="icon" href="image/logo.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <style>
@@ -19,7 +19,10 @@ h1{
 
 
 .hero{
-    background-color: #67B0E5;
+    background-image: url(image/fundoazul.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -38,9 +41,6 @@ h2{
     width: 500px;
     height: 500px;
 }
-
-/* Forma verde (blob) */
-
 
 /* Mulher */
 .mulher {
@@ -67,7 +67,7 @@ h2{
     color: white;
     font-weight: bold;
     display: flex;
-    flex-direction: row;
+    
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -79,39 +79,50 @@ h2{
 .card-vantagem img{
     height: 120px;
     width: 120px;
-    height: auto;
     margin-bottom: 0;
     object-fit: contain;
     padding: 20px;
     background-color: white;
-    padding: 3%;
     border-radius:50% ; /* Formato de domo para cada um */                    /* Largura fixa para ficarem iguais */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 /*parte do meio*/
-.blob-verde{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #7CBF5C;
+.imagemverde{
+    background-image: url(image/fundoverde2.jpg);
+    background-size: cover;
+    background-position: center;
     border-radius: 40px;
     padding: 40px 40px 0 40px;
     overflow: hidden;
     gap: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: stretch;
+    
 }
 
-.muier-verde{
-    align-self: flex-end
-}
+
 .muier-verde img{
     margin-top: 50px;
     max-width: 105%;
+    align-self: flex-end;
 }
-.conteudo-esquedot h1{
-    max-width: 450px;
- }
+
+.conteudo-esquerdot{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.conteudo-esquerdot h1{
+    font-size: 2.5rem;
+    max-width: 100%;
+    color:#005B5E;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 .lista-servicos{
     list-style-type: none;
@@ -122,46 +133,10 @@ h2{
     margin: 0;
 }
 
- .servicos{
-    background-color: #2BA2DD;
-    color: white;
-    border-radius: 30px;
-    height: 100%;
-    width: 100%;
-    
- }
-
- .card-servicos{
-    width: 260px;
-    
-    overflow: hidden;
-    text-align: center;
- }
-
- .card-servicos img{
-    border-radius: 16px 16px 16px 16px;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
- }
-
- .card-servicos h3{
-    padding: 12px 0;
- }
-
- .servicos h2{
-    text-align: center;
- }
-
- ul{
+ul{
     display: flex;
-   
- }
- a.nav-login, button.nav-reservar{
-        display: none;
-    }
 
-
+}
 
 .btnReservar{
     width: 90px;
@@ -173,19 +148,6 @@ h2{
 .btnReservar:hover{
     background-color: #2BA2DD;
     color: white;
-}
-
-
-.btnpreco{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    
-}
-
-.btnpreco p{
-    color: white;
-    font-weight: bold;
 }
 
 .offcanvas-body{
@@ -217,11 +179,13 @@ h2{
     flex-direction: column;
 }
 
+
+/*Formatos*/
 .container-formatos {
     gap: 15px;
     padding: 20px;
     display: flex;
-    background-color: #7CBF5C;
+ 
     border-radius: 35px;
 }
 
@@ -244,7 +208,7 @@ h2{
 }
 
 .formatos{
-    background-color: #7CBF5C;
+    background-image: url(image/fundogra.jpg);
     border-radius: 35px;
     padding: 40px;
 }
@@ -262,11 +226,16 @@ h2{
     color: white;
 }
 
+
+/*Sobre nós*/
 .sobre{
-    background-color: rgb(180, 245, 236);
+    background-image: url(image/fundoazul.jpg);
     font-size: 26px;
     padding: 40px;
     border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sobre h1{
@@ -279,6 +248,15 @@ h2{
     font-size: 26px;
     color: #01579B;
 }
+
+.fundobranco{
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
 /*Serviços*/
 .carousel-item active h5{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -291,24 +269,44 @@ h2{
 }
 
 .fundoverde{
-    background-image: url(image/fundoverde.jpg);
+    background-image: url(image/fundoazul2.jpg);
     background-size: cover;
+    background-position: center;
     border-radius: 50px;
     padding: 40px;
+    overflow: hidden;
+}
+
+.fundoverde h1{
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 /*Serviços lavanderia img*/
-.fundoverde img{
-    height: 600px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 30px;
+
+.carousel-item img {
+    height: 450px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50px;
+    filter: brightness(0.5);
+}
+
+.carousel-caption{
+    bottom: 40px;
+}
+
+
+.carousel-caption h5, .carousel-caption p{
+    color: #E9ECEF;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 /*mapa*/
 
 .localizacao{
-    background-color: #7CBF5C;
+    background-image: url(image/fundoazul.jpg);
     border-radius: 35px;
     padding: 40px;
     margin-bottom: 0;
@@ -443,6 +441,51 @@ h2{
     }
 }
 
+/*Media de serviços*/
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 220px;
+    }
+}
+
+/*Botões da area de serviços*/
+
+.btnservicos{
+    background-color: #01579B;
+    color: white;
+    border-radius: 48px;
+    border: none;
+    outline: none;
+    transition: transform 0.3 ease;
+}
+
+.btnservicos:hover{
+    background-color: #7CBF5C;
+    color: #01579B;
+    transform: scale(1.3);
+}
+
+/*Carrossel: Levando as setas para o centro*/
+
+.carousel-control-prev, .carousel-control-next{
+    width: 5%;
+    top: 50% !important;
+    transform: translateY(-50%);
+    height: auto;
+}
+
+/*Tirando o hover azul das setas*/
+
+.carousel-control-prev:hover, .carousel-control-next:hover{
+    background-color: transparent !important;
+}
     </style>
 </head>
 
@@ -494,10 +537,10 @@ h2{
     <div class="conteudo-esquerdo">
         <div class="texto">
             <h1>Lavanderia com entrega em até 24 horas</h1>
-            <h2>Rápido, prático e do jeito que você precisa</h2>
+            <h2>Rápido, prático e do jeito que você precisa!</h2>
         </div>
 
-        <div class="blob-branco">
+        <div>
             <div class="container-vantagens">
                 <article class="card-vantagem">
                     <img src="image/verify.png" alt="Simobolo de verificado">
@@ -525,10 +568,12 @@ h2{
 
 </section>
 
+
+<!--Banner verde da mulher lá-->
 <section class="meio">
-    <div class="blob-verde">
+    <div class="imagemverde">
         <div class="conteudo-esquerdot">
-            <h1>O lugar que deixa suas roupas tão brilhantes quanto seu sorriso</h1>
+            <h1>O lugar que deixa suas roupas tão brilhantes quanto seu sorriso!</h1>
         </div>
 
         <div class="muier-verde">
@@ -537,35 +582,21 @@ h2{
     </div>
 </section>
 
-<section class="servicos">
-    
-    <h2>Serviços</h2>
+<!--Muier verde-->
 
-    <ul class="lista-servicos">
-        <li class="card-servicos">
-            <img src="image/lava-e-seca.jpg" alt="Homem de cabelos preto olhando para sua roupa dentro da máquina de lavar">
-            <h3>Lava e Seca</h3>
-        </li>
-
-        <li class="card-servicos">
-            <img src="image/passando.jpg" alt="Pessoa passando roups">
-            <h3>Passamento de roupa</h3>
-        </li>
-    </ul>
-</section>
-
-
-<!-- tipo -->
+<!-- Sobre nós -->
 
 <section class="sobre" id="sobre">
     <h1>Sobre nós</h1>
-    <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto</p>
+    <div class="fundobranco">
+        <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto.</p>
+    </div>
 </section>
 
+<!--Formatos-->
 <section class="formatos">
     <h2>Formatos</h2>
-    <div class="container-formatos">
-         
+    <div class="container-formatos">   
         <article class="formato">
             <h3>Loja fisica</h3>
             <img src="image/lojafisica.png" alt="Lavanderia fisica da Clothean">
@@ -586,40 +617,51 @@ h2{
 
 <section>
     <article class="fundoverde">
-            <div id="carouselExampleCaptions" class="carousel slide">
+    <div id="carouselExampleCaptions" class="carousel slide">
+                <h1>Serviços</h1>
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <img src="image/homemSegurandoRoupa.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+        <img src="image/mulhersegurando" class="d-block w-100" alt="mulher segurando roupas limpas e dobradas.">
+        <div class="carousel-caption d-block">
             <h5>Lava e Seca</h5>
             <p>Nós lavamos e secamos as suas roupas.</p>
+            <p>Por apenas:</p>
+            <h3>30R$</h3>
+            <button class="btnservicos" onclick="window.location.href='reserva.html'">Reserve</button>
         </div>
         </div>
         <div class="carousel-item">
-        <img src="image/passando.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-        </div>
-        </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+        <img src="image/passando.jpg" class="d-block w-100" alt="Pessoa passando roupa. O ferro de passar está em cima de uma camiseta preta.">
+        <div class="carousel-caption d-block">
+            <h5>Passagismo</h5>
+            <p>Passe suas roupas em nossa lavanderia.</p>
+            <p>Por apenas:</p>
+            <h3>20R$</h3>
+            <button class="btnservicos" onclick="window.location.href='reserva.html'">Reserve</button>
 
-    </article>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+</article>
+
 </section>
 
 <!--FIMMMMMMMMMMMMMMM-->
+
+<!--Localização-->
     <section class="localizacao">
         <h2>Onde nos encontrar</h2>
         <div class="loc-grid">
