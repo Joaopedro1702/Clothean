@@ -185,7 +185,6 @@ ul{
     gap: 15px;
     padding: 20px;
     display: flex;
- 
     border-radius: 35px;
 }
 
@@ -196,6 +195,25 @@ ul{
     padding: 10px;
     background-color: #2BA2DD;
     border-radius: 40px;
+    align-items: center;
+}
+
+.textformatos{
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    
+}
+
+.textformatos h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
 }
 
 .formato img {
@@ -211,6 +229,8 @@ ul{
     background-image: url(image/fundogra.jpg);
     border-radius: 35px;
     padding: 40px;
+    text-align: center;
+
 }
 
 .formato h3{
@@ -236,11 +256,22 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+.textsobre{
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-bottom: 28px;
 }
 
 .sobre h1{
-    color: #01579B;
+    color: white;
     text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 .sobre p{
     text-align: center;
@@ -263,10 +294,6 @@ ul{
     font-weight: bold;
 }
 
-.carousel-item active p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-}
 
 .fundoverde{
     background-image: url(image/fundoazul2.jpg);
@@ -275,6 +302,7 @@ ul{
     border-radius: 50px;
     padding: 40px;
     overflow: hidden;
+    text-align: center;
 }
 
 .fundoverde h1{
@@ -303,19 +331,52 @@ ul{
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-/*mapa*/
-
-.localizacao{
-    background-image: url(image/fundoazul.jpg);
-    border-radius: 35px;
-    padding: 40px;
-    margin-bottom: 0;
+.textservicos{
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.localizacao h2{
+.textservicos h1{
     text-align: center;
     color: white;
     margin-bottom: 28px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+/*mapa*/
+
+.localizacao{
+    background-image: url(image/28640726_17259.jpg);
+    border-radius: 35px;
+    padding: 40px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.localtext{
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 0 auto 28px auto;
+}
+
+
+.localtext h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
 }
 
 /*GRID: os dois lados*/
@@ -587,7 +648,7 @@ ul{
 <!-- Sobre nós -->
 
 <section class="sobre" id="sobre">
-    <h1>Sobre nós</h1>
+    <div class="textsobre"><h1>Sobre nós</h1></div>
     <div class="fundobranco">
         <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto.</p>
     </div>
@@ -595,7 +656,7 @@ ul{
 
 <!--Formatos-->
 <section class="formatos">
-    <h2>Formatos</h2>
+    <div class="textformatos"><h2>Formatos</h2></div>
     <div class="container-formatos">   
         <article class="formato">
             <h3>Loja fisica</h3>
@@ -618,7 +679,8 @@ ul{
 <section>
     <article class="fundoverde">
     <div id="carouselExampleCaptions" class="carousel slide">
-                <h1>Serviços</h1>
+    <div class="textservicos"><h1>Serviços</h1></div>
+        
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -663,7 +725,9 @@ ul{
 
 <!--Localização-->
     <section class="localizacao">
+        <div class="localtext">
         <h2>Onde nos encontrar</h2>
+        </div>
         <div class="loc-grid">
             <div class="mapa-container">
                 <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
