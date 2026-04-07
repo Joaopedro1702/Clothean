@@ -284,6 +284,8 @@ footer{
 }
 
 .btnlogin {
-    width: 450px;
+    width: 365px;
     height: auto;
+    gap: 800px;
 }
+
