@@ -1,8 +1,12 @@
-@media (max-width: 900px){
-    .hero{
+    @media (max-width: 900px){
+        .hero {
+        height: auto !important; /* Força o container a ter apenas o tamanho dos itens */
+        min-height: unset;
+        display: flex;
         flex-direction: column;
-        padding: 40px 28px;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Controla o espaço entre o texto/ícones e a foto */
     }
 
 
@@ -177,7 +181,10 @@
     }
 
     .muier-verde img {
-        max-width: 200px;
+        display: block;
+        margin-bottom: 0;
+        max-width: 220px;
+        width: 100%;
     }
 
     /* Footer */
@@ -242,6 +249,15 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+    }
+
+    .imagemverde{
+        display: flex;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 20px 20px 0 20px;
+        align-items: center;
+        justify-content: flex-start;
     }
     
 }
