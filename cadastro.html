@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Tela para Cadastro de Usuários na plataforma">
+    <meta name="keywords" content="metatags, cadastro, usuario">
+    <meta name="authot" content="Otávio Augusto Canola do Carmo">
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylePadrao.css">
+    <link rel="stylesheet" href="styleResposivo.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        .dados-login {
+            height: 50%;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        form {
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+        }
+
+        .facebook {
+            width: 25px;
+
+        }
+
+        .loginCom {
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            background-color: #BDFFA6;
+            color: #3420E6;
+            border: none;
+
+        }
+
+        .botoes {
+            display: flex;
+            padding: 2%;
+            gap: 5px;
+        }
+
+        .btnEntrar {
+            margin-right: 10%;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            background-color: #f0f0f0;
+            /* cinza bem claro */
+        }
+
+        footer {
+            margin-top: 2%;
+            bottom: 0;
+            flex-direction: column;
+        }
+
+        .quadrado {
+            display: grid;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            min-width: 390px;
+            margin: auto
+        }
+
+        button:hover {
+            background-color: #67B0E5;
+            color: #BDFFA6;
+            transform: scale(1.05);
+        }
+
+        .conteiner {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .imagem {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-size: cover;
+            object-position: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(image/Casal\ lavando.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur();
+
+        }
+
+        .Cadastro {
+            display: flex;
+            justify-content: center;
+        }
+
+        .Img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+        }
+
+        .Titulo {
+            display: flex;
+            justify-content: end;
+            margin-right: 15%;
+            padding-bottom: 3%;
+            margin-top: 5%;
+            color: white;
+        }
+
+        .texto {
+            display: flex;
+            justify-content: start;
+        }
+
+        .Icons {
+            padding-left: 1%;
+        }
+
+        .form-label {
+            padding-top: 5%;
+        }
+
+        .Formulario {
+            padding-left: 3%;
+            padding-bottom: 2%;
+            height: 100%;
+            object-fit: cover;
+            background-size: cover;
+            object-position: top;
+            background-image: url(image/Fundo\ de\ lavanderia\ Imagens\ –\ Download\ Grátis\ no\ Freepik.jpg);
+            background-repeat: no-repeat;
+        }
+
+        .Campos {
+            border-radius: 13px;
+        }
+
+        .locBotao {
+            margin-top: 7%;
+            display: flex;
+            justify-content: start;
+            align-items: flex-start;
+        }
+
+        .Botao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2%;  
+            border-radius: 20px;
+            width: 82%;
+            font-size: x-large;
+
+        }
+
+        .Linha {
+            background-color: #3420E6;
+            width: 100%;
+            height: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class=border 3>
+
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link nav-login" href="#">Login</a></li>
+                    <li class="nav-item mt-3">
+                        <a href="reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/logo.png" alt="Logo da Clothean">
+            </a>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="quadrado">
+            <div class="conteiner">
+                <section class="Imagem-Lateral">
+                    <div class="imagem">
+                        <blockquote style="background-color: black;">
+
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section class="Formulario">
+                    <div class="Cadastro">
+                        <h1 class="Titulo"><b>CADASTRO</b></h1>
+                    </div>
+
+                    <div>
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-10 position-relative">
+                                <img src="image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control texto Campos" id="validationTooltip01"
+                                    placeholder="Fulano da Silva Junior" required>
+                            </div>
+                    </div>
+
+                    <div>
+                        <div class="col-lg-10 position-relative">
+                            <img src="image/imagem_12px.png" alt="Icon Email">
+                            <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                            <input type="email" class="form-control texto Campos" id="validationTooltip01"
+                                placeholder="fulano@gmail.com" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-5 position-relative">
+                                <img src="image/file.png" alt="Icon CPF">
+                                <label for="validationTooltip01" class="form-label"><b>CPF</b></label>
+                                <input type="text" class="form-control texto Campos" id="validationTooltip01"
+                                    placeholder="000.000.000-00" required>
+                            </div>
+
+                            <div class="col-lg-5 position-relative">
+                                <img src="image/telephone-handle-silhouette.png" style=width:12px height:12px;
+                                    alt="Icon Telefone">
+                                <label for="validationTooltip01" class="form-label"><b>Telefone</b></label>
+                                <input type="tel" class="form-control texto Cadastro" id="validationTooltip01"
+                                    placeholder="(00) 00000-0000" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-5 position-relative">
+                                    <img src="image/padlock.png" style=width:12px; height:12px; alt="Icon Senha">
+                                    <label for="validationTooltip01" class="form-label"><b>Senha</b></label>
+                                    <input type="password" class="form-control texto" id="validationTooltip01"
+                                        placeholder="_ A 9" required>
+                                </div>
+
+                                <div class="col-lg-5 position-relative">
+                                    <img src="image/padlock.png" style="width: 12px; height:12px;" alt="Icon Senha">
+                                    <label for="validationTooltip01" class="form-label"><b>Confirmar Senha</b></label>
+                                    <input type="password" class="form-control texto" id="validationTooltip01"
+                                        placeholder="Digite a senha novamente" required>
+                                </div>
+
+                                <div class="locBotao">
+                                    <button type="button" class="btn btn-light Botao"><b>Cadastrar</b></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+    </main>
+    <footer>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
+        </section>
+    </footer>
+</body>
+
+</html>
