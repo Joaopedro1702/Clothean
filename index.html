@@ -1,710 +1,859 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clothean</title>
     <link rel="stylesheet" href="stylePadrao.css">
     <link rel="stylesheet" href="styleResposivo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
     <style>
         /*Parte principal*/
 
-h1{
-    color: white;
-}
-
-
-.hero{
-    background-color: #67B0E5;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5%;
-    border-radius: 30px;
-}
-
-h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-}
-
-/* Container da imagem */
-.banner-mulher {
-    position: relative;
-    width: 500px;
-    height: 500px;
-}
-
-/* Forma verde (blob) */
-
-
-/* Mulher */
-.mulher {
-    position: relative;
-    z-index: 2;
-
-    max-width: 420px;
-    height: auto;
-
-    display: block;
-}
-
-/*cards*/
-.container-vantagens{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-top: 40px;
-    
-}
-
-.card-vantagem{
-    color: white;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-}
-
-
-.card-vantagem img{
-    height: 120px;
-    width: 120px;
-    height: auto;
-    margin-bottom: 0;
-    object-fit: contain;
-    padding: 20px;
-    background-color: white;
-    padding: 3%;
-    border-radius:50% ; /* Formato de domo para cada um */                    /* Largura fixa para ficarem iguais */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-/*parte do meio*/
-.blob-verde{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #7CBF5C;
-    border-radius: 40px;
-    padding: 40px 40px 0 40px;
-    overflow: hidden;
-    gap: 24px;
-    align-items: stretch;
-}
-
-.muier-verde{
-    align-self: flex-end
-}
-.muier-verde img{
-    margin-top: 50px;
-    max-width: 105%;
-}
-.conteudo-esquedot h1{
-    max-width: 450px;
- }
-
-.lista-servicos{
-    list-style-type: none;
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
- .servicos{
-    background-color: #2BA2DD;
-    color: white;
-    border-radius: 30px;
-    height: 100%;
-    width: 100%;
-    
- }
-
- .card-servicos{
-    width: 260px;
-    
-    overflow: hidden;
-    text-align: center;
- }
-
- .card-servicos img{
-    border-radius: 16px 16px 16px 16px;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
- }
-
- .card-servicos h3{
-    padding: 12px 0;
- }
-
- .servicos h2{
-    text-align: center;
- }
-
- ul{
-    display: flex;
-   
- }
- a.nav-login, button.nav-reservar{
-        display: none;
-    }
-
-.card{
-    border-radius: 45px 45px 45px 45px;
-    background-color: #2BA2DD;
-    color: white;
-    overflow: hidden;
-    border-radius: 45px;
-    
-}
-
-.card img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-    
-}
-
-.btnReservar{
-    width: 90px;
-    background-color: #7CBF5C;
-    color: white;
-    border-radius: 50px;
-}
-
-.btnReservar:hover{
-    background-color: #2BA2DD;
-    color: white;
-}
-
-
-.btnpreco{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    
-}
-
-.btnpreco p{
-    color: white;
-    font-weight: bold;
-}
-
-.offcanvas-body{
-
-    flex-direction: column;
-}
-
-.offcanvas-body ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    
-}
-
-.offcanvas-body li{
-    
-    margin-bottom: 15px;
-}
-
-.offcanvas-body a{
-    text-decoration: none;
-    color: #333;
-    display: block;
-    font-size: 1.1rem;
-}
-
-.navbar{
-    color: #01579B;
-    flex-direction: column;
-}
-
-.container-formatos {
-    gap: 15px;
-    padding: 20px;
-    display: flex;
-    background-color: #7CBF5C;
-    border-radius: 35px;
-}
-
-.formato {
-    width: 50%;
-    text-align: center;
-    object-fit: cover;
-    padding: 10px;
-    background-color: #2BA2DD;
-    border-radius: 40px;
-}
-
-.formato img {
-    width: 100%;
-
-}
-
-.formato p{
-    color: white;
-}
-
-.formatos{
-    background-color: #7CBF5C;
-    border-radius: 35px;
-    padding: 40px;
-}
-
-.formato h3{
-    color: white;
-}
-
-.formatos h2{
-    text-align: center;
-    color: white;
-}
-
-.formato h4{
-    color: white;
-}
-
-.sobre{
-    background-color: rgb(180, 245, 236);
-    font-size: 26px;
-    padding: 40px;
-    border-radius: 35px;
-}
-
-.sobre h1{
-    color: #01579B;
-    text-align: center;
-}
-.sobre p{
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 26px;
-    color: #01579B;
-}
-
-
-
-/*mapa*/
-
-.localizacao{
-    background-color: #7CBF5C;
-    border-radius: 35px;
-    padding: 40px;
-    margin-bottom: 0;
-}
-
-.localizacao h2{
-    text-align: center;
-    color: white;
-    margin-bottom: 28px;
-}
-
-/*GRID: os dois lados*/
-
-.loc-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: stretch; 
-}
-
-.mapa-container{
-    background-color: #dceee8;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    min-height: 300px;
-}
-
-.mapa-container svg{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/*Balão do pin*/
-
-.pin-label{
-    position: absolute;
-    top: 36%;
-    left: 38%;
-    transform: translateX(-50%);
-    background: white;
-    border-radius: 8px;
-    padding: 6px 10px;
-    font-size: 12px;
-    font-weight: bold;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0, 15);
-    white-space: nowrap;
-}
-
-/*Card de informações*/
-
-.info-card{
-    background: white;
-    border-radius: 20px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.info-card h3{
-    color:#2BA2DD;
-    margin: 0;
-}
-
-.info-linha{
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.icone{
-    width: 30px;
-    height: 36px;
-    border-radius: 50%;
-    background: #bdffa6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 16px;
-}
-
-.info-label{
-    font-size: 12px;
-    color: #999;
-    margin: 0;
-}
-
-.info-valor{
-    font-size: 14px;
-    color: #333;
-    font-weight: bold;
-    margin: 0;
-}
-
-.btn-mapa{
-    display: block;
-    background: #2BA2DD;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 25px;
-    padding: 12px;
-    font-weight: bold;
-    margin-top: auto;
-}
-
-.btn-mapa:hover{
-    background: #1a8fc7;
-}
-
-#login{
-    background-color: #adffbf;
-    color: #2BA2DD;
-    height: 35px;
-    width: 55px;
-    border-radius: 10px;
-}
-
-#login:hover{
-    background-color: #2BA2DD;
-    color: white;
-}
-
-@media (max-width: 600px){
-    .loc-grid{
-        grid-template-columns: 1frS;
-    }
-}
-
+        h1 {
+            color: white;
+        }
+
+
+        .hero {
+            background-image: url(image/fundoazul22.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5%;
+            border-radius: 30px;
+            min-height: unset;
+            align-items: flex-end;
+        }
+
+        h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        /* Container da imagem */
+        .banner-mulher {
+            height: auto !important;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Mulher */
+        .mulher {
+            position: static;
+            width: 100%;
+            height: auto;
+            
+        }
+
+        /*cards*/
+        .container-vantagens {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin-top: 40px;
+
+        }
+
+        .card-vantagem {
+            color: white;
+            font-weight: bold;
+            display: flex;
+
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+
+        .card-vantagem img {
+            height: 120px;
+            width: 120px;
+            margin-bottom: 0;
+            object-fit: contain;
+            padding: 20px;
+            background-color: white;
+            border-radius: 50%;
+            /* Formato de domo para cada um */
+            /* Largura fixa para ficarem iguais */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /*parte do meio*/
+        .imagemverde {
+            background-image: url(image/fundoverde2.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 40px;
+            padding: 40px 40px 0 40px;
+            overflow: hidden;
+            gap: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+
+        }
+
+
+        .muier-verde img {
+            margin-top: 50px;
+            max-width: 100%;
+            align-self: flex-end;
+        }
+
+        .conteudo-esquerdot {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteudo-esquerdot h1 {
+            font-size: 2.5rem;
+            max-width: 100%;
+            color: #005B5E;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .lista-servicos {
+            list-style-type: none;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            display: flex;
+
+        }
+
+        .btnReservar {
+            width: 90px;
+            background-color: #7CBF5C;
+            color: white;
+            border-radius: 50px;
+        }
+
+        .btnReservar:hover {
+            background-color: #2BA2DD;
+            color: white;
+        }
+
+        .offcanvas-body {
+
+            flex-direction: column;
+        }
+
+        .offcanvas-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .offcanvas-body li {
+
+            margin-bottom: 15px;
+        }
+
+        .offcanvas-body a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .navbar {
+            color: #01579B;
+            flex-direction: column;
+        }
+
+
+        /*Formatos*/
+        .container-formatos {
+            gap: 15px;
+            padding: 20px;
+            display: flex;
+            border-radius: 35px;
+        }
+
+        .formato {
+            width: 50%;
+            text-align: center;
+            object-fit: cover;
+            padding: 10px;
+            background-color: #2BA2DD;
+            border-radius: 40px;
+            align-items: center;
+        }
+
+        .textformatos {
+            border-radius: 40px;
+            width: fit-content;
+            background-color: #2BA2DD;
+            padding: 10px 20px;
+            display: inline-block;
+
+        }
+
+        .textformatos h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 28px;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            white-space: nowrap;
+        }
+
+        .formato img {
+            width: 100%;
+
+        }
+
+        .formato p {
+            color: white;
+        }
+
+        .formatos {
+            background-image: url(image/fundogra.jpg);
+            border-radius: 35px;
+            padding: 40px;
+            text-align: center;
+
+        }
+
+        .formato h3 {
+            color: white;
+        }
+
+        .formatos h2 {
+            text-align: center;
+            color: white;
+        }
+
+        .formato h4 {
+            color: white;
+        }
+
+
+        /*Sobre nós*/
+        .sobre {
+            background-image: url(image/fundoazul.jpg);
+            font-size: 26px;
+            padding: 40px;
+            border-radius: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .textsobre {
+            border-radius: 40px;
+            width: fit-content;
+            background-color: #2BA2DD;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-bottom: 28px;
+        }
+
+        .sobre h1 {
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .sobre p {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 26px;
+            color: #01579B;
+        }
+
+        .fundobranco {
+            width: 80%;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /*Serviços*/
+        .carousel-item active h5 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+
+        .fundoverde {
+            background-image: url(image/fundoazul2.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 50px;
+            padding: 40px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .fundoverde h1 {
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        /*Serviços lavanderia img*/
+
+        .carousel-item img {
+            height: 450px !important;
+            width: 100% !important;
+            object-fit: cover !important;
+            border-radius: 50px;
+            filter: brightness(0.5);
+        }
+
+        .carousel-caption {
+            bottom: 40px;
+        }
+
+
+        .carousel-caption h5,
+        .carousel-caption p {
+            color: #E9ECEF;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .textservicos {
+            border-radius: 40px;
+            width: fit-content;
+            background-color: #2BA2DD;
+            padding: 10px 20px;
+            display: inline-block;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .textservicos h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 28px;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            white-space: nowrap;
+        }
+
+        /*mapa*/
+
+        .localizacao {
+            background-image: url(image/paranaue.jpg);
+            border-radius: 35px;
+            padding: 40px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .localtext {
+            border-radius: 40px;
+            width: fit-content;
+            background-color: #2BA2DD;
+            padding: 10px 20px;
+            display: inline-block;
+            margin: 0 auto 28px auto;
+        }
+
+
+        .localtext h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 28px;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            white-space: nowrap;
+        }
+
+        /*GRID: os dois lados*/
+
+        .loc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .mapa-container {
+            background-color: #dceee8;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .mapa-container svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /*Balão do pin*/
+
+        .pin-label {
+            position: absolute;
+            top: 36%;
+            left: 38%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0, 15);
+            white-space: nowrap;
+        }
+
+        /*Card de informações*/
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .info-card h3 {
+            color: #2BA2DD;
+            margin: 0;
+        }
+
+        .info-linha {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .icone {
+            width: 30px;
+            height: 36px;
+            border-radius: 50%;
+            background: #bdffa6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #999;
+            margin: 0;
+        }
+
+        .info-valor {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .btn-mapa {
+            display: block;
+            background: #2BA2DD;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 25px;
+            padding: 12px;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        .btn-mapa:hover {
+            background: #1a8fc7;
+        }
+
+        #login {
+            background-color: #adffbf;
+            color: #2BA2DD;
+            height: 35px;
+            width: 55px;
+            border-radius: 10px;
+        }
+
+        #login:hover {
+            background-color: #2BA2DD;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .loc-grid {
+                grid-template-columns: 1frS;
+            }
+        }
+
+        /*Media de serviços*/
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item img {
+                height: 220px;
+            }
+        }
+
+        /*Botões da area de serviços*/
+
+        .btnservicos {
+            background-color: #01579B;
+            color: white;
+            border-radius: 48px;
+            border: none;
+            outline: none;
+            transition: transform 0.3 ease;
+        }
+
+        .btnservicos:hover {
+            background-color: #7CBF5C;
+            color: #01579B;
+            transform: scale(1.3);
+        }
+
+        /*Carrossel: Levando as setas para o centro*/
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            top: 50% !important;
+            transform: translateY(-50%);
+            height: auto;
+        }
+
+        /*Tirando o hover azul das setas*/
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: transparent !important;
+        }
     </style>
 </head>
 
 <body>
 
-<header>
+    <header>
 
-    <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú</h5>
-    </div>
-    <div class="offcanvas-body">
-        <ul class="navbar">
-            <li class="nav-item"><a class="nav-link" href="#">Como funcionamos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html" id="login">Login</a></li>
-            <li class="nav-item mt-3">
-                <a href="reserva.html">
-                <button class="btn-reservar w-100">Reservar</button>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú</h5>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar">
+                    <li class="nav-item"><a class="nav-link" href="#">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
+                    <li class="nav-item mt-3">
+                        <a href="login.html">
+                            <button type="button" class="btn btn-outline-primary btnlogin">Login</button>
+                        </a>
+                        <a href="reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
 
-
- <div class="logo">
-        <a href="index.html">
-            <img src="image/logo.png" alt="Logo da Clothean">
-        </a>
-    </div>
-
-    
-    <div class="acao" id="acaoMenu">
-        <a href="login.html" class="menuLogin">Login</a>
-        <button>Reservar</button>
-    </div>
-</header>
-
-<main>
-<section class="hero">
-
-    <div class="conteudo-esquerdo">
-        <div class="texto">
-            <h1>Lavanderia com entrega em até 24 horas</h1>
-            <h2>Rápido, prático e do jeito que você precisa</h2>
-        </div>
-
-        <div class="blob-branco">
-            <div class="container-vantagens">
-                <article class="card-vantagem">
-                    <img src="image/verify.png" alt="Simobolo de verificado">
-                    <p>Qualidade</p>
-                </article>
-
-                <article class="card-vantagem">
-                    <img src="image/hour.png" alt="Rapidez" class="relogio">
-                    <p>Rapidez</p>
-                </article>
-
-                <article class="card-vantagem">
-                    <img src="image/dollar.png" alt="Preço justo" class="moeda">
-                    <p>Preço justo</p>
-                </article>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="banner-mulher">
-        <div class="blob"></div>
-        <img src="image/muiecheirando4.png" alt="Mulher com roupas limpas" class="mulher">
-        
-    </div>
 
-</section>
-
-<section class="meio">
-    <div class="blob-verde">
-        <div class="conteudo-esquerdot">
-            <h1>O lugar que deixa suas roupas tão brilhantes quanto seu sorriso</h1>
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/logo.png" alt="Logo da Clothean">
+            </a>
         </div>
 
-        <div class="muier-verde">
-            <img src="image/muie2.0-removebg-preview.png" alt="">
+
+        <div class="acao" id="acaoMenu">
+            <a href="login.html" class="menuLogin">Login</a>
+            <button>Reservar</button>
         </div>
-    </div>
-</section>
+    </header>
 
-<section class="servicos">
-    <h2>Serviços</h2>
+    <main>
+        <section class="hero">
 
-    <ul class="lista-servicos">
-        <li class="card-servicos">
-            <img src="image/lava-e-seca.jpg" alt="Homem de cabelos preto olhando para sua roupa dentro da máquina de lavar">
-            <h3>Lava e Seca</h3>
-        </li>
-
-        <li class="card-servicos">
-            <img src="image/passando.jpg" alt="Pessoa passando roups">
-            <h3>Passamento de roupa</h3>
-        </li>
-    </ul>
-</section>
-
-
-<!-- tipo -->
-
-<section class="sobre" id="sobre">
-    <h1>Sobre nós</h1>
-    <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto</p>
-</section>
-
-<section class="formatos">
-    <h2>Formatos</h2>
-    <div class="container-formatos">
-         
-        <article class="formato">
-            <h3>Loja fisica</h3>
-            <img src="image/lojafisica.png" alt="Lavanderia fisica da Clothean">
-            <h4>Endereço:</h4>
-            <p>rua lilas, lavanda, SP</p>
-
-        </article>
-
-        <article class="formato">
-            <h3>Entrega</h3>
-            <img src="image/entregahome.png" alt="">
-            <h4>Veiculos:</h4>
-            <p>Motocicleta ou Bicicleta</p>
-        </article>
-    </div>
-</section>
-
-<section>
-    <article class="blob-verde">
-    <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="image/homemSegurandoRoupa.png" class="img-fluid rounded-start" alt="Homem segurando Roupas limpas e secas.">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Lava e Seca</h5>
-        <p class="card-text">Serviço de lavagem de roupa e seca</p>
-
-       <div class="btnpreco">
-            <p class="card-text"><small>R$ 30,00</small></p>
-            <button class="btnReservar">Reservar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="image/entrega1.png" class="img-fluid rounded-start" alt="Homem entregando roupas para uma mulher">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Entrega rápida</h5>
-        <p class="card-text">Recebas suas roupas em sua casa.</p>
-        <div class="btnpreco">
-            <p class="card-text"><small>R$ 5,00</small></p>
-            <button class="btnReservar">Reservar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</article>
-    </section>
-
-    <section class="localizacao">
-        <h2>Onde nos encontrar</h2>
-        <div class="loc-grid">
-            <div class="mapa-container">
-                <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="420" height="320" fill="#dceee8"/>
-                    <rect x="0" y="60"  width="420" height="12" fill="#c8dfd6"/>
-                    <rect x="0" y="130" width="420" height="12" fill="#c8dfd6"/>
-                    <rect x="0" y="200" width="420" height="12" fill="#c8dfd6"/>
-                    <rect x="55"  y="0" width="12" height="320" fill="#c8dfd6"/>
-                    <rect x="150" y="0" width="12" height="320" fill="#c8dfd6"/>
-                    <rect x="250" y="0" width="12" height="320" fill="#c8dfd6"/>
-                    <rect x="10"  y="10" width="40" height="45" rx="4" fill="#b5cfcb"/>
-                    <rect x="75"  y="10" width="70" height="45" rx="4" fill="#b5cfcb"/>
-                    <rect x="170" y="10" width="75" height="45" rx="4" fill="#b5cfcb"/>
-                    <rect x="75"  y="80" width="70" height="45" rx="4" fill="#b5cfcb"/>
-                    <rect x="170" y="150" width="75" height="45" rx="4" fill="#b5cfcb"/>
-                    <rect x="170" y="80" width="75" height="45" rx="4" fill="#7CBF5C" opacity="0.7"/>
-                    <text x="110" y="57" font-size="9" fill="#8aada6" text-anchor="middle">Rua das Lavandas</text>
-                    <text x="62"  y="100" font-size="8" fill="#8aada6" text-anchor="middle" transform="rotate(-90, 62, 100)">R. Lírio</text>
-                </svg>
-                <div class="pin-label">Clothean Lavanderia
-
+            <div class="conteudo-esquerdo">
+                <div class="texto">
+                    <h1>Lavanderia com entrega em até 24 horas</h1>
+                    <h2>Rápido, prático e do jeito que você precisa!</h2>
                 </div>
-            </div>
-            <div class="info-card">
-                <h3>Clothean Lavanderia</h3>
-                <div class="info-linha">
-                    <div class="icone">📍</div>
-                    <div><p class="info-label">Endereço</p>
-                        <p class="info-valor"> Ruas das Lavandas, 247 - SP</p>
+
+                <div>
+                    <div class="container-vantagens">
+                        <article class="card-vantagem">
+                            <img src="image/verify.png" alt="Simobolo de verificado">
+                            <p>Qualidade</p>
+                        </article>
+
+                        <article class="card-vantagem">
+                            <img src="image/hour.png" alt="Rapidez" class="relogio">
+                            <p>Rapidez</p>
+                        </article>
+
+                        <article class="card-vantagem">
+                            <img src="image/dollar.png" alt="Preço justo" class="moeda">
+                            <p>Preço justo</p>
+                        </article>
                     </div>
                 </div>
-                <a href="#" class="btn-mapa">Abrir no Google Maps</a>
             </div>
-        </div>
-    </section>
-</main>
 
-    <footer>
-    <div class="footer-container">
-        <section class="footer-contato">
-            <h3>Fale conosco</h3>
-            <address>
-                <div class="contato">
-                    <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
-                    <a href="11999999999">(11) 99999-9999</a>
-                </div>
-                <div class="email">
-                    <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
-                    <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
-                </div>
-            </address>
+            <div class="banner-mulher">
+                <div class="blob"></div>
+                <img src="image/muiecheirando4.png" alt="Mulher com roupas limpas" class="mulher">
+
+            </div>
+
         </section>
 
-        <nav class="footer-col" aria-label="Nossas redes sociais">
-            <h3>Nos Siga</h3>
-            <div class="social-icons">
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo facebook" class="face"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn"></a>
+
+        <!--Banner verde da mulher lá-->
+        <section class="meio">
+            <div class="imagemverde">
+                <div class="conteudo-esquerdot">
+                    <h1>O lugar que deixa suas roupas tão brilhantes quanto seu sorriso!</h1>
+                </div>
+
+                <div class="muier-verde">
+                    <img src="image/muie2.0-removebg-preview.png" alt="">
+                </div>
             </div>
-        </nav>
+        </section>
 
-    </div>
+        <!--Muier verde-->
 
-    <section class="footer-barra-final">
-        <small>© 2026 Clothean</small>
-    </section>
-</footer>
+        <!-- Sobre nós -->
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() { 
-    document.querySelectorAll('.offcanvas a').forEach(item => { 
-        item.addEventListener('click', () => {
-            const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
-            const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
-            offcanvas.hide()
+        <section class="sobre" id="sobre">
+            <div class="textsobre">
+                <h1>Sobre nós</h1>
+            </div>
+            <div class="fundobranco">
+                <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia
+                    a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto.</p>
+            </div>
+        </section>
+
+        <!--Formatos-->
+        <section class="formatos">
+            <div class="textformatos">
+                <h2>Formatos</h2>
+            </div>
+            <div class="container-formatos">
+                <article class="formato">
+                    <h3>Loja fisica</h3>
+                    <img src="image/lojafisica.png" alt="Lavanderia fisica da Clothean">
+                    <h4>Endereço:</h4>
+                    <p>rua lilas, lavanda, SP</p>
+
+                </article>
+
+                <article class="formato">
+                    <h3>Entrega</h3>
+                    <img src="image/entregahome.png" alt="">
+                    <h4>Veiculos:</h4>
+                    <p>Motocicleta ou Bicicleta</p>
+                </article>
+            </div>
+        </section>
+        <!--TÔ MEXENDO AQUI!!!!!!!!!!!!!-->
+
+        <section>
+            <article class="fundoverde">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="textservicos">
+                        <h1>Serviços</h1>
+                    </div>
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="image/mulhersegurando" class="d-block w-100"
+                                alt="mulher segurando roupas limpas e dobradas.">
+                            <div class="carousel-caption d-block">
+                                <h5>Lava e Seca</h5>
+                                <p>Nós lavamos e secamos as suas roupas.</p>
+                                <p>Por apenas:</p>
+                                <h3>30R$</h3>
+                                <button class="btnservicos"
+                                    onclick="window.location.href='reserva.html'">Reserve</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/passando.jpg" class="d-block w-100"
+                                alt="Pessoa passando roupa. O ferro de passar está em cima de uma camiseta preta.">
+                            <div class="carousel-caption d-block">
+                                <h5>Passagismo</h5>
+                                <p>Passe suas roupas em nossa lavanderia.</p>
+                                <p>Por apenas:</p>
+                                <h3>20R$</h3>
+                                <button class="btnservicos"
+                                    onclick="window.location.href='reserva.html'">Reserve</button>
+
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!--FIMMMMMMMMMMMMMMM-->
+
+        <!--Localização-->
+        <section class="localizacao">
+            <div class="localtext">
+                <h2>Onde nos encontrar</h2>
+            </div>
+            <div class="loc-grid">
+                <div class="mapa-container">
+                    <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="420" height="320" fill="#dceee8" />
+                        <rect x="0" y="60" width="420" height="12" fill="#c8dfd6" />
+                        <rect x="0" y="130" width="420" height="12" fill="#c8dfd6" />
+                        <rect x="0" y="200" width="420" height="12" fill="#c8dfd6" />
+                        <rect x="55" y="0" width="12" height="320" fill="#c8dfd6" />
+                        <rect x="150" y="0" width="12" height="320" fill="#c8dfd6" />
+                        <rect x="250" y="0" width="12" height="320" fill="#c8dfd6" />
+                        <rect x="10" y="10" width="40" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="75" y="10" width="70" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="170" y="10" width="75" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="75" y="80" width="70" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="170" y="150" width="75" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="170" y="80" width="75" height="45" rx="4" fill="#7CBF5C" opacity="0.7" />
+                        <text x="110" y="57" font-size="9" fill="#8aada6" text-anchor="middle">Rua das Lavandas</text>
+                        <text x="62" y="100" font-size="8" fill="#8aada6" text-anchor="middle"
+                            transform="rotate(-90, 62, 100)">R. Lírio</text>
+                    </svg>
+                    <div class="pin-label">Clothean Lavanderia
+
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>Clothean Lavanderia</h3>
+                    <div class="info-linha">
+                        <div class="icone">📍</div>
+                        <div>
+                            <p class="info-label">Endereço</p>
+                            <p class="info-valor"> Ruas das Lavandas, 247 - SP</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-mapa">Abrir no Google Maps</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
+        </section>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.offcanvas a').forEach(item => {
+                item.addEventListener('click', () => {
+                    const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+                    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+                    offcanvas.hide()
+                })
+            })
+
+            document.querySelector('.btn-reservar').addEventListener('click', () => {
+                const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+                const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+                offcanvas.hide()
+            })
+            <!-- Parei aqui -->
         })
-    })
-
-    document.querySelector('.btn-reservar').addEventListener('click', () => {
-        const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
-        const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
-        offcanvas.hide()
-    })
-    <!-- Parei aqui -->
-})
-</script>
-
+    </script>
+    <!--Termina aq-->
 </body>
+
 </html>

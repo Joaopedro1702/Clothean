@@ -106,6 +106,7 @@ button:hover{
 footer{
     padding: 2%;
     background-color: #BDFFA6;
+    width: 100%;
     text-align: center;
     align-items: center;
     border-radius: 10px;
@@ -116,7 +117,6 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
 }
 
 .footer-col{
@@ -287,3 +287,10 @@ footer{
     color: white;
     border: none;
 }
+
+.btnlogin {
+    width: 365px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
