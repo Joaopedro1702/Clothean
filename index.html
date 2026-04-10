@@ -741,7 +741,7 @@ ul{
                         <p class="info-valor"> Ruas das Lavandas, 247 - SP</p>
                     </div>
                 </div>
-                <a href="#" class="btn-mapa">Abrir no Google Maps</a>
+                <a href="https://www.openstreetmap.org/?mlat=-23.6015&mlon=-46.7922#map=16/-23.6015/-46.7922" class="btn-mapa">Abrir no Mapa</a>
             </div>
         </div>
     </section>
@@ -800,11 +800,11 @@ ul{
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-    var map = L.map('mapa').setView([-23,6015, -46,7922], 16);
+    var map = L.map('mapa').setView([-23.6015, -46.7922], 16);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution : '© OpenStreetMap'
     }).addTo(map)
-    L.marker([-23,6015, -46,7922]).addTo(map)
+    L.marker([-23.6015, -46.7922]).addTo(map)
         .bindPopup('<b>Clothean Lavanderia</b><br>Rua das Lavandas, 247')
         .openPopup()
 </script>
