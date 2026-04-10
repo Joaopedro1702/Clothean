@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar - CLOTHEAN</title>
+    <link rel="stylesheet" href="stylePadrao.css">
+    <link rel="stylesheet" href="reservaCSS.css">
+
+    <style>
+        .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 130px; 
+}
+    </style>
+</head>
+<body>
+    <!-- ============ HEADER ============ -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+            <img src="image/logo.png" alt="CLOTHEAN Logo">
+            </a>
+            <div class="logo-text">
+            </div>
+        </div>
+        <div class="user-section">
+            <span style="color: #666; font-size: 14px;">Olá, Usuário</span>
+            <div class="user-icon">👤</div>
+        </div>
+    </header>
+
+    <!-- ============ CONTAINER PRINCIPAL ============ -->
+    <div class="main-container">
+        <!-- ============ PROGRESS BAR ============ -->
+        <div class="progress-section">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <span class="step-label">Serviço</span>
+            </div>
+            <div class="step active">
+                <div class="step-number">2</div>
+                <span class="step-label">Endereço</span>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <span class="step-label">Data & Hora</span>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <span class="step-label">Pagamento</span>
+            </div>
+        </div>
+
+        <!-- ============ CONTEÚDO PRINCIPAL ============ -->
+        <div class="main-content">
+            <!-- ============ FORMULÁRIO ============ -->
+            <div class="form-section">
+                <h2>📍 Detalhes da Entrega</h2>
+
+                <div class="form-group">
+                    <label>Nome Completo *</label>
+                    <input type="text" placeholder="João Silva" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone *</label>
+                        <input type="tel" placeholder="(11) 99999-9999" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Endereço *</label>
+                    <input type="text" placeholder="Rua, número, complemento" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Cidade *</label>
+                        <input type="text" placeholder="São Paulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CEP *</label>
+                        <input type="text" placeholder="01310-100" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Observações</label>
+                    <textarea placeholder="Alguma instrução especial? (ex: deixar na porta)"></textarea>
+                </div>
+
+                <h2 style="margin-top: 30px; margin-bottom: 20px;">👕 Escolha o Serviço</h2>
+
+                <div class="service-selector">
+                    <div class="service-card selected">
+                        <div class="service-icon">🌊</div>
+                        <h3>Lava e Seca</h3>
+                        <p>R$ 30,00</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🧺</div>
+                        <h3>Passagismo</h3>
+                        <p>R$ 20,00</p>
+                    </div>
+                    
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-back">← Voltar</button>
+                    <button class="btn-continue">Continuar →</button>
+                </div>
+            </div>
+
+            <!-- ============ SIDEBAR (RESUMO) ============ -->
+            <div class="summary-section">
+                <h3>📋 Resumo do Pedido</h3>
+
+                <div class="summary-item">
+                    <span class="summary-label">Serviço</span>
+                    <span class="summary-value">Lava e Seca</span>
+                </div>
+
+                <div class="summary-item">
+                    <span class="summary-label">Quantidade</span>
+                    <span class="summary-value">1x</span>
+                </div>
+
+                <div class="summary-item">
+                    <span class="summary-label">Preço Unit.</span>
+                    <span class="summary-value">R$ 30,00</span>
+                </div>
+
+                <div class="summary-item">
+                    <span class="summary-label">Taxa Entrega</span>
+                    <span class="summary-value">R$ 5,00</span>
+                </div>
+
+                <div class="price-total">
+                    <h4>TOTAL</h4>
+                    <div class="amount">R$ 35,00</div>
+                </div>
+
+                <div style="background: #f0f0f0; padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 13px; color: #666; line-height: 1.6;">
+                    <strong>ℹ️ Informações:</strong>
+                    <p style="margin-top: 8px;">✓ Coleta na próxima 24h<br>✓ Entrega garantida<br>✓ Qualidade premium</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SCRIPT ============ -->
+    <script src="reserva.js"></script>
+    <footer>
+        <div class="footer-container">
+        <section class="footer-contato">
+            <h3>Fale conosco</h3>
+            <address>
+                <div class="contato">
+                    <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                    <a href="11999999999">(11) 99999-9999</a>
+                </div>
+                <div class="email">
+                    <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
+                    <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
+                </div>
+            </address>
+        </section>
+
+        <nav class="footer-col" aria-label="Nossas redes sociais">
+            <h3>Nos Siga</h3>
+            <div class="social-icons">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo facebook" class="face"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn"></a>
+            </div>
+        </nav>
+
+    </div>
+
+    <section class="footer-barra-final">
+        <small>© 2026 Clothean</small>
+    </section>
+    </footer>
+</body>
+</html>
