@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido Confirmado - CLOTHEAN</title>
+    <link rel="stylesheet" href="stylePadrao.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="image/logo.png" alt="CLOTHEAN Logo">
+            </a>
+        </div>
+    </header>
+
+    <script>
+        Swal.fire({
+            title: 'Pedido Confirmado! 🎉',
+            html: `
+                <p>Seu agendamento foi realizado com sucesso!</p>
+                <p>Entraremos em contato em breve.</p>
+            `,
+            confirmButtonText: 'Voltar ao início',
+            confirmButtonColor: '#008080',
+            icon: 'success',
+            iconColor: '#BDFFA6',
+            background: '#FFFFFF',
+        }).then(() => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
