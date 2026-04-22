@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco</title>
+    <link rel="stylesheet" href="StyleFaleConosco.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body class="CorpoModal">
+    <button class="button" id="abrir">Fale Consco</button>
+
+    <div class="modalConteiner" id="ModalConteiner">
+        <div class="Modal">
+            <h1 class="Titulo"><b>Mensagem</b></h1>
+
+            <section>
+                <form id="formularioContato">
+                    <div>
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative">
+                                <img src="image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control" id="TxtNome"
+                                    placeholder="Fulano da Silva Junior" required>
+                            </div>
+                        </form>
+
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative">
+                                <img src="image/imagem_12px.png" alt="Icon Email">
+                                <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                <input type="email" class="form-control texto Campos" placeholder="fulano@gmail.com"
+                                    id="TxtEmail" required>
+                            </div>
+                        </form>
+
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative">
+                                <img src="image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                <label for="validationTooltip01" class="form-label"><b>Titulo</b></label>
+                                <input type="text" class="form-control" placeholder="Titulo do Email" id="TxtTitulo"
+                                    required>
+
+                            </div>
+                        </form>
+
+                        <form class="row g-3 needs-validation" novalidate></form>
+                        <div class="col-lg-12 position-relative">
+                            <img src="image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
+                            <label for="validationTooltip01" class="form-label"><b>Mensagem</b></label>
+                            <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                id="TxtMensagem" required></textarea>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button class="button" id="enviar">Enviar</button>
+                        <button class="button" id="fechar">Fechar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+<script src="FaleConoscoJs.js">
+</script>
+
+</html>

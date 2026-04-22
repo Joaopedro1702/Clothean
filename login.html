@@ -1,190 +1,320 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
     <link rel="stylesheet" href="stylePadrao.css">
     <link rel="stylesheet" href="styleResposivo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="StyleFaleConosco.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
 
-<style>
-    html{
-        height: 100%;
-    }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    .dados-login{
-        height: 50%;
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        
-    }
 
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .facebook{
-        width: 25px;
-    
-    }
 
-    .loginCom{
-        text-align: center;
-    }
+    <style>
+        html {
+            height: 100%;
+        }
 
-    button{ 
-        width: 100%;
-        background-color: #BDFFA6;
-        color: #3420E6;
-        border: none;
-        
-    }
-    .botoes{
-        display: flex;
-        padding: 2%;
-        gap: 5px;
-    }
+        .dados-login {
+            height: 50%;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
 
-    .btnEntrar{
-        margin-right: 10%;
-    }
+        }
 
-    main{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    body{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-        background-color: #f0f0f0;  /* cinza bem claro */
-    }
+        .facebook {
+            width: 25px;
 
-    footer{
-        bottom: 0;
-        flex-direction: column;
-    }
+        }
 
-    .quadrado {
-    background-color: white;
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    margin: 0 auto;
-}
+        .loginCom {
+            text-align: center;
+        }
 
-</style>
+        button {
+            width: 100%;
+            background-color: #BDFFA6;
+            color: #3420E6;
+            border: none;
+
+        }
+
+        .botoesLogin {
+            display: flex;
+            padding: 2%;
+            gap: 5px;
+        }
+
+        .btnEntrar {
+            margin-right: 10%;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            background-color: #f0f0f0;
+            /* cinza bem claro */
+        }
+
+        footer {
+            bottom: 0;
+            flex-direction: column;
+        }
+
+        .quadrado {
+            background-color: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            cursor: pointer;
+        }
+
+        .EyeFechado {
+            display: flex;
+            position: absolute;
+            left: 87%;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .EyeAberto {
+            display: flex;
+            position: absolute;
+            left: 87%;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .ImagemEye {
+            position: relative;
+        }
+    </style>
 
 </head>
+
 <body>
     <header class=border 3>
 
-        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <ul class="navbar">
-        <li class="nav-item"><a class="nav-link" href="#">Como funcionamos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
-        <li class="nav-item mt-3">
-            <a href="login.html">
-                    <button type="button" class="btn btn-outline-primary btnlogin">Login</button>
-                </a>
-            <a href="reserva.html">
-            <button class="btn-reservar w-100">Reservar</button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar">
+                    <li class="nav-item"><a class="nav-link" href="index.html#Serviços">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link" id="btnFaleConosco" onclick="carregarModal()">Fale
+                            Conosco</a></li>
+                    <li class="nav-item mt-3">
+                        <a href="login.html">
+                            <button type="button" class="btn btn-outline-primary btnlogin">Login</button>
+                        </a>
+                        <a href="reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/logo.png" alt="Logo da Clothean">
             </a>
-        </li>
-    </ul>
-  </div>
-</div>
-    
-    <div class="logo">
-        <a href="index.html">
-            <img src="image/logo.png" alt="Logo da Clothean">
-        </a>
-    </div>
+        </div>
 
-    
+
     </header>
     <main>
-        <form class="quadrado" action="quadrado">
-    <div class="form-floating mb-3">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-    <label for="floatingInput">Email address</label>
-</div>
-<div class="form-floating">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-    <label for="floatingPassword">Password</label>
-</div>
+        <form class="form quadrado" action="quadrado">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput">
+                <label for="floatingInput">Email address</label>
+            </div>
 
-<a href="#">Esqueceu a senha</a>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <div class="ImagemEye">
+                    <img src="image/eye.png" alt="Ver Senha" class="EyeAberto" id="ImgOlhoAbertoS" ;>
+                    <img src="image/hidden.png" alt="Ocutar Senha" class="EyeFechado" id="ImgOlhoFechadoS" ;
+                        style="display: none">
+                </div>
+                <label for="floatingPassword">Password</label>
 
-<div class="botoes">
-    
-<button type="button" class="btn btn-outline-primary">Entrar</button>
 
-<button type="button" class="btn btn-outline-success">Cadastrar</button>
 
-</div>
 
-</form>
+            </div>
 
-    <div class="loginCom">
-        <h3>Login com</h3>
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo da Google"></a>
-        <a href="#"><img src="image/facebookicon (1).png" alt="Logo do facebook" class="facebook"></a>
-        
-    </div>
+            <a href="#">Esqueceu a senha</a>
+
+            <div class="botoesLogin">
+
+                <button type="button" id="BtnLogar" class="btn btn-outline-primary">Entrar</button>
+
+                <button type="" class="btn btn-outline-success"><a href="cadastro.html"
+                        style="text-decoration: none;">Cadastrar</a></button>
+
+            </div>
+
+        </form>
+
+        <div class="loginCom">
+            <h3>Login com</h3>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                    alt="Logo da Google"></a>
+            <a href="#"><img src="image/facebookicon (1).png" alt="Logo do facebook" class="facebook"></a>
+
+        </div>
     </main>
     <footer>
-    <div class="footer-container">
-        <section class="footer-contato">
-            <h3>Fale conosco</h3>
-            <address>
-                <div class="contato">
-                    <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
-                    <a href="11999999999">(11) 99999-9999</a>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
                 </div>
-                <div class="email">
-                    <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
-                    <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
-                </div>
-            </address>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
         </section>
 
-        <nav class="footer-col" aria-label="Nossas redes sociais">
-            <h3>Nos Siga</h3>
-            <div class="social-icons">
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo facebook" class="face"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn"></a>
-            </div>
-        </nav>
+    </footer>
 
+    <div class="modalConteiner" id="ModalConteiner">
+        <div class="Modal">
+            <h1 class="TituloModal"><b>Mensagem</b></h1>
+
+            <section>
+                <form id="formularioContato" method="post">
+                    <div>
+                        <form class="col-lg-12 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative" style="margin-bottom: 5%; margin-top: 3%;">
+                                <img src="image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control" id="TxtNomeModal"
+                                    placeholder="Fulano da Silva Junior">
+                            </div>
+
+                            <div class="row" style="margin-bottom: 5%;">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="image/imagem_12px.png" alt="Icon Email">
+                                        <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                        <input type="email" class="form-control texto Campos"
+                                            placeholder="fulano@gmail.com" id="TxtEmailModal">
+                                    </div>
+
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                        <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
+                                        <input type="text" class="form-control" placeholder="Titulo do Email"
+                                            id="TxtAssunto">
+                                    </div>
+
+                            </div>
+
+                            <div class="col-lg-12 position-relative">
+                                <img src="image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
+                                <label for="validationTooltip01" class="form-label"><b>Mensagem</b></label>
+                                <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                    id="TxtMensagemModal"></textarea>
+                            </div>
+
+                            <div class="botoes" style="padding-top: 5%;">
+                                <button class="button" id="enviar" type="submit">Enviar</button>
+                                <button class="button" id="fechar">Fechar</button>
+                            </div>
+                        </form>
+                </form>
+        </div>
     </div>
 
-    <section class="footer-barra-final">
-        <small>© 2026 Clothean</small>
-    </section>
-
-</footer>
 </body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.offcanvas a').forEach(item => {
+            item.addEventListener('click', () => {
+                const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+                const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+                offcanvas.hide()
+            })
+        })
+    }
+    )       
+</script>
+
+<script src="Login.js">
+</script>
+
+<script src="FaleConoscoJs.js">
+</script>
+
 </html>
