@@ -128,7 +128,7 @@ btnImgOlhoAberto.addEventListener("click", function () {
 btnImgOlhoFechadoCS.addEventListener("click", function () {
     btnImgOlhoFechadoCS.style.display = "none"
 
-    TxtConfSenha.type = "text"
+    TxtConfSenha.type = "password"
 
     btnImgOlhoAbertoCS.style.display = "block"
 })
@@ -136,7 +136,7 @@ btnImgOlhoFechadoCS.addEventListener("click", function () {
 btnImgOlhoAbertoCS.addEventListener("click", function () {
     btnImgOlhoAbertoCS.style.display = "none"
 
-    TxtConfSenha.type = "password"
+    TxtConfSenha.type = "text"
 
     btnImgOlhoFechadoCS.style.display = "block"
 })
