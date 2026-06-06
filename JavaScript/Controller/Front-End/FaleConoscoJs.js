@@ -3,7 +3,6 @@
 // Consertar clear() quando enviar mensagem
 const enviar = document.getElementById("enviar")
 const form = document.getElementById("formularioContato")
-const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z^\s@]{2,}$/i;
 
 document.addEventListener('DOMContentLoaded', () => {
     const fechar = document.getElementById("fechar")
@@ -12,24 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnFaleConosco && ModalConteiner) {
         btnFaleConosco.addEventListener("click", (e) => {
-            e.preventDefault()
-            ModalConteiner.classList.add("show")
+            e.preventDefault();
+            aparecerModal(ModalConteiner);
         });
     };
 
     if (btnFaleConosco && ModalConteiner) {
         fechar.addEventListener("click", (e) => {
-            e.preventDefault()
-            ModalConteiner.classList.remove("show")
+            e.preventDefault();
+            fecharModal(ModalConteiner);
         })
     }
 });
 
-function clear() {
-    document.getElementById("TxtNomeModal").value = "";
-    document.getElementById("TxtAssunto").value = "";
-    document.getElementById("TxtEmailModal").value = "";
-    document.getElementById("TxtMensagemModal").value = "";
+function clearFaleConosco() {
+    const nome = document.getElementById("TxtNomeModal");
+    const assunto = document.getElementById("TxtAssunto");
+    const email = document.getElementById("TxtEmailModal");
+    const mensagem = document.getElementById("TxtMensagemModal");
+
+    clear(nome);
+    clear(assunto);
+    clear(email);
+    clear(mensagem);
 }
 
 
@@ -64,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const templateId = "template_5eker9v";
 
                 emailjs.send(serviceId, templateId, formData);
-                Swal.fire("Sucesso", "Mensagem enviada", "success")
-                clear()
+                mensagemSucesso("Mensagem enviada");
+                clearFaleConosco()
             }
         })
     }
