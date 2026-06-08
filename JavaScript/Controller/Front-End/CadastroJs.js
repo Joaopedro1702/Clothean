@@ -12,8 +12,12 @@
 // - Colocar a api para validar o email digitado como existente: https://www.npmjs.com/package/verifalia-widget: Não obrigatório agora
 // - Colocar a api para validar o cpf digitado como existente: Não obrigatório agora 
 
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z^\s@]{2,}$/i;
+        const regexLetraMaiscula = /.*[A-Z]/;
+        const regexNumero = /.*[0-9]/;
+        const regexCaractereEspecial = /.*[@_-]/;
 
-function cadastrar(event) {
+function cadastrarUser(event) {
     event.preventDefault()
     let strNome = document.getElementById("TxtNome").value.trim();
     let strEmail = document.getElementById("TxtEmail").value.trim();
@@ -21,10 +25,11 @@ function cadastrar(event) {
     let strTelefone = document.getElementById("TxtTelefone").value.trim();
     let strSenha = document.getElementById("TxtSenha").value.trim();
     let strConfSenha = document.getElementById("TxtConfSenha").value.trim();
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z^\s@]{2,}$/i;
-    const regexLetraMaiscula = /.*[A-Z]/;
-    const regexNumero = /.*[0-9]/;
-    const regexCaractereEspecial = /.*[@_-]/;
+    validacaoInput(strNome, strEmail, strCpf, strTelefone, strSenha, strConfSenha);
+
+}
+
+function validacaoInput(strNome, strEmail, strCpf, strTelefone, strSenha, strConfSenha) {
 
     if (strNome === "" || strEmail === "" || strCpf === "" || strTelefone === "" || strSenha === "" || strConfSenha === "") {
 
@@ -60,6 +65,8 @@ function cadastrar(event) {
     }
 }
 
+fetch("")
+
 function clear() {
     document.getElementById("TxtNome").value = "";
     document.getElementById("TxtEmail").value = "";
@@ -80,9 +87,7 @@ const btnImgOlhoAbertoCS = document.getElementById("ImgOlhoAbertoCS")
 const btnImgOlhoFechado = document.getElementById("ImgOlhoFechadoS")
 const btnImgOlhoAberto = document.getElementById("ImgOlhoAbertoS")
 
-let strCpf = document.getElementById("TxtCpf").value;
-
-botaoCadastro.addEventListener("click", cadastrar)
+botaoCadastro.addEventListener("click", cadastrarUser)
 
 txtCpf.addEventListener('input', function (e) {
 
