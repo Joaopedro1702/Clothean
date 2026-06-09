@@ -4,9 +4,10 @@ const router = express.Router();
 const db = require("./conexao");
 const { Connection } = require("mysql2/promise");
 
+
 router.get("/", async(req, res) => {
     try{
-        const [ListaUsuarios] = await db.query("SELECT * FROM tbl_Usuario");
+        const [ListaUsuarios] = await db.query("SELECT id, email, senha, tipo FROM tbl_Usuario WHERE email = ?");
 
         if(ListaUsuarios.length === 0){
             return res.json({mensagem: "Nenhum usuário encontrado."})
@@ -22,6 +23,7 @@ router.get("/", async(req, res) => {
 
 router.post("/", async (req, res) => {
     try {
+        const senhaCriptografada = await bcrypt.hash(senha, 10);
         const { email, senha } = req.body;
 
         if (!email || !senha) {
@@ -29,9 +31,14 @@ router.post("/", async (req, res) => {
         }
 
         const [usuarios] = await db.query(
-            "SELECT id, nome, email, tipo FROM tbl_Usuario WHERE email = ? AND senha = ? AND tipo = ?",
-            [email, senha, "admin"]
+            "SELECT id, nome, email, tipo FROM tbl_Usuario WHERE email = ? AND tipo = ?",
+            [email, "admin"]
         );
+        const senhaSecret = await bcrypt.compare(senha, senhaCriptografada);
+
+        if(!senhaSecret){
+            return res.status(401).json({error: "Email ou senha do administrador incorretos."});
+        }
 
         if (usuarios.length === 0) {
             return res.status(401).json({ error: "Email ou senha de administrador incorretos." });

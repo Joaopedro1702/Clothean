@@ -7,10 +7,12 @@ router.post("/cadastro", async (req, res) => {
     try {
         const { nome, email, cpf, telefone, senha } = req.body;
 
+        const senhaCriptografada = await bcrypt.hash(senha, 10);
+
         await db.query(
             `INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, tipo)
              VALUES (?, ?, ?, ?, ?, ?)`,
-            [nome, email, cpf, telefone, senha, "admin"]
+            [nome, email, cpf, telefone, senhaCriptografada, "admin"]
         );
 
         res.status(201).json({ mensagem: "Administrador cadastrado com sucesso." });

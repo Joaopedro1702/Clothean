@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const db = require("./conexao");
+const senhaCriptografada = await bcrypt.hash(senha, 10);
 
 router.get("/", async (req, res) => {
   try {
