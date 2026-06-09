@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Tela para Cadastro de Usuários na plataforma">
+    <meta name="keywords" content="metatags, cadastro, usuario">
+    <meta name="authot" content="Otávio Augusto Canola do Carmo">
+    <title>Cadastro</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylePadrao.css">
+    <link rel="stylesheet" href="styleResposivo.css">
+    <link rel="stylesheet" href="StyleFaleConosco.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        .dados-login {
+            height: 50%;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        form {
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+        }
+
+        .facebook {
+            width: 25px;
+
+        }
+
+        .loginCom {
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            background-color: #BDFFA6;
+            color: #3420E6;
+            border: none;
+
+        }
+
+        .botoes {
+            display: flex;
+            padding: 2%;
+            gap: 5px;
+        }
+
+        .btnEntrar {
+            margin-right: 10%;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            background-color: #f0f0f0;
+            /* cinza bem claro */
+        }
+
+        footer {
+            margin-top: 3%;
+            bottom: 0;
+            flex-direction: column;
+        }
+
+        .quadrado {
+            display: grid;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            min-width: 390px;
+            margin: auto
+        }
+
+        button:hover {
+            background-color: #67B0E5;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .conteiner {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .imagem {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-size: cover;
+            object-position: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(image/Casal\ lavando.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur();
+
+        }
+
+        .Cadastro {
+            display: flex;
+            justify-content: center;
+        }
+
+        .Img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+        }
+
+        .Titulo {
+            display: flex;
+            justify-content: end;
+            margin-right: 15%;
+            padding-bottom: 3%;
+            margin-top: 5%;
+            color: white;
+        }
+
+        .texto {
+            display: flex;
+            justify-content: start;
+        }
+
+        .Icons {
+            padding-left: 1%;
+        }
+
+        .form-label {
+            padding-top: 5%;
+        }
+
+        .Formulario {
+            padding-left: 3%;
+            padding-bottom: 2%;
+            height: 100%;
+            object-fit: cover;
+            background-size: cover;
+            object-position: top;
+            background-image: url(image/Fundo\ de\ lavanderia\ Imagens\ –\ Download\ Grátis\ no\ Freepik.jpg);
+            background-repeat: no-repeat;
+        }
+
+        .Campos {
+            border-radius: 13px;
+        }
+
+        .locBotao {
+            margin-top: 7%;
+            display: flex;
+            justify-content: start;
+            align-items: flex-start;
+        }
+
+        .Botao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3%;
+            border-radius: 20px;
+            width: 82%;
+            font-size: x-large;
+
+        }
+
+        .Linha {
+            background-color: #3420E6;
+            width: 100%;
+            height: 1%;
+        }
+
+        .Descricao {
+            font-size: small;
+        }
+
+        .EyeFechado {
+            display: flex;
+            position: absolute;
+            left: 87%;
+            top: 27%;
+            cursor: pointer;
+        }
+
+        .EyeAberto {
+            display: flex;
+            position: absolute;
+            left: 87%;
+            top: 27%;
+            cursor: pointer;
+        }
+
+        .ImagemEye {
+            position: relative;
+        }
+
+        .nav-link {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class=border 3>
+
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html#Serviços">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link" id="btnFaleConosco">Fale
+                            Conosco</a>
+                    </li>
+                    <li class="nav-item mt-3">
+                        <a href="login.html">
+                            <button type="button" class="btn btn-outline-primary btnlogin">Login</button>
+                        </a>
+
+                        <a href="reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/logo.png" alt="Logo da Clothean">
+            </a>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="quadrado">
+            <div class="conteiner">
+                <section class="Imagem-Lateral">
+                    <div class="imagem">
+                        <blockquote style="background-color: black;">
+
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section class="Formulario">
+                    <div class="Cadastro">
+                        <h1 class="Titulo"><b>CADASTRO</b></h1>
+                    </div>
+
+                    <div>
+                        <form class="row g-3 needs-validation cam" novalidate>
+                            <div class="col-lg-10 position-relative">
+                                <img src="image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control texto Campos" id="TxtNome"
+                                    placeholder="Fulano da Silva Junior" required>
+                            </div>
+                    </div>
+
+                    <div>
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-10 position-relative">
+                                <img src="image/imagem_12px.png" alt="Icon Email">
+                                <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                <input type="email" class="form-control texto Campos" placeholder="fulano@gmail.com"
+                                    id="TxtEmail" required>
+                            </div>
+                    </div>
+
+                    <div>
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-lg-5 position-relative">
+                                    <img src="image/file.png" alt="Icon CPF">
+                                    <label for="validationTooltip01" class="form-label"><b>CPF</b></label>
+                                    <input type="text" class="form-control texto Campos" id="TxtCpf"
+                                        placeholder="000.000.000-00" required maxlength="14">
+                                </div>
+
+                                <div class="col-lg-5 position-relative">
+                                    <img src="image/telephone-handle-silhouette.png" style=width:12px height:12px;
+                                        alt="Icon Telefone">
+                                    <label for="validationTooltip01" class="form-label"><b>Telefone</b></label>
+                                    <input type="tel" class="form-control texto Cadastro" id="TxtTelefone"
+                                        placeholder="(00)00000-0000" required maxlength="16">
+                                </div>
+                            </div>
+
+                            <div>
+                                <form class="row g-3 needs-validation " novalidate>
+                                    <div class="row">
+                                        <div class="col-lg-5 position-relative">
+                                            <img src="image/padlock.png" style=width:12px; height:12px;
+                                                alt="Icon Senha">
+                                            <label for="validationTooltip01" class="form-label"><b>Senha</b></label>
+                                            <div class="ImagemEye">
+                                                <img src="image/eye.png" alt="Ver Senha" class="EyeAberto"
+                                                    id="ImgOlhoAbertoS" ;>
+                                                <img src="image/hidden.png" alt="Ocutar Senha" class="EyeFechado"
+                                                    id="ImgOlhoFechadoS" ; style="display: none">
+                                                <input type="password" class="form-control TxtSenha Senha" id="TxtSenha"
+                                                    placeholder="Senha_123" maxlength="16" required>
+                                            </div>
+                                            <label for="TxtSenha" class="Descricao">
+                                                <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _),
+                                                    letra
+                                                    maiúscula, minúscula e número</p>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-lg-5 position-relative">
+                                            <img src="image/padlock.png" style="width: 12px; height:12px;"
+                                                alt="Icon Senha">
+                                            <label for="validationTooltip01" class="form-label"><b>Confirmar
+                                                    Senha</b></label>
+                                            <div class="ImagemEye">
+                                                <img src="image/eye.png" alt="Esconder Senha" class="EyeAberto"
+                                                    id="ImgOlhoAbertoCS">
+                                                <img src="image/hidden.png" alt="Mostrar Senha" class="EyeFechado"
+                                                    id="ImgOlhoFechadoCS" style="display: none;">
+                                                <input type="password" class="form-control texto" id="TxtConfSenha"
+                                                    placeholder="Senha_123" maxlength="16" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="locBotao">
+                                            <button type="" class="btn btn-light Botao"
+                                                id="BtnCadastrar"><b>Cadastrar</b></button>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+                </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a
+                            href="mailto:otavio.augusttocc@gmail.com?subject=Contato com a Empresa&body=Olá, isso é um teste">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
+        </section>
+    </footer>
+
+    <div class="modalConteiner" id="ModalConteiner">
+        <div class="Modal">
+            <h1 class="Titulo" style="color: black;"><b>Mensagem</b></h1>
+
+            <section>
+                <form id="formularioContato" method="post" type="submit">
+                    <div>
+                        <div class="col-lg-12 position-relative">
+                            <img src="image/IconNome12.png" alt="Icon Nome">
+                            <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                            <input type="text" class="form-control" placeholder="Fulano da Silva Junior" id="TxtNomeModal">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 position-relative">
+                                <img src="image/imagem_12px.png" alt="Icon Email">
+                                <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                <input type="email" class="form-control texto Campos" placeholder="fulano@gmail.com"
+                                    id="TxtEmailModal">
+                            </div>
+
+                            <div class="col-lg-6 position-relative">
+                                <img src="image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
+                                <input type="text" class="form-control" placeholder="Assunto do Email" id="TxtAssunto">
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-12 position-relative">
+                            <img src="image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
+                            <label for="validationTooltip01" class="form-label"><b>Mensagem</b></label>
+                            <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                id="TxtMensagemModal"></textarea>
+                        </div>
+
+                        <div class="botoes" style="margin-top: 3%;">
+                            <button class="button" id="enviar" class="BtnEnviar" type="submit">Enviar</button>
+                            <button class="button" id="fechar" class="BtnFechar">Fechar</button>
+                        </div>
+                </form>
+        </div>
+    </div>
+
+</body>
+
+<script src="./FaleConoscoJs.js"></script>
+
+<script src="./JavaScript/Controller/Front-End/CadastroJs.js"></script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.offcanvas a').forEach(item => {
+            item.addEventListener('click', () => {
+                const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+                const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+                offcanvas.hide()
+            })
+        })
+    }
+    )       
+</script>
+
+</html>
