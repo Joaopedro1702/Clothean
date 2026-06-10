@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 const db = require("./conexao");
 
@@ -10,7 +11,7 @@ router.post("/cadastro", async (req, res) => {
         const senhaCriptografada = await bcrypt.hash(senha, 10);
 
         await db.query(
-            `INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, tipo)
+            `INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, perfil)
              VALUES (?, ?, ?, ?, ?, ?)`,
             [nome, email, cpf, telefone, senhaCriptografada, "admin"]
         );
