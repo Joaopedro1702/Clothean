@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const db = require("./conexao");
-const senhaCriptografada = await bcrypt.hash(senha, 10);
 
 router.get("/", async (req, res) => {
+  const senhaCriptografada = await bcrypt.hash(senha, 10);
+
   try {
     const [usuarios] = await db.query(
       "SELECT id, nome, email, cpf, telefone, tipo FROM tbl_Usuario"
@@ -43,7 +44,7 @@ async function cadastrarUsuario(req, res) {
     }
 
     const [resultado] = await db.query(
-      "INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, tipo) VALUES (?, ?, ?, ?, ?, ?)",
+      "INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES (?, ?, ?, ?, ?, ?)",
       [nome, email, cpf || null, telefone || null, senha, "cliente"]
     );
 
