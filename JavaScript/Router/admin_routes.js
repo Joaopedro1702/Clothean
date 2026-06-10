@@ -23,4 +23,11 @@ router.post("/cadastro", async (req, res) => {
     }
 });
 
+const { verificarToken } = require("../../middleware/autorizacao");
+
+router.get("/dashboard", verificarToken, (req, res) => {
+    // Responde apenas se o token JWT for válido.
+    res.json({mensagem: "Bem-vindo ao dashboard de administração!"});
+});
+
 module.exports = router;

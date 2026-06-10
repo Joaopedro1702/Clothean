@@ -1,0 +1,18 @@
+const jwt = require('jsonwebtoken');
+
+const verificarToken = (req, res, next) => {
+    const token = req.cookies.token;
+
+    if (!token){
+        return res.status(401).json({error: "Acesso negado. Token não não fornecido."});
+    }
+    try{
+        const decodificado = jwt.verify(token, process.env.JWT_SECRET);
+        req.usuario = decodificado;
+        next();
+    }catch(error){
+        console.error("Token inválido:", error);
+        res.status(401).json({message: 'Token inválido ou expirdo.'});
+    }
+}
+module.exports = {verificarToken};

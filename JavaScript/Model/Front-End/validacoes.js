@@ -1,21 +1,11 @@
 function isNull(valor) {
-    if (valor === "" || valor === isNaN) {
-        return true
-    }
-    else {
-        return false
-    }
+    // Verifica se o valor está vazio ou indefinido.
+    return valor === undefined || valor === null || valor === "";
 }
 
 function validarEmail(email) {
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z^\s@]{2,}$/i;
-
-    if (!regexEmail.test(valor)) {
-        return false
-    }
-    else {
-        return true
-    }
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+    return regexEmail.test(email);
 }
 
 function validarSenha(senha) {
@@ -35,4 +25,11 @@ function validarSenha(senha) {
     else {
         return true
     }
+}
+
+// Expondo funções globais para uso em scripts que não são módulos.
+if (typeof window !== 'undefined') {
+    window.isNull = isNull;
+    window.validarEmail = validarEmail;
+    window.validarSenha = validarSenha;
 }
