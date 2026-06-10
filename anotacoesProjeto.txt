@@ -1,0 +1,7 @@
+Tarefas totais:
+- Validação de adm e usuario normal: João
+- Fetch: Otávio
+- Tela de usuario comum e adm: Otávio (feito)
+- Adicionar o usuário para as outras telas quando logar: Otávio
+- criptografia: João (adm) e Otávio (usuario normal)
+- token: João

@@ -16,6 +16,7 @@
 function cadastrar(event) {
     event.preventDefault();
     let strNome = document.getElementById("TxtNome").value.trim();
+    let nomeUsuario = alterandoPrimeiraLetra(strNome);
     let strEmail = document.getElementById("TxtEmail").value.trim();
     let strCpf = document.getElementById("TxtCpf").value.trim();
     let strTelefone = document.getElementById("TxtTelefone").value.trim();
@@ -41,15 +42,38 @@ function cadastrar(event) {
         else if (validarConfirmarSenha(strSenha, strConfSenha) === false) {
             mensagemErro("As senha digitadas são diferentes uma da outra, verifique!");
         }
-        else if (validarCpf(strCpf) === false){
+        else if (validarCpf(strCpf) === false) {
             mensagemErro("O cpf não foi digitado corretamente, verifique!");
         }
-        else if (validarTelefone(strTelefone) === false){
+        else if (validarTelefone(strTelefone) === false) {
             mensagemErro("O telefone não foi digitado corretamente, verifique");
         }
         else {
-            mensagemSucesso("Usuário cadastrado com sucesso! Seja bem-vindo " + strNome + "!");
-            clearCadastro();
+            fetch("http://localhost:3000/usuarios", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome: nomeUsuario,
+                    email: strEmail,
+                    cpf: strCpf,
+                    telefone: strTelefone,
+                    senha: strSenha,
+                })
+
+            })
+                .then(response => response.json())
+                .then(dados => {
+
+                    // addInfoUsuario(dados.id, dados.nome, dados.email, dados.cpf, dados.telefone, dados.senha, dados.perfil); // Adiciona a linha com as informações na tabela (Essa função coloco na tela de adm para ele adicionar os usuários, e na tela de usuário comum usuaria outra função)
+
+                    // console.log("Usuario salvo: ", dados) 
+
+                    mensagemSucesso("Usuario cadastrado com sucesso! Seja bem-vindo " + strNome + "!"); // Mostra a mensagem
+                    clearCadastro();
+                });
+
         }
     }
 };

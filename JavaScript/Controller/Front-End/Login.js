@@ -1,3 +1,5 @@
+// Quando logar, direcionar para a index e adicionar um ícone de usuário na header, que direcionaria para a tela de usuário, onde teria as informações de usuário e a possibilidade de alterar ele
+
 function logar(event) {
     event.preventDefault()
 

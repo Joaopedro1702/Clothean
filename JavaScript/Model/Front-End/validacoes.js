@@ -1,5 +1,5 @@
 function isNull(valor) {
-    if (valor === "" || valor === isNaN) {
+    if (valor === "") {
         return true;
     }
     else {
@@ -70,7 +70,7 @@ function validarCpf(cpf) {
 }
 
 function validarTelefone(telefone) {
-    if (telefone.length < 16) {
+    if (telefone.length < 15) {
         return false;
     }
     else {

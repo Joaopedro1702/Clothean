@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let strEmail = document.getElementById("TxtEmailModal").value.trim();
             let strMensagem = document.getElementById("TxtMensagemModal").value.trim();
 
-            if (strNome === "" || strMensagem === "" || strEmail === "" || strSubject === "") {
-                Swal.fire("Erro", "Algum campo não está preenchido, verifique!", "error");
+            if (isNull(strNome) === true || isNull(strMensagem) === true || isNull(strEmail) === true || isNull(strSubject) === true) {
+                mensagemErro("Algum campo não está preenchido, verifique!");
             }
-            else if (!regexEmail.test(strEmail)) {
-                Swal.fire("Erro", "Insira um email válido!", "error");
+            else if (validarEmail(strEmail) === false) {
+                mensagemErro("Insira um email válido!");
             }
             else {
                 const formData = {

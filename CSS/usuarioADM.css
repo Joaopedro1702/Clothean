@@ -1,0 +1,16 @@
+.Centro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    width: 70%;
+    height: 100%;
+    margin-bottom: 5%;
+}
+
+.Lista {
+    position: relative;
+    margin-top: 2%;
+    margin-left: 10%;
+
+}

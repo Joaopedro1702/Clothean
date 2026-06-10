@@ -7,7 +7,7 @@
     <meta name="Description" content="Tela para Cadastro de Usuários na plataforma">
     <meta name="keywords" content="metatags, cadastro, usuario">
     <meta name="authot" content="Otávio Augusto Canola do Carmo">
-    <title>Cadastro</title>
+    <title>Usuario</title>
     <link rel="icon" href="image/logo.png" type="image/png">
 
     <!--BootStrap-->
@@ -39,7 +39,6 @@
     <script src="./JavaScript/View/mostrarMensagem.js" defer></script>
     <script src="./JavaScript/View/funcoesModal.js" defer></script>
     <script src="./JavaScript/View/apagarTexto.js" defer></script>
-    <script src="./JavaScript/View/funcoesTabela.js" defer></script>
 
     <!--Modal-->
     <script src="./JavaScript/Model/Front-End/validacoes.js"></script>
@@ -75,10 +74,6 @@
                             Conosco</a>
                     </li>
                     <li class="nav-item mt-3">
-                        <a href="login.html">
-                            <button type="button" class="btn btn-outline-primary btnlogin">Login</button>
-                        </a>
-
                         <a href="reserva.html">
                             <button class="btn-reservar w-100">Reservar</button>
                         </a>
@@ -99,7 +94,7 @@
         <div class="quadrado">
             <div class="conteiner">
                 <section class="Imagem-Lateral">
-                    <div class="imagem">
+                    <div class="imagemUsuario">
                         <blockquote style="background-color: black;">
 
                         </blockquote>
@@ -108,82 +103,108 @@
 
                 <section class="Formulario">
                     <div class="Cadastro">
-                        <h1 class="Titulo"><b>CADASTRO</b></h1>
+                        <h1 class="Titulo"><b>Informações de Perfil</b></h1>
                     </div>
 
                     <div>
                         <form class="row g-3 needs-validation" novalidate>
                             <div class="col-lg-10 position-relative">
                                 <img src="image/IconNome12.png" alt="Icon Nome">
-                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
-                                <input type="text" class="form-control Campos" id="TxtNome"
-                                    placeholder="Fulano da Silva Junior" required>
+                                <label for="TxtNome" class="form-label"><b>Nome Completo</b></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control Campos" id="TxtNome"
+                                        placeholder="Fulano da Silva Junior" required readonly>
+
+                                    <span class="input-group-text border-start-0" style="cursor: pointer;">
+                                        <img src="./image/editar.png" style="width: 20px; height: 20px;" alt="Editar">
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="col-lg-10 position-relative">
                                 <img src="image/imagem_12px.png" alt="Icon Email">
-                                <label for="validationTooltip01" class="form-label"><b>Email</b></label>
-                                <input type="email" class="form-control Campos" placeholder="fulano@gmail.com"
-                                    id="TxtEmail" required>
+                                <label for="TxtEmail" class="form-label"><b>Email</b></label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control Campos" placeholder="fulano@gmail.com"
+                                        id="TxtEmail" required readonly>
+                                        <span class="input-group-text"
+                                        style="cursor: pointer;">
+                                        <img src="./image/editar.png"
+                                            style="width: 20px; height: 20px;" alt="Editar">
+                                    </span>
+                                </div>
                             </div>
 
                             <div class="row linhaCPF">
                                 <div class="col-lg-5 position-relative">
                                     <img src="image/file.png" alt="Icon CPF">
-                                    <label for="validationTooltip01" class="form-label"><b>CPF</b></label>
-                                    <input type="text" class="form-control Campos" id="TxtCpf"
-                                        placeholder="000.000.000-00" required maxlength="14">
-                                </div>
+                                    <label for="TxtCpf" class="form-label"><b>CPF</b></label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control Campos" id="TxtCpf"
+                                            placeholder="000.000.000-00" required maxlength="14" readonly>
 
+                                        <span class="input-group-text border-start-0" style="cursor: pointer;">
+                                            <img src="./image/editar.png" style="width: 20px; height: 20px;"
+                                                alt="Editar">
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="col-lg-5 position-relative">
                                     <img src="image/telephone-handle-silhouette.png" style=width:12px height:12px;
                                         alt="Icon Telefone">
-                                    <label for="validationTooltip01" class="form-label"><b>Telefone</b></label>
-                                    <input type="tel" class="form-control Cadastro" id="TxtTelefone"
-                                        placeholder="(00)00000-0000" required maxlength="16">
-                                </div>
-                            </div>
+                                    <label for="TxtTelefone" class="form-label"><b>Telefone</b></label>
+                                    <div class="input-group">
 
+                                        <input type="tel" class="form-control Cadastro" id="TxtTelefone"
+                                            placeholder="(00)00000-0000" required maxlength="16" readonly>
 
-                            <div class="row">
-                                <div class="col-lg-5 position-relative">
-                                    <img src="image/padlock.png" style=width:12px; height:12px; alt="Icon Senha">
-                                    <label for="validationTooltip01" class="form-label"><b>Senha</b></label>
-                                    <div class="ImagemEye">
-                                        <img src="image/eye.png" alt="Ver Senha" class="EyeAberto" id="ImgOlhoAbertoS"
-                                            ;>
-                                        <img src="image/hidden.png" alt="Ocutar Senha" class="EyeFechado esconder"
-                                            id="ImgOlhoFechadoS" ;>
-                                        <input type="password" class="form-control TxtSenha Senha" id="TxtSenha"
-                                            placeholder="Senha_123" maxlength="16" required>
-                                    </div>
-                                    <label for="TxtSenha" class="Descricao">
-                                        <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _),
-                                            letra
-                                            maiúscula, minúscula e número</p>
-                                    </label>
-                                </div>
-
-                                <div class="col-lg-5 position-relative">
-                                    <img src="image/padlock.png" style="width: 12px; height:12px;" alt="Icon Senha">
-                                    <label for="validationTooltip01" class="form-label"><b>Confirmar
-                                            Senha</b></label>
-                                    <div class="ImagemEye">
-                                        <img src="image/eye.png" alt="Esconder Senha" class="EyeAberto"
-                                            id="ImgOlhoAbertoCS">
-                                        <img src="image/hidden.png" alt="Mostrar Senha" class="EyeFechado esconder"
-                                            id="ImgOlhoFechadoCS">
-                                        <input type="password" class="form-control texto" id="TxtConfSenha"
-                                            placeholder="Senha_123" maxlength="16" required>
+                                        <span class="input-group-text border-start-0" style="cursor: pointer;">
+                                            <img src="./image/editar.png" style="width: 20px; height: 20px;"
+                                                alt="Editar">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="locBotao">
-                                <button type="" class="btn btn-light Botao" id="BtnCadastrar"><b>Cadastrar</b></button>
+
+
+                            <div class="col-lg-6 position-relative">
+                                <img src="image/padlock.png" style=width:12px; height:12px; alt="Icon Senha">
+                                <label for="TxtSenha" class="form-label"><b>Senha</b></label>
+
+                                <div class="input-group">
+                                    <input type="password" class="form-control TxtSenha Senha" id="TxtSenha"
+                                        placeholder="Senha_123" maxlength="16" required readonly>
+                                    <span class="input-group-text border-start-0" style="cursor: pointer;">
+                                        <img src="./image/editar.png" style="width: 20px; height: 20px;" alt="Editar">
+                                    </span>
+                                    <div class="ImagemEye">
+                                        <img src="image/eye.png" alt="Ver Senha" class="EyeAbertoUsuario"
+                                            id="ImgOlhoAbertoS">
+                                        <img src="image/hidden.png" alt="Ocutar Senha"
+                                            class="EyeFechadoUsuario esconder" id="ImgOlhoFechadoS" ;>
+                                        <label for="TxtSenha" class="Descricao">
+                                            <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _),
+                                                letra
+                                                maiúscula, minúscula e número</p>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
+                        </form>
                     </div>
-                </section>
+                    <div class="row linhaCPF">
+                        <div class="col-lg-5 position-relative locBotaoLogin">
+                            <button type="" class="btn btn-danger BotaoUsuario"
+                                id="BtnCadastrar"><b>Excluir</b></button>
+                        </div>
+                        <div class="col-lg-5 position-relative locBotaoLogin">
+                            <button type="" class="btn btn-primary BotaoUsuario"
+                                id="BtnCadastrar"><b>Editar</b></button>
+                        </div>
+                    </div>
             </div>
+            </section>
+        </div>
 
     </main>
 
