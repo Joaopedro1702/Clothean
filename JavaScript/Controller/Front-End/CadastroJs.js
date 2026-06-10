@@ -1,3 +1,15 @@
+function validarEmail(email) {
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+  return regexEmail.test(email);
+}
+
+function validarSenha(senha) {
+  const regexLetraMaiscula = /[A-Z]/;
+  const regexNumero = /[0-9]/;
+  const regexCaractereEspecial = /[@_\-]/;
+  return senha.length >= 8 && regexLetraMaiscula.test(senha) && regexNumero.test(senha) && regexCaractereEspecial.test(senha);
+}
+
 async function cadastrarUsuario(e) {
   e.preventDefault();
 
@@ -12,6 +24,16 @@ async function cadastrarUsuario(e) {
 
   if (!nome || !email || !senha) {
     alert("Preencha nome, email e senha.");
+    return;
+  }
+
+  if (!validarEmail(email)) {
+    alert("Informe um email válido.");
+    return;
+  }
+
+  if (!validarSenha(senha)) {
+    alert("Senha deve ter ao menos 8 caracteres, uma letra maiúscula, um número e um caractere especial (@, _ ou -).");
     return;
   }
 

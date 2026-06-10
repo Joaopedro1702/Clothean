@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 const db = require("./conexao");
 
 router.get("/", async (req, res) => {
-  const senhaCriptografada = await bcrypt.hash(senha, 10);
+  // Retorna a lista de usuários cadastrados (sem filtros) para fins administrativos.
 
   try {
     const [usuarios] = await db.query(
@@ -43,9 +44,12 @@ async function cadastrarUsuario(req, res) {
       });
     }
 
+    // Hash da senha antes de salvar no banco, para proteger os dados de login.
+    const senhaCriptografada = await bcrypt.hash(senha, 10);
+
     const [resultado] = await db.query(
       "INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES (?, ?, ?, ?, ?, ?)",
-      [nome, email, cpf || null, telefone || null, senha, "cliente"]
+      [nome, email, cpf || null, telefone || null, senhaCriptografada, "cliente"]
     );
 
     res.status(201).json({
