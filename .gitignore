@@ -1,1 +1,59 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+serviceAccountKey.json
+**/serviceAccountKey.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime and cache files
+.cache/
+.parcel-cache/
+.npm/
+.eslintcache
+*.pid
+*.seed
+*.pid.lock
+
+# Build outputs and coverage
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Editor and local history
+.vscode/
 .history/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Optional local database/backups
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
