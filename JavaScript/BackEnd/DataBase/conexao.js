@@ -1,5 +1,5 @@
 
-const mysql = require("mysql2");
+/*const mysql = require("mysql2");
 
 // require('dotenv').config();
 
@@ -27,4 +27,4 @@ module.exports = conexao;
 //     }
 // });
 
-// module.exports = conexao;
+// module.exports = conexao;*/
