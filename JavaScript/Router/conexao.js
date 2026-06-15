@@ -1,10 +1,13 @@
 const mysql = require('mysql2/promise');
 
+require('dotenv').config();
+console.log('DB_USER:', process.env.DB_USER);
 const conexao = mysql.createPool({
-    host:  'localhost',
-    user: 'root',
-    password: '',
-    database: "db_Clothean"
+    host:  process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 module.exports = conexao;

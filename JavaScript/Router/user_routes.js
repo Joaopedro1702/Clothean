@@ -3,13 +3,14 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 const db = require("./conexao");
+const { verificarToken } = require("../middleware/autorizacao");
 
-router.get("/", async (req, res) => {
+router.get("/", verificarToken, async (req, res) => {
   // Retorna a lista de usuários cadastrados (sem filtros) para fins administrativos.
 
   try {
     const [usuarios] = await db.query(
-      "SELECT id, nome, email, cpf, telefone, tipo FROM tbl_Usuario"
+      "SELECT id, nome, email, cpf, telefone, perfil FROM tbl_Usuario"
     );
 
     if (usuarios.length === 0) {
@@ -60,7 +61,7 @@ async function cadastrarUsuario(req, res) {
         email,
         cpf: cpf || null,
         telefone: telefone || null,
-        tipo: "cliente"
+        perfil: "cliente"
       }
     });
   } catch (error) {
@@ -72,7 +73,7 @@ async function cadastrarUsuario(req, res) {
 router.post("/", cadastrarUsuario);
 router.post("/cadastro", cadastrarUsuario);
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", verificarToken, async (req, res) => {
   try {
     const { id } = req.params;
 

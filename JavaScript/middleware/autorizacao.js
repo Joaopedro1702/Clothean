@@ -8,7 +8,7 @@ const verificarToken = (req, res, next) => {
     }
     try{
         const decodificado = jwt.verify(token, process.env.JWT_SECRET);
-        req.usuario = decodificado;
+        req.user = decodificado;
         next();
     }catch(error){
         console.error("Token inválido:", error);

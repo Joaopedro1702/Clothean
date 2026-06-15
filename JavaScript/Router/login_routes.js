@@ -3,14 +3,15 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const db = require("./conexao");
 const jwt = require('jsonwebtoken');
+const { verificarToken } = require("../middleware/autorizacao");
 
 // Rotas de login e autenticação de administrador.
 
 
-router.get("/", async(req, res) => {
+router.get("/", verificarToken,async(req, res) => {
     try{
         // Lista todos os usuários; não há parâmetro de filtro nesta rota GET.
-        const [ListaUsuarios] = await db.query("SELECT id, email, senha, tipo FROM tbl_Usuario");
+        const [ListaUsuarios] = await db.query("SELECT id, email, senha, perfil FROM tbl_Usuario");
 
         if(ListaUsuarios.length === 0){
             return res.json({mensagem: "Nenhum usuário encontrado."})
@@ -70,7 +71,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", verificarToken, async (req, res) => {
     try{
         // Esta rota depende de `req.user` definido pelo middleware de autenticação JWT.
         // Certifique-se de aplicar o middleware antes de usar esta rota em produção.

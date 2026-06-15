@@ -3,8 +3,9 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 const db = require("./conexao");
+const { verificarToken } = require("../middleware/autorizacao");
 
-router.post("/cadastro", async (req, res) => {
+router.post("/cadastro", verificarToken,async (req, res) => {
     try {
         const { nome, email, cpf, telefone, senha } = req.body;
 
@@ -23,7 +24,6 @@ router.post("/cadastro", async (req, res) => {
     }
 });
 
-const { verificarToken } = require("../../middleware/autorizacao");
 
 router.get("/dashboard", verificarToken, (req, res) => {
     // Responde apenas se o token JWT for válido.
