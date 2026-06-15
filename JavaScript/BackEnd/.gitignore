@@ -1,0 +1,16 @@
+# Ignorando as Pastas com os Materiais das Aulas
+node_modules/
+.env
+desktop.ini
+desktop.ini/
+/desktop.ini
+Desktop.ini
+DESKTOP.INI
+**/desktop.ini
+desktop.ini/*
+Desktop.ini
+DESKTOP.INI
+**/desktop.ini
+**/Desktop.ini
+
+

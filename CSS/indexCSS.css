@@ -548,3 +548,11 @@ ul {
 .nav-link {
     cursor: pointer;
 }
+
+.esconder {
+    display: none !important;
+}
+
+.mostrar {
+    display: block !important;
+}

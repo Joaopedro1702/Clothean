@@ -314,6 +314,12 @@ footer {
     margin-bottom: 10px;
 }
 
+.btnUsuario {
+    width: 365px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
 button:hover {
     background-color: #67B0E5;
     color: white;
