@@ -16,22 +16,22 @@
 }
 
 .modalConteiner {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
-    opacity: 0;
-    pointer-events: none;
     top: 0;
     left: 0;
     height: 105vh;
     width: 100vw;
-    z-index: 1000;
+    z-index: 1040;
     padding-bottom: 5%;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .modalConteiner.show {
+    display: flex;
     pointer-events: auto;
     opacity: 1;
 }
@@ -65,7 +65,7 @@ textarea {
     max-height: 100%;
     text-align: start;
     /* overflow-wrap: break-word; */
-    z-index: 99999;
+    z-index: auto;
     margin-top: 2%;
 }
 

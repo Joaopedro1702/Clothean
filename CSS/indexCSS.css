@@ -1,0 +1,558 @@
+h1 {
+    color: white;
+}
+
+
+.hero {
+    background-image: url(../image/fundoazul22.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+    border-radius: 30px;
+    min-height: unset;
+    align-items: flex-end;
+}
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* Container da imagem */
+.banner-mulher {
+    height: auto !important;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Mulher */
+.mulher {
+    position: static;
+    width: 100%;
+    height: auto;
+
+}
+
+/*cards*/
+.container-vantagens {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+
+}
+
+.card-vantagem {
+    color: white;
+    font-weight: bold;
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+
+.card-vantagem img {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 0;
+    object-fit: contain;
+    padding: 20px;
+    background-color: white;
+    border-radius: 50%;
+    /* Formato de domo para cada um */
+    /* Largura fixa para ficarem iguais */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*parte do meio*/
+.imagemverde {
+    background-image: url(../image/fundoverde2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    padding: 40px 40px 0 40px;
+    overflow: hidden;
+    gap: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+
+.muier-verde img {
+    margin-top: 50px;
+    max-width: 100%;
+    align-self: flex-end;
+}
+
+.conteudo-esquerdot {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.conteudo-esquerdot h1 {
+    font-size: 2.5rem;
+    max-width: 100%;
+    color: #005B5E;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.lista-servicos {
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    display: flex;
+
+}
+
+.btnReservar {
+    width: 90px;
+    background-color: #7CBF5C;
+    color: white;
+    border-radius: 50px;
+}
+
+.btnReservar:hover {
+    background-color: #2BA2DD;
+    color: white;
+}
+
+.offcanvas-body {
+
+    flex-direction: column;
+}
+
+.offcanvas-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.offcanvas-body li {
+
+    margin-bottom: 15px;
+}
+
+.offcanvas-body a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.navbar {
+    color: #01579B;
+    flex-direction: column;
+}
+
+
+/*Formatos*/
+.container-formatos {
+    gap: 15px;
+    padding: 20px;
+    display: flex;
+    border-radius: 35px;
+}
+
+.formato {
+    width: 50%;
+    text-align: center;
+    object-fit: cover;
+    padding: 10px;
+    background-color: #2BA2DD;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.textformatos {
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+
+}
+
+.textformatos h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+.formato img {
+    width: 100%;
+
+}
+
+.formato p {
+    color: white;
+}
+
+.formatos {
+    background-image: url(../image/fundogra.jpg);
+    border-radius: 35px;
+    padding: 40px;
+    text-align: center;
+
+}
+
+.formato h3 {
+    color: white;
+}
+
+.formatos h2 {
+    text-align: center;
+    color: white;
+}
+
+.formato h4 {
+    color: white;
+}
+
+
+/*Sobre nós*/
+.sobre {
+    background-image: url(../image/fundoazul.jpg);
+    font-size: 26px;
+    padding: 40px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.textsobre {
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-bottom: 28px;
+}
+
+.sobre h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.sobre p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+    color: #01579B;
+}
+
+.fundobranco {
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/*Serviços*/
+.carousel-item active h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+.fundoverde {
+    background-image: url(../image/fundoazul2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    padding: 40px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.fundoverde h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/*Serviços lavanderia img*/
+
+.carousel-item img {
+    height: 450px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50px;
+    filter: brightness(0.5);
+}
+
+.carousel-caption {
+    bottom: 40px;
+}
+
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #E9ECEF;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.textservicos {
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.textservicos h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+/*mapa*/
+
+.localizacao {
+    background-image: url(../image/paranaue.jpg);
+    border-radius: 35px;
+    padding: 40px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.localtext {
+    border-radius: 40px;
+    width: fit-content;
+    background-color: #2BA2DD;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 0 auto 28px auto;
+}
+
+
+.localtext h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+/*GRID: os dois lados*/
+
+.loc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.mapa-container {
+    background-color: #dceee8;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 300px;
+}
+
+.mapa-container svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*Balão do pin*/
+
+.pin-label {
+    position: absolute;
+    top: 36%;
+    left: 38%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0, 15);
+    white-space: nowrap;
+}
+
+/*Card de informações*/
+
+.info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-card h3 {
+    color: #2BA2DD;
+    margin: 0;
+}
+
+.info-linha {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.icone {
+    width: 30px;
+    height: 36px;
+    border-radius: 50%;
+    background: #bdffa6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.info-label {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+.info-valor {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.btn-mapa {
+    display: block;
+    background: #2BA2DD;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 25px;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.btn-mapa:hover {
+    background: #1a8fc7;
+}
+
+#login {
+    background-color: #adffbf;
+    color: #2BA2DD;
+    height: 35px;
+    width: 55px;
+    border-radius: 10px;
+}
+
+#login:hover {
+    background-color: #2BA2DD;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .loc-grid {
+        grid-template-columns: 1frS;
+    }
+}
+
+/*Media de serviços*/
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 220px;
+    }
+}
+
+/*Botões da area de serviços*/
+
+.btnservicos {
+    background-color: #01579B;
+    color: white;
+    border-radius: 48px;
+    border: none;
+    outline: none;
+    transition: transform 0.3 ease;
+}
+
+.btnservicos:hover {
+    background-color: #7CBF5C;
+    color: #01579B;
+    transform: scale(1.3);
+}
+
+/*Carrossel: Levando as setas para o centro*/
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    margin-top: 23rem;
+    width: 5%;
+}
+
+/*Tirando o hover azul das setas*/
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: transparent !important;
+}
+
+.formularioContato {
+    width: 100%;
+    padding-bottom: 7%;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.esconder {
+    display: none !important;
+}
+
+.mostrar {
+    display: block !important;
+}

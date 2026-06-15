@@ -1,0 +1,287 @@
+html {
+    height: 100%;
+}
+
+.dados-login {
+    height: 50%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+form {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+}
+
+.facebook {
+    width: 25px;
+
+}
+
+.loginCom {
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    background-color: #BDFFA6;
+    color: #3420E6;
+    border: none;
+
+}
+
+.botoes {
+    display: flex;
+    padding: 2%;
+    gap: 5px;
+}
+
+.btnEntrar {
+    margin-right: 10%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #f0f0f0;
+    /* cinza bem claro */
+}
+
+footer {
+    margin-top: 3%;
+    bottom: 0;
+    flex-direction: column;
+}
+
+.quadrado {
+    display: grid;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    min-width: 390px;
+    margin: auto
+}
+
+button:hover {
+    background-color: #67B0E5;
+    color: white;
+    transform: scale(1.05);
+}
+
+.conteiner {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    object-position: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/Casal\ lavando.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur();
+
+}
+
+.imagemUsuario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    object-position: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/smiley-man-with-basket-full-clothes.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur();
+
+}
+
+.Cadastro {
+    display: flex;
+    justify-content: center;
+}
+
+.Img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+.Titulo {
+    display: flex;
+    justify-content: end;
+    margin-right: 15%;
+    padding-bottom: 3%;
+    margin-top: 5%;
+    color: white;
+}
+
+.texto {
+    display: flex;
+    justify-content: start;
+}
+
+.Icons {
+    padding-left: 1%;
+}
+
+.form-label {
+    padding-top: 5%;
+}
+
+.Formulario {
+    padding-left: 3%;
+    padding-bottom: 2%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    object-position: top;
+    background-image: url(../image/Fundo\ de\ lavanderia\ Imagens\ –\ Download\ Grátis\ no\ Freepik.jpg);
+    background-repeat: no-repeat;
+}
+
+.Campos {
+    border-radius: 13px;
+}
+
+#TxtEmail {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.linhaCPF {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.linhaBotoes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.locBotao {
+    margin-top: 7%;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.locBotaoLogin {
+    margin-top: 7%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    width: 82%;
+    font-size: x-large;
+
+}
+
+.BotaoUsuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    width: 100%;
+    font-size: x-large;
+}
+
+.Linha {
+    background-color: #3420E6;
+    width: 100%;
+    height: 1%;
+}
+
+.Descricao {
+    font-size: small;
+}
+
+.EyeFechado {
+    display: flex;
+    position: absolute;
+    left: 87%;
+    top: 27%;
+    cursor: pointer;
+}
+
+.EyeAberto {
+    display: flex;
+    position: absolute;
+    left: 87%;
+    top: 27%;
+    cursor: pointer;
+}
+
+.EyeAbertoUsuario {
+    display: flex;
+    position: absolute;
+    left: 80%;
+    bottom: 120%;
+    cursor: pointer;
+}
+
+.EyeFechadoUsuario {
+    display: flex;
+    position: absolute;
+    left: 73%;
+    bottom: 115%;
+    cursor: pointer;
+}
+
+.ImagemEye {
+    position: relative;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.esconder {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
+.placeSenha::placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+}
