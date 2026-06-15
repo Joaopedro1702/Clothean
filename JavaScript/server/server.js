@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const userRoutes = require("../Router/user_routes");
 const loginRoutes = require("../Router/login_routes");
 const adminRoutes = require("../Router/admin_routes");
+const uRoutes = require("../Router/routes")
 const path = require("path");
 
 
