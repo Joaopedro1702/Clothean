@@ -1,0 +1,16 @@
+Tarefas totais:
+- Validação de adm e usuario normal: João (ok)
+- Fetch: Otávio (ok)
+- Tela de usuario comum e adm: Otávio (ok)
+- criptografia: João (adm) e Otávio (usuario normal) (ok)
+- token ADM: João (ok) 
+- token Usuario: Otavio (ok) 
+- Adicionar o usuário para as outras telas quando logar: Otávio (ok)
+- fazer a tabela compras e a validação no reservar: João
+- Fazer a verificação se o usuario é adm ou comum: Otávio (Parcialmente feito)
+- fazer funcionar a tela de adm: Otávio (Fazer o modal de editar e funcionar a função de edição e exclusão)
+
+* Ideias:
+- Ter a tela de usuarios normal, e o adm alterar outros usuários para adm, não ter uma tela de criação de adm
+- Na tela de edição do adm colocar a opção do perfil como uma combobox
+

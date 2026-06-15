@@ -1,0 +1,8 @@
+.Campos {
+    border-radius: 13px;
+}
+
+.Cadastro {
+    display: flex;
+    justify-content: center;
+}
