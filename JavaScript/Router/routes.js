@@ -1,8 +1,8 @@
 
 const express = require("express");
 const router = express.Router();
-const controllerBack = require("../../Services/controllerService")
-const validation = require("../../Validations/validation")
+const controllerBack = require("../BackEnd/Services/controllerService")
+const validation = require("../BackEnd/Validations/validation")
 
 
 router.get("/usuarios", controllerBack.listar);

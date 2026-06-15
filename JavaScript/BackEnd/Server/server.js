@@ -2,7 +2,7 @@ const express = require("express"); // Garante que o servidor seja criado e seja
 
 const cors = require("cors"); // É um método que permite que um site posso acessar as informações de outro site mesmo com a porta ou o direcionamento diferente
 
-const rotas = require("./Router/routes"); // É um garçom que anota o que deseja ser feito, ler, escrever, editar, deletar, etc
+const rotas = require("../../Router/routes"); // É um garçom que anota o que deseja ser feito, ler, escrever, editar, deletar, etc
 
 const app = express();
 app.use(cors());
