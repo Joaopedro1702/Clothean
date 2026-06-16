@@ -47,7 +47,8 @@
     <script src="../JavaScript/FrontEnd/Controller/addTabela.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/ConsultarAdm.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/LoginAdm.js" defer></script>
-
+    <script src="../JavaScript/FrontEnd/Controller/editarAdm.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/ExcluirAdm.js" defer></script>
 
 </head>
 
@@ -172,17 +173,17 @@
                         </div>
                         <div class="form-group">
                             <label for="notaTrabalho">CPF:</label>
-                            <input type="number" class="form-control" id="novoCPF" placeholder="Ditie o novo CPF"
-                                maxlength="14">
+                            <input type="text" class="form-control" id="novoCPF" placeholder="Ditie o novo CPF"
+                                 required maxlength="14">
                         </div>
                         <div class="form-group">
                             <label for="notaTrabalho">Telefone:</label>
-                            <input type="number" class="form-control" id="novoTelefone"
-                                placeholder="Ditie o novo Telefone" maxlength="16">
+                            <input type="tel" class="form-control" id="novoTelefone" 
+                                placeholder="Ditie o novo Telefone" required maxlength="15">
                         </div>
                         <div class="form-group">
                             <label for="notaTrabalho">Usuario:</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" id="opcoes">
                                 <option value="1">Admin</option>
                                 <option value="2">Usuario</option>
                             </select>

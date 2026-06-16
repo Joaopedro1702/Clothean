@@ -29,7 +29,7 @@ function criarColunaBotaoEditar(textContent) {
 function criarLinha(id, nome, email, cpf, telefone, perfil) {
 
     const linha = document.createElement("tr");
-    linha.className = "Aluno"                   // Cria a linha e coloca o nome dela
+    linha.className = "Usuario"                   // Cria a linha e coloca o nome dela
     linha.dataset.id = id;
 
     linha.appendChild(criarColuna(id));

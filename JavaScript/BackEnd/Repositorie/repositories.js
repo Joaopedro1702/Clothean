@@ -65,3 +65,15 @@ exports.buscaEmail = (email, callback) => {
         callback(resultado[0]);
     });
 };
+
+exports.editarAdm = (usuario, callback) => {
+    const sql = "UPDATE Tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, perfil = ? WHERE id = ?";
+
+    conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.perfil, usuario.id], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        callback(resultado);
+    });
+};
