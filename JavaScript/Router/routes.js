@@ -8,7 +8,7 @@ const validation = require("../BackEnd/Validations/validation")
 router.get("/", controllerBack.listar);
 router.post("/", validation.validarUsuario, controllerBack.cadastrar);
 router.delete("/:id", controllerBack.excluir);
-router.put("/:id", controllerBack.editar);
+router.put("/:id", controllerBack.editarAdm);
 router.post("/login", validation.validarLogin, controllerBack.login);
 
 module.exports = router;

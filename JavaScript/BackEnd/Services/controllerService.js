@@ -52,6 +52,39 @@ exports.editar = (req, res) => {
     });
 };
 
+exports.editarAdm = (req, res) => {
+    const idUrl = parseInt(req.params.id); 
+    const dadosUsuario = req.body; 
+    dadosUsuario.id = idUrl;
+
+    if (!dadosUsuario.id) {
+        return res.status(400).json({ mensagem: "Erro: O ID do usuario não foi identificado na URL." });
+    }
+
+    modelBackSer.editarAdm(dadosUsuario, (resultado) => {
+        // Agora que sabemos que o afetado é 1, ele vai pular esse IF direto para o sucesso!
+        if (resultado.affectedRows === 0) {
+            return res.status(404).json({ 
+                mensagem: "Não foi possível editar: Usuario não encontrado com o ID informado." 
+            });
+        }
+
+        // O Node vai responder isso aqui para o seu Frontend:
+        return res.status(200).json({
+            mensagem: "Usuario ajustado com Sucesso!"
+        });
+    });
+};
+
+exports.excluirAdm = (req, res) => {
+   const id = parseInt(req.params.id);
+    modelBackSer.excluir(id, () => {
+        res.status(201).json({
+            mensagem: "Usuario Deletado com Sucesso!"
+        });
+    });
+};
+
 exports.login = (req, res) => { 
     const dadosUsuario = req.body; 
 
