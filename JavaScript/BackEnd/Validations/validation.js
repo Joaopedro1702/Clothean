@@ -28,14 +28,14 @@ exports.validarUsuario = (req, res, next) => {
         });
     }
 
-    if (cpf.lenght < 14) {
+    if (cpf.length < 14) {
         return res.status(400).json({
             erro: "CPF inválido!"
         });
     }
 
     // valida nota prova
-    if (telefone.lenght < 16) {
+    if (telefone.length < 16) {
         return res.status(400).json({
             erro: "Telefone inválido!"
         });

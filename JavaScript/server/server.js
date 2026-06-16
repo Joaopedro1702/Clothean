@@ -1,4 +1,4 @@
-require('dotenv').config(); // ESSA LINHA PRECISA SER A PRIMEIRA DO SERVER.JS
+require('dotenv').config({ path: require('path').join(__dirname, '../../.env') });
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, "..")));
 app.use("/login", loginRoutes);
 app.use("/ListaUsuarios", userRoutes);
 app.use("/admin", adminRoutes);
+app.use("/usuarios", uRoutes);
+
 
 app.listen(3002, ()=>{
     console.log("Servidor a todo vapor em http://localhost:3002");
