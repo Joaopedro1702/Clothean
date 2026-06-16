@@ -33,27 +33,32 @@ exports.editar = (usuario, callback) => {
     repositories.editarUsuario(usuario, callback);
 };
 
+exports.editarAdm = (usuario, callback) => {
+
+    repositories.editarAdm(usuario, callback);
+};
+
 exports.loginUsuario = (usuario, callback) => {
     console.log("--> 1. Dados recebidos no Service:", usuario);
 
     repositories.buscaEmail(usuario.email, (usuarioEncontrado) => {
         console.log("--> 2. Retorno do Banco de Dados:", usuarioEncontrado);
 
-        if(!usuarioEncontrado) {
+        if (!usuarioEncontrado) {
             console.log("--> BLOQUEIO: Usuário não foi encontrado no banco.");
-            return callback({erro: "Email ou Senha inválidos!"});
+            return callback({ erro: "Email ou Senha inválidos!" });
         }
 
         console.log("--> 3. Comparando Senha digitada:", usuario.senha, "com Senha do Banco:", usuarioEncontrado.senha);
         const senhaValida = bcrypt.compareSync(usuario.senha, usuarioEncontrado.senha)
 
         console.log("--> 4. O Bcrypt validou? ", senhaValida);
-        if(!senhaValida) {
+        if (!senhaValida) {
             console.log("--> BLOQUEIO: Senha incorreta segundo o Bcrypt.");
-            return callback({erro: "Email ou Senha inválidos!"})
+            return callback({ erro: "Email ou Senha inválidos!" })
         }
 
-        const {senha, ...usuarioSeguro} = usuarioEncontrado;
+        const { senha, ...usuarioSeguro } = usuarioEncontrado;
         callback(null, usuarioSeguro)
     })
 }

@@ -40,6 +40,7 @@
     <script src="../JavaScript/FrontEnd/View/funcoesModal.js" defer></script>
     <script src="../JavaScript/FrontEnd/View/apagarTexto.js" defer></script>
     <script src="../JavaScript/FrontEnd/View/funcoesTabela.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/layoutUsuario.js" defer></script>
 
     <!--Controller-->
     <script src="../JavaScript/FrontEnd/Controller/acaoMascaras.js" defer></script>
@@ -74,6 +75,8 @@
                     </li>
                     <li class="nav-item mt-3">
                         <a href="./login.html" class="btn btn-outline-primary btnlogin" id="btnLogin">Login</a>
+                        <a href="./UsuarioLogin.html" class="btn btn-outline-primary btnUsuario esconder"
+                            id="btnUsuario">Usuario</a>
                         <a href="reserva.html">
                             <button class="btn-reservar w-100">Reservar</button>
                         </a>
@@ -136,7 +139,7 @@
                                         alt="Icon Telefone">
                                     <label for="validationTooltip01" class="form-label"><b>Telefone</b></label>
                                     <input type="tel" class="form-control Cadastro" id="TxtTelefone"
-                                        placeholder="(00)00000-0000" required maxlength="16">
+                                        placeholder="(00) 00000-0000" required maxlength="15">
                                 </div>
                             </div>
 
