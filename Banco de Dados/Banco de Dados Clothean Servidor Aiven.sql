@@ -1,3 +1,4 @@
+CREATE defaultdb
 USE defaultdb;
 
 CREATE TABLE tbl_Usuario

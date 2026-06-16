@@ -71,6 +71,54 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.post("/cliente", async (req,res) => {
+    try{
+        const {email, senha} = req.body;
+
+        if(!email || !senha){
+            return res.status(400).json({error: "Informe email e senha."});
+        }
+
+        const [usuarios] = await db.query(
+            "SELECT id, nome, email, senha, perfil FROM tbl_Usuario WHERE email = ? AND perfil = ?",
+            [email, "cliente"]
+        );
+
+        if (usuarios.length === 0) {
+            return res.status(401).json({ error: "Email ou senha incorretos." });           
+        }
+
+        const senhaValida = await bcrypt.compare(senha, usuarios[0].senha);
+
+        if(!senhaValida){
+            return res.status(401).json({error: "Email ou senha incorretos."});
+        }
+
+        const token = jwt.sign(
+            { id: usuarios[0].id, email: usuarios[0].email, perfil: usuarios[0].perfil},
+            process.env.JWT_SECRET,
+            {expiresIn: '1h'}
+        
+        );
+
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: false,
+            maxAge: 3600000
+        });
+
+        res.json({
+            mensagem: "Login realizado com sucesso.",
+            usuario: usuarios[0]
+        })
+
+}catch(error){
+    console.error("Erro ao fazer login:", error);
+    res.status(500).json({ error: "Erro ao fazer login."});
+}
+    
+});
+
 router.delete("/", verificarToken, async (req, res) => {
     try{
         // Esta rota depende de `req.user` definido pelo middleware de autenticação JWT.
