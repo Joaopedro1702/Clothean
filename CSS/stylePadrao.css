@@ -325,3 +325,7 @@ button:hover {
     color: white;
     transform: scale(1.05);
 }
+
+.texto{
+    color: white;
+}
