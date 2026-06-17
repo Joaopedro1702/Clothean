@@ -49,7 +49,7 @@ function cadastrar(event) {
             mensagemErro("O telefone não foi digitado corretamente, verifique");
         }
         else {
-            fetch("http://localhost:3002/ListarUsuarios", {
+            fetch("http://localhost:3002/ListaUsuarios/cadastro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

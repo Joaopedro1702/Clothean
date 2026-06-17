@@ -24,6 +24,21 @@ router.get("/", verificarToken, async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+    const { id } = req.params;
+
+    const [usuario] = await db.query(
+        "SELECT id, nome, email, cpf, telefone, perfil FROM tbl_Usuario WHERE id = ?",
+        [id]
+    );
+
+    if (usuario.length === 0) {
+        return res.status(404).json({ error: "Usuario nao encontrado." });
+    }
+
+    res.json(usuario[0]);
+});
+
 async function cadastrarUsuario(req, res) {
   try {
     const { nome, email, cpf, telefone, senha } = req.body;

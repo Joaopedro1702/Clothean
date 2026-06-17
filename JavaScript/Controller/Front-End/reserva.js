@@ -43,6 +43,44 @@ function bindQtyControls(){
     });
 }
 
+function bindPagamento() {
+    const btnContinue = document.querySelector('.btn-continue');
+
+    if (!btnContinue) return;
+
+    btnContinue.addEventListener('click', async () => {
+        btnContinue.textContent = 'Aguarde...';
+        btnContinue.disabled = true;
+
+        try {
+            // Servidor local do Mercado Pago
+            const urlPagamento = 'http://localhost:3000/criar_preferencia';
+
+            // Servidor publicado no Render - ativar depois
+            // const urlPagamento = 'https://servclothean.onrender.com/criar_preferencia';
+
+            const response = await fetch(urlPagamento, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    title: order.serviceName,
+                    quantity: order.qty,
+                    price: order.unitPrice + (order.deliveryFee || 0)
+                })
+            });
+
+            const data = await response.json();
+
+            window.location.href = data.init_point;
+        } catch (error) {
+            console.error('Erro:', error);
+            alert('Erro ao processar pagamento. Tente novamente.');
+            btnContinue.textContent = 'Continuar →';
+            btnContinue.disabled = false;
+        }
+    });
+}
+
 function saveAndRender(){
     localStorage.setItem(orderkey, JSON.stringify(order));
     renderSummary();
@@ -59,15 +97,66 @@ function renderSummary(){
 
 }
 
+function mostrarModalAuth(){
+    Swal.fire({
+        title: 'Faça login para continuar',
+        text: 'Você precisa estar logado para realizar uma reserva.',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Login',
+        cancelButtonText: 'Cadastrar',
+    }).then((result) => {
+        if(result.isConfirmed){
+            window.location.href = './loginUsuario.html'
+        }else if(result.dismise === Swal.DismissReason.cancel){
+            window.location.href = './cadastro.html'
+        }
+    });
+}
+
+//Insere dados automaticamente caso o usuario já esteja logado.
+
+async function preencherDadosUsuario(){
+    const token = localStorage.getItem('token');
+    const id = localStorage.getItem('usuarioId');
+    const nome = localStorage.getItem('usuarioNome');
+
+    if(!token || !id){
+        mostrarModalAuth();
+        return;
+    }
+
+    try{
+        const res = await fetch(`http://localhost:3002/ListaUsuarios/${id}`, {
+            headers: {'Authorization': `Bearer ${token}`}
+        });
+
+        const dados = await res.json();
+
+        document.querySelector('input[placeholder="João Silva"]').value = dados.nome || nome;
+        document.querySelector('input[placeholder="seu@email.com"]').value = dados.email || '';
+        document.querySelector('input[placeholder="(11) 99999-9999"]').value = dados.telefone || '';
+
+    }catch{
+        document.querySelector('input[placeholder="João Silva"]').value = nome || '';
+    }
+
+}
+
 function init(){
     const cards = document.querySelectorAll('.service-card');
     cards.forEach((card, idx) => {
         const name = card.querySelector('h3')?.textContent.trim();
         if (name === order.serviceName) card.classList.add('selected');
     });
+
+
+
     bindServiceCards();
     bindQtyControls();
+    bindPagamento();
     renderSummary();
+    preencherDadosUsuario();
 
     /*const btnContinue = document.getElementById('btn-continue');
   if (btnContinue) {
