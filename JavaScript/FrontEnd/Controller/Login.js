@@ -101,7 +101,7 @@ btnImgOlhoFechadoLogin.addEventListener("click", function () {
     mostrarSenha(btnImgOlhoAbertoLogin);
 })
 
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem("token");
     const perfil = localStorage.getItem("usuarioPerfil");
 
@@ -110,4 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Acesso negado! Esta área é exclusiva para o Usuário.");
         window.location.href = "login.html"; // Chuta de volta pro login
     }
-});
+});*/
