@@ -24,7 +24,7 @@ function logar(event) {
             mensagemErro("Senha inválida!");
         }
         else {
-            fetch("http://localhost:3002/usuarios/login", {
+            fetch("https://clothean-g1s8.onrender.com/usuarios/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

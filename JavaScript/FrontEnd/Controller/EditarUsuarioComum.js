@@ -31,7 +31,7 @@ function editarUsuario() {
         const id = btnEditar.dataset.id;
         console.log(id)
 
-        fetch(`http://localhost:3002/usuarios/${id}`, {
+        fetch(`https://clothean-g1s8.onrender.com/usuarios/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

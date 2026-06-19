@@ -8,7 +8,7 @@ tabela.addEventListener("click", function (e) {
 
     const id = linha.dataset.id // Pegamos o Id guardado na linha
 
-    fetch(`http://localhost:3002/usuarios/${id}`, {
+    fetch(`https://clothean-g1s8.onrender.com/usuarios/${id}`, {
         method: "DELETE"
     })
         .then(response => response.json())

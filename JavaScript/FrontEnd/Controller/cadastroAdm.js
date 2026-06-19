@@ -27,7 +27,7 @@ async function enviar(event) {
     btn.textContent = "Cadastrando...";
 
     try {
-        const response = await fetch("http://localhost:3002/admin/cadastro", {
+        const response = await fetch("https://clothean-g1s8.onrender.com/admin/cadastro", {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
