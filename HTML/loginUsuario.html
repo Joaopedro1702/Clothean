@@ -31,7 +31,7 @@
     <!--== JavaScript ==-->
     <!--Model-->
     <script src="../JavaScript/FrontEnd/Model/validacoes.js" defer></script>
-    
+
     <!--View-->
     <script src="../JavaScript/FrontEnd/View/funcoesModal.js" defer></script>
     <script src="../JavaScript/FrontEnd/View/mostrarMensagem.js" defer></script>
@@ -45,7 +45,7 @@
 </head>
 
 <body>
-    <header class="border">
+    <header class=border 3>
 
         <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
@@ -67,12 +67,26 @@
                     <li class="nav-item"><a class="nav-link" id="btnFaleConosco">Fale
                             Conosco</a></li>
                     <li class="nav-item mt-3">
-                        <a href="./login.html">
-                            <button type="button" class="btn btn-outline-primary btnlogin" id="btnLogin">Login</button>
+                        <a href="./loginUsuario.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginUsuario">Login
+                                Usuario</button>
                         </a>
-                        <a href="./reserva.html">
+                        <a href="./loginADM.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginAdmin">Login
+                                Adm</button>
+                        </a>
+                        <a href="./UsuarioAdmin.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaAdmin">Usuario Admin</button>
+                        </a>
+                        <a href="./UsuarioComum.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaUsuario">Usuario</button>
+                        </a>
+                        <a href="reserva.html">
                             <button class="btn-reservar w-100">Reservar</button>
                         </a>
+
                     </li>
                 </ul>
             </div>
@@ -84,8 +98,8 @@
             </a>
         </div>
 
-    </header>
 
+    </header>
     <main>
         <form class="form quadrado" action="quadrado">
             <div class="form-floating mb-3">
@@ -105,11 +119,14 @@
             <a href="#">Esqueceu a senha</a>
 
             <div class="botoesLogin">
+
                 <button type="button" id="BtnLogar" class="btn btn-outline-primary">Entrar</button>
 
                 <button type="" class="btn btn-outline-success"><a href="./cadastro.html"
                         style="text-decoration: none;">Cadastrar</a></button>
+
             </div>
+
         </form>
 
         <div class="loginCom">
@@ -117,9 +134,9 @@
             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                     alt="Logo da Google"></a>
             <a href="#"><img src="../image/facebookicon (1).png" alt="Logo do facebook" class="facebook"></a>
+
         </div>
     </main>
-
     <footer>
         <div class="footer-container">
             <section class="footer-contato">
@@ -147,11 +164,13 @@
                             alt="LinkedIn"></a>
                 </div>
             </nav>
+
         </div>
 
         <section class="footer-barra-final">
             <small>© 2026 Clothean</small>
         </section>
+
     </footer>
 
     <div class="modalConteiner" id="ModalConteiner">
@@ -160,45 +179,50 @@
 
             <section>
                 <form id="formularioContato" method="post">
-                    <div class="col-lg-12 position-relative" style="margin-bottom: 5%; margin-top: 3%;">
-                        <img src="../image/IconNome12.png" alt="Icon Nome">
-                        <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
-                        <input type="text" class="form-control" id="TxtNomeModal"
-                            placeholder="Fulano da Silva Junior">
-                    </div>
+                    <div>
+                        <form class="col-lg-12 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative" style="margin-bottom: 5%; margin-top: 3%;">
+                                <img src="../image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control" id="TxtNomeModal"
+                                    placeholder="Fulano da Silva Junior">
+                            </div>
 
-                    <div class="row" style="margin-bottom: 5%;">
-                        <div class="col-lg-6 position-relative">
-                            <img src="../image/imagem_12px.png" alt="Icon Email">
-                            <label for="validationTooltip01" class="form-label"><b>Email</b></label>
-                            <input type="email" class="form-control texto Campos"
-                                placeholder="fulano@gmail.com" id="TxtEmailModal">
-                        </div>
+                            <div class="row" style="margin-bottom: 5%;">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="../image/imagem_12px.png" alt="Icon Email">
+                                        <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                        <input type="email" class="form-control texto Campos"
+                                            placeholder="fulano@gmail.com" id="TxtEmailModal">
+                                    </div>
 
-                        <div class="col-lg-6 position-relative">
-                            <img src="../image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
-                            <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
-                            <input type="text" class="form-control" placeholder="Titulo do Email"
-                                id="TxtAssunto">
-                        </div>
-                    </div>
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="../image/title.png" alt="Icon Titulo"
+                                            style="width: 12px; height: 12px;">
+                                        <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
+                                        <input type="text" class="form-control" placeholder="Titulo do Email"
+                                            id="TxtAssunto">
+                                    </div>
 
-                    <div class="col-lg-12 position-relative">
-                        <img src="../image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
-                        <label for="validationTooltip01" class="form-label"><b>Mensagem</b></label>
-                        <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
-                            id="TxtMensagemModal"></textarea>
-                    </div>
+                            </div>
 
-                    <div class="botoes" style="padding-top: 5%;">
-                        <button class="button" id="enviar" type="submit">Enviar</button>
-                        <button class="button" id="fechar">Fechar</button>
-                    </div>
+                            <div class="col-lg-12 position-relative">
+                                <img src="../image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
+                                <label for="validationTooltip01" class="form-label"><b>Mensagem</b></label>
+                                <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                    id="TxtMensagemModal"></textarea>
+                            </div>
+
+                            <div class="botoes" style="padding-top: 5%;">
+                                <button class="button" id="enviar" type="submit">Enviar</button>
+                                <button class="button" id="fechar">Fechar</button>
+                            </div>
+                        </form>
                 </form>
-            </section>
         </div>
     </div>
 
 </body>
 
-</html>
+</html

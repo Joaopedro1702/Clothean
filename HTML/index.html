@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../CSS/styleResposivo.css">
     <link rel="stylesheet" href="../CSS/StyleFaleConosco.css">
     <link rel="stylesheet" href="../CSS/indexCSS.css">
+    <link rel="stylesheet" href="../CSS/Cadastro.css">
 
     <!--JavaScript-->
 
@@ -37,8 +38,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
 
     <!--BootStrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
     <!--EmailJs-->
@@ -69,12 +72,28 @@
                             Conosco</a>
                     </li>
                     <li class="nav-item mt-3">
-                        <a href="./login.html" class="btn btn-outline-primary btnlogin" id="btnLogin">Login</a>
-                        <a href="./UsuarioLogin.html" class="btn btn-outline-primary btnUsuario esconder"
-                                id="btnUsuario">Usuario</a>
+                        <a href="./loginUsuario.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginUsuario">Login
+                                Usuario</button>
+                        </a>
+                        <a href="./loginADM.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginAdmin">Login
+                                Adm</button>
+                        </a>
+                        <a href="./UsuarioAdmin.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaAdmin">Usuario Admin</button>
+                        </a>
+                        <a href="./UsuarioComum.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaUsuario">Usuario</button>
+                        </a>
                         <a href="reserva.html">
                             <button class="btn-reservar w-100">Reservar</button>
                         </a>
+                        <button type="button" class="btn-sair" id="btnSairUsuario">
+                            Sair
+                        </button>
 
                     </li>
                 </ul>

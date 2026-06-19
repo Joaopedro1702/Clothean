@@ -329,3 +329,25 @@ button:hover {
 .texto{
     color: white;
 }
+
+.btn-sair {
+    width: 365px;
+    height: 40px;
+    margin-top: 10px;
+    border: 2px solid #2BA2DD;
+    border-radius: 8px;
+    background-color: #BDFFA6;
+    color: #01579B;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sair:hover {
+    background-color: #2BA2DD;
+    color: white;
+    transform: scale(1.08);
+}
