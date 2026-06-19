@@ -1,8 +1,8 @@
 
 const express = require("express");
 const router = express.Router();
-const controllerBack = require("../../Services/controllerService")
-const validation = require("../../Validations/validation")
+const controllerBack = require("../Services/controllerService")
+const validation = require("../Validations/validation")
 
 // Rotas Usuário Comum:
 router.get("/usuarios", controllerBack.listar);

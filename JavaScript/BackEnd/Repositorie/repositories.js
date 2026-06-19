@@ -2,7 +2,7 @@
 const conexao = require("../DataBase/conexao");
 
 exports.listar = (callback) => {
-    const sql = "SELECT * FROM Tbl_Usuario";
+    const sql = "SELECT * FROM tbl_Usuario";
 
     conexao.query(sql, (erro, resultado) => {
         if (erro) {
@@ -14,7 +14,7 @@ exports.listar = (callback) => {
 };
 
 exports.inserirUsuario = (usuario, callback) => {
-    const sql = "INSERT INTO Tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES (?, ?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES (?, ?, ?, ?, ?, ?)";
 
     // Se o frontend não mandou perfil, definimos como 'Usuario' por padrão
     const perfil = usuario.perfil || 'Usuario';
@@ -31,7 +31,7 @@ exports.inserirUsuario = (usuario, callback) => {
 };
 
 exports.excluirUsuario = (id, callback) => {
-    const sql = "DELETE FROM Tbl_Usuario WHERE id = ?";
+    const sql = "DELETE FROM tbl_Usuario WHERE id = ?";
 
     conexao.query(sql, [id], (erro, resultado) => {
         if (erro) {
@@ -44,7 +44,7 @@ exports.excluirUsuario = (id, callback) => {
 
 
 exports.editarUsuario = (usuario, callback) => {
-    const sql = "UPDATE Tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, senha = ? WHERE id = ?";
+    const sql = "UPDATE tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, senha = ? WHERE id = ?";
 
     conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha, usuario.id], (erro, resultado) => {
         if (erro) {
@@ -56,7 +56,7 @@ exports.editarUsuario = (usuario, callback) => {
 };
 
 exports.buscaEmail = (email, callback) => {
-    const sql = "SELECT * FROM Tbl_Usuario WHERE email = ?";
+    const sql = "SELECT * FROM tbl_Usuario WHERE email = ?";
 
     conexao.query(sql, [email], (erro, resultado) => {
         if (erro) {
@@ -72,7 +72,7 @@ exports.buscaEmail = (email, callback) => {
 };
 
 exports.editarAdm = (usuario, callback) => {
-    const sql = "UPDATE Tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, perfil = ? WHERE id = ?";
+    const sql = "UPDATE tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, perfil = ? WHERE id = ?";
 
     conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.perfil, usuario.id], (erro, resultado) => {
         if (erro) {
