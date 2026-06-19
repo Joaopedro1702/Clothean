@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothean</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/stylePadrao.css">
+    <link rel="stylesheet" href="../CSS/styleResposivo.css">
+    <link rel="stylesheet" href="../CSS/StyleFaleConosco.css">
+    <link rel="stylesheet" href="../CSS/indexCSS.css">
+    <link rel="stylesheet" href="../CSS/Cadastro.css">
+
+    <!--JavaScript-->
+
+    <!--Model-->
+    <script src="../JavaScript/FrontEnd/Model/validacoes.js" defer></script>
+
+    <!--View-->
+    <script src="../JavaScript/FrontEnd/View/funcoesSenha.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/mostrarMensagem.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/funcoesModal.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/apagarTexto.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/funcoesTabela.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/layoutUsuario.js" defer></script>
+
+    <!--Controller-->
+    <script src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/verificaUsuario.js" defer></script>
+
+
+
+    <!--SweetAlert-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
+
+    <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!--EmailJs-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar">
+                    <li class="nav-item"><a class="nav-link" href="#Serviços">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link" id="btnFaleConosco" style="cursor:pointer;">Fale
+                            Conosco</a>
+                    </li>
+                    <li class="nav-item mt-3">
+                        <a href="./loginUsuario.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginUsuario">Login
+                                Usuario</button>
+                        </a>
+                        <a href="./loginADM.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginAdmin">Login
+                                Adm</button>
+                        </a>
+                        <a href="./UsuarioAdmin.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaAdmin">Usuario Admin</button>
+                        </a>
+                        <a href="./UsuarioComum.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaUsuario">Usuario</button>
+                        </a>
+                        <a href="reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo.png" alt="Logo da Clothean">
+            </a>
+        </div>
+
+
+        <div class="acao" id="acaoMenu">
+            <a href="./login.html" class="menuLogin">Login</a>
+            <button>Reservar</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+
+            <div class="conteudo-esquerdo">
+                <div class="texto">
+                    <h1>Lavanderia com entrega em até 24 horas</h1>
+                    <h2>Rápido, prático e do jeito que você precisa!</h2>
+                </div>
+
+                <div>
+                    <div class="container-vantagens">
+                        <article class="card-vantagem">
+                            <img src="../image/verify.png" alt="Simobolo de verificado">
+                            <p>Qualidade</p>
+                        </article>
+
+                        <article class="card-vantagem">
+                            <img src="../image/hour.png" alt="Rapidez" class="relogio">
+                            <p>Rapidez</p>
+                        </article>
+
+                        <article class="card-vantagem">
+                            <img src="../image/dollar.png" alt="Preço justo" class="moeda">
+                            <p>Preço justo</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner-mulher">
+                <div class="blob"></div>
+                <img src="../image/muiecheirando4.png" alt="Mulher com roupas limpas" class="mulher">
+
+            </div>
+
+        </section>
+
+
+        <!--Banner verde da mulher lá-->
+        <section class="meio">
+            <div class="imagemverde">
+                <div class="conteudo-esquerdot">
+                    <h1>O lugar que deixa suas roupas tão brilhantes quanto seu sorriso!</h1>
+                </div>
+
+                <div class="muier-verde">
+                    <img src="../image/muie2.0-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--Muier verde-->
+
+        <!-- Sobre nós -->
+
+        <section class="sobre" id="sobre">
+            <div class="textsobre">
+                <h1>Sobre nós</h1>
+            </div>
+            <div class="fundobranco">
+                <p>Somos uma Empresa dedicada a deixar suas roupas mais limpas e cheirosas para uso, facilitando seu dia
+                    a dia, com opções e serviços que se encaixam a sua rotina e sua semana ao seu gosto.</p>
+            </div>
+        </section>
+
+        <!--Formatos-->
+        <section class="formatos" id="formatos">
+            <div class="textformatos">
+                <h2>Formatos</h2>
+            </div>
+            <div class="container-formatos">
+                <article class="formato">
+                    <h3>Loja fisica</h3>
+                    <img src="../image/lojafisica.png" alt="Lavanderia fisica da Clothean">
+                    <h4>Endereço:</h4>
+                    <p>rua lilas, lavanda, SP</p>
+
+                </article>
+
+                <article class="formato">
+                    <h3>Entrega</h3>
+                    <img src="../image/entregahome.png" alt="">
+                    <h4>Veiculos:</h4>
+                    <p>Motocicleta ou Bicicleta</p>
+                </article>
+            </div>
+        </section>
+        <!--TÔ MEXENDO AQUI!!!!!!!!!!!!!-->
+
+        <section id="Serviços">
+            <article class="fundoverde">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="textservicos">
+                        <h1>Serviços</h1>
+                    </div>
+
+                    <!-- <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div> -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/image/mulhersegurando" class="d-block w-100"
+                                alt="mulher segurando roupas limpas e dobradas.">
+                            <div class="carousel-caption d-block">
+                                <h5>Lava e Seca</h5>
+                                <p>Nós lavamos e secamos as suas roupas.</p>
+                                <p>Por apenas:</p>
+                                <h3>R$30</h3>
+                                <button class="btnservicos"
+                                    onclick="window.location.href='reserva.html'">Reserve</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../image/passando.jpg" class="d-block w-100"
+                                alt="Pessoa passando roupa. O ferro de passar está em cima de uma camiseta preta.">
+                            <div class="carousel-caption d-block">
+                                <h5>Passagismo</h5>
+                                <p>Passe suas roupas em nossa lavanderia.</p>
+                                <p>Por apenas:</p>
+                                <h3>R$20</h3>
+                                <button class="btnservicos"
+                                    onclick="window.location.href='reserva.html'">Reserve</button>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!--FIMMMMMMMMMMMMMMM-->
+
+        <!--Localização-->
+        <section class="localizacao">
+            <div class="localtext">
+                <h2>Onde nos encontrar</h2>
+            </div>
+            <div class="loc-grid">
+                <div class="mapa-container">
+                    <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="420" height="320" fill="#dceee8" />
+                        <rect x="0" y="60" width="420" height="12" fill="#c8dfd6" />
+                        <rect x="0" y="130" width="420" height="12" fill="#c8dfd6" />
+                        <rect x="0" y="200" width="420" height="12" fill="#c8dfd6" />
+                        <rect x="55" y="0" width="12" height="320" fill="#c8dfd6" />
+                        <rect x="150" y="0" width="12" height="320" fill="#c8dfd6" />
+                        <rect x="250" y="0" width="12" height="320" fill="#c8dfd6" />
+                        <rect x="10" y="10" width="40" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="75" y="10" width="70" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="170" y="10" width="75" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="75" y="80" width="70" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="170" y="150" width="75" height="45" rx="4" fill="#b5cfcb" />
+                        <rect x="170" y="80" width="75" height="45" rx="4" fill="#7CBF5C" opacity="0.7" />
+                        <text x="110" y="57" font-size="9" fill="#8aada6" text-anchor="middle">Rua das Lavandas</text>
+                        <text x="62" y="100" font-size="8" fill="#8aada6" text-anchor="middle"
+                            transform="rotate(-90, 62, 100)">R. Lírio</text>
+                    </svg>
+                    <div class="pin-label">Clothean Lavanderia
+
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>Clothean Lavanderia</h3>
+                    <div class="info-linha">
+                        <div class="icone">📍</div>
+                        <div>
+                            <p class="info-label">Endereço</p>
+                            <p class="info-valor"> Ruas das Lavandas, 247 - SP</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-mapa">Abrir no Google Maps</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="../image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="../image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a href="clotheansac@clothean.com">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
+        </section>
+    </footer>
+
+    <div class="modalConteiner" id="ModalConteiner">
+        <div class="Modal">
+            <h1 class="TituloModal"><b>Mensagem</b></h1>
+
+            <section>
+                <form id="formularioContato" method="post" novalidate>
+                    <div>
+                        <form class="col-lg-12 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative" style="margin-bottom: 5%; margin-top: 3%;">
+                                <img src="../image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control" id="TxtNomeModal"
+                                    placeholder="Fulano da Silva Junior">
+                            </div>
+
+                            <div class="row" style="margin-bottom: 5%;">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="../image/imagem_12px.png" alt="Icon Email">
+                                        <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                        <input type="text" class="form-control texto Campos"
+                                            placeholder="fulano@gmail.com" id="TxtEmailModal">
+                                    </div>
+
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="../image/title.png" alt="Icon Titulo"
+                                            style="width: 12px; height: 12px;">
+                                        <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
+                                        <input type="text" class="form-control" placeholder="Titulo do Email"
+                                            id="TxtAssunto">
+                                    </div>
+
+                                    <div class="col-lg-12 position-relative">
+                                        <img src="../image/chat.png" alt="Icon Mensagem"
+                                            style="width: 12px; height: 12px;">
+                                        <label for="validationTooltip01" class="form-label"
+                                            style="margin-top: 5%;"><b>Mensagem</b></label>
+                                        <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                            id="TxtMensagemModal"></textarea>
+                                    </div>
+
+                                    <div class="botoes" style="padding-top: 5%;">
+                                        <button class="button" id="enviar" type="submit">Enviar</button>
+                                        <button class="button" id="fechar">Fechar</button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.offcanvas a').forEach(item => {
+            item.addEventListener('click', () => {
+                const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+                const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+                offcanvas.hide()
+            })
+        })
+
+        document.querySelector('.btn-reservar').addEventListener('click', () => {
+            const offcanvasEl = document.getElementById('offcanvasWithBothOptions')
+            const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl)
+            offcanvas.hide()
+        })
+        <!-- Parei aqui -->
+    })
+</script>
+<!--Termina aq-->
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 380px
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 28px
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2BA2DD
+}
+
+.logo p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px
+}
+
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s
+}
+
+input:focus {
+    border-color: #7CBF5C
+}
+
+.grupo {
+    margin-bottom: 16px
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px
+}
+
+.row span {
+    font-size: 12px;
+    color: #888
+}
+
+.row a {
+    font-size: 12px;
+    color: #2BA2DD;
+    text-decoration: none
+}
+
+.btn {
+    width: 100%;
+    padding: 11px;
+    background: #7CBF5C;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.btn:hover {
+    background: #6aaf4c
+}
+
+.rodape {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #888
+}
+
+.rodape a {
+    color: #2BA2DD;
+    text-decoration: none
+}

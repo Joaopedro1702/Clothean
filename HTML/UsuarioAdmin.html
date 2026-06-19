@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Tela para Cadastro de Usuários na plataforma">
+    <meta name="keywords" content="metatags, cadastro, usuario">
+    <meta name="authot" content="Otávio Augusto Canola do Carmo">
+    <title>Admin</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+
+    <!--SweetAlert-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
+
+    <!--EmailJS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        defer></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/stylePadrao.css">
+    <link rel="stylesheet" href="../CSS/styleResposivo.css">
+    <link rel="stylesheet" href="../CSS/cadastroCSS.css">
+    <link rel="stylesheet" href="../CSS/usuarioADM.css">
+    <!--JavaScript-->
+
+    <!--Model-->
+    <script src="../JavaScript/FrontEnd/Model/validacoes.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Model/obterUsuarios.js" defer></script>
+
+    <!--View-->
+    <script src="../JavaScript/FrontEnd/View/funcoesSenha.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/mostrarMensagem.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/funcoesModal.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/apagarTexto.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/funcoesTabela.js" defer></script>
+
+    <!--Controller-->
+    <script src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/addTabela.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/ConsultarAdm.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/LoginAdm.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/editarAdm.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/ExcluirAdm.js" defer></script>
+
+</head>
+
+<body>
+    <header class=border 3>
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./index.html#Serviços">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html#sobre">Sobre nós</a></li>
+
+                    <li class="nav-item mt-3">
+                        <a href="./UsuarioLogin.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder">Usuario</button>
+                        </a>
+                        <a href="./reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo.png" alt="Logo da Clothean">
+            </a>
+        </div>
+
+    </header>
+
+    <main>
+        <section>
+            <h2 id="TituloTabela" class="Lista">Lista de Usuarios</h2>
+
+            <div class="Centro">
+                <table class="table">
+                    <thead>
+                        <tr class="Cabeçalho">
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Perfil</th>
+                            <th scope="col">Excluir</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="CorpoTabela">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="../image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="../image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a
+                            href="mailto:otavio.augusttocc@gmail.com?subject=Contato com a Empresa&body=Olá, isso é um teste">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
+        </section>
+    </footer>
+
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="DadosEdicao" class="d-flex flex-column gap-3">
+                        <div class="form-group mb-3">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite o novo nome">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="notaProva">Email:</label>
+                            <input type="email" class="form-control" id="novoEmail" placeholder="Ditie o novo email">
+                        </div>
+                        <div class="form-group">
+                            <label for="notaTrabalho">CPF:</label>
+                            <input type="text" class="form-control" id="novoCPF" placeholder="Ditie o novo CPF"
+                                 required maxlength="14">
+                        </div>
+                        <div class="form-group">
+                            <label for="notaTrabalho">Telefone:</label>
+                            <input type="tel" class="form-control" id="novoTelefone" 
+                                placeholder="Ditie o novo Telefone" required maxlength="15">
+                        </div>
+                        <div class="form-group">
+                            <label for="notaTrabalho">Usuario:</label>
+                            <select class="form-select" aria-label="Default select example" id="opcoes">
+                                <option value="1">Admin</option>
+                                <option value="2">Usuario</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary " id="btnEditar">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
