@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Tela para Cadastro de Usuários na plataforma">
+    <meta name="keywords" content="metatags, cadastro, usuario">
+    <meta name="authot" content="Otávio Augusto Canola do Carmo">
+    <title>Usuario</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+    <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+
+    <!--SweetAlert-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
+
+    <!--EmailJS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        defer></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/stylePadrao.css">
+    <link rel="stylesheet" href="../CSS/styleResposivo.css">
+    <link rel="stylesheet" href="../CSS/StyleFaleConosco.css">
+    <link rel="stylesheet" href="../CSS/cadastroCSS.css">
+    <!--JavaScript-->
+
+    <!--Model-->
+    <script src="../JavaScript/FrontEnd/Model/validacoes.js"></script>
+    <script src="../JavaScript/FrontEnd/Model/obterUsuarios.js"></script>
+
+    <!--View-->
+    <script src="../JavaScript/FrontEnd/View/funcoesSenha.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/mostrarMensagem.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/funcoesModal.js" defer></script>
+    <script src="../JavaScript/FrontEnd/View/apagarTexto.js" defer></script>
+
+    <!--Controller-->
+    <script src="../JavaScript/FrontEnd/Controller/acaoOlho.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/EditarUsuarioComum.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/ExcluirUsuariosComum.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/ConsultarUsuarioComum.js" defer></script>
+
+
+</head>
+
+<body>
+    <header class=border 3>
+        <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./index.html#Serviços">Como funcionamos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html#sobre">Sobre nós</a></li>
+                    <li class="nav-item"><a class="nav-link" id="btnFaleConosco">Fale
+                            Conosco</a>
+                    </li>
+                    <li class="nav-item mt-3">
+                        <a href="./UsuarioLogin.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder">Usuario</button>
+                        </a>
+                        <a href="./reserva.html">
+                            <button class="btn-reservar w-100">Reservar</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="../image/logo.png" alt="Logo da Clothean">
+            </a>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="quadrado">
+            <div class="conteiner">
+                <section class="Imagem-Lateral">
+                    <div class="imagemUsuario">
+                        <blockquote style="background-color: black;">
+
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section class="Formulario">
+                    <div class="Cadastro">
+                        <h1 class="Titulo"><b>Informações de Perfil</b></h1>
+                    </div>
+
+                    <div>
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-lg-10 position-relative">
+                                <img src="../image/IconNome12.png" alt="Icon Nome">
+                                <label for="TxtNovoNome" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control Campos" id="TxtNovoNome" required>
+                            </div>
+
+                            <div class="col-lg-10 position-relative">
+                                <img src="../image/imagem_12px.png" alt="Icon Email">
+                                <label for="TxtNovoEmail" class="form-label"><b>Email</b></label>
+                                <input type="email" class="form-control Campos" id="TxtNovoEmail" required>
+                            </div>
+
+                            <div class="col-lg-5 position-relative">
+                                <img src="../image/file.png" alt="Icon CPF">
+                                <label for="TxtNovoCpf" class="form-label"><b>CPF</b></label>
+                                <input type="text" class="form-control Campos" id="TxtNovoCpf" required maxlength="14">
+                            </div>
+
+                            <div class="col-lg-5 position-relative">
+                                <img src="../image/telephone-handle-silhouette.png" style=width:12px height:12px;
+                                    alt="Icon Telefone">
+                                <label for="TxtNovoTelefone" class="form-label"><b>Telefone</b></label>
+                                <input type="tel" class="form-control Cadastro Campos" id="TxtNovoTelefone" required
+                                    maxlength="16">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-5 position-relative">
+                                    <img src="../image/telephone-handle-silhouette.png" style=width:12px height:12px;
+                                        alt="Icon Telefone">
+                                    <label for="TxtPerfil" class="form-label"><b>Perfil</b></label>
+                                    <input type="tel" class="form-control Cadastro Campos" id="TxtPerfil" required
+                                        readonly>
+                                </div>
+                                <div class="col-lg-5 position-relative">
+                                    <img src="../image/padlock.png" style=width:12px; height:12px; alt="Icon Senha">
+                                    <label for="validationTooltip01" class="form-label"><b>Senha</b></label>
+                                    <div class="ImagemEye">
+                                        <img src="../image/eye.png" alt="Ver Senha" class="EyeAberto"
+                                            id="ImgOlhoAbertoS" ;>
+                                        <img src="../image/hidden.png" alt="Ocutar Senha" class="EyeFechado esconder"
+                                            id="ImgOlhoFechadoS">
+                                        <input type="password" class="form-control Cadastro Campos placeSenha"
+                                            id="TxtSenha" required
+                                            placeholder="Não digite para senha atual">
+                                    </div>
+                                    <label for="TxtSenha" class="Descricao">
+                                        <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _),
+                                            letra
+                                            maiúscula, minúscula e número</p>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="row linhaBotoes">
+                            <div class="col-lg-3 position-relative locBotaoLogin">
+                                <button type="" class="btn btn-warning BotaoUsuario"
+                                    id="BtnConsultar"><b>Consultar</b></button>
+                            </div>
+                            <div class="col-lg-3 position-relative locBotaoLogin">
+                                <button type="" class="btn btn-danger BotaoUsuario"
+                                    id="BtnExcluir"><b>Excluir</b></button>
+                            </div>
+                            <div class="col-lg-3 position-relative locBotaoLogin">
+                                <button type="" class="btn btn-primary BotaoUsuario"
+                                    id="BtnEditar"><b>Editar</b></button>
+                            </div>
+                            <div class="col-lg-3 position-relative locBotaoLogin">
+                                <button type="" class="btn btn-primary BotaoUsuario"
+                                    id="BtnSair"><b>Sair</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-contato">
+                <h3>Fale conosco</h3>
+                <address>
+                    <div class="contato">
+                        <img src="../image/phone-call.png" alt="Telefone para contato (11) 99999-9999">
+                        <a href="11999999999">(11) 99999-9999</a>
+                    </div>
+                    <div class="email">
+                        <img src="../image/email.png" alt="email SAC: clotheansac@clothean.com">
+                        <a
+                            href="mailto:otavio.augusttocc@gmail.com?subject=Contato com a Empresa&body=Olá, isso é um teste">clotheansac@clothean.com</a>
+                    </div>
+                </address>
+            </section>
+
+            <nav class="footer-col" aria-label="Nossas redes sociais">
+                <h3>Nos Siga</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg"
+                            alt="Logo facebook" class="face"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            alt="LinkedIn"></a>
+                </div>
+            </nav>
+
+        </div>
+
+        <section class="footer-barra-final">
+            <small>© 2026 Clothean</small>
+        </section>
+    </footer>
+
+    <div class="modalConteiner" id="ModalConteiner">
+        <div class="Modal">
+            <h1 class="TituloModal"><b>Mensagem</b></h1>
+
+            <section>
+                <form id="formularioContato" method="post">
+                    <div>
+                        <form class="col-lg-12 needs-validation" novalidate>
+                            <div class="col-lg-12 position-relative" style="margin-bottom: 5%; margin-top: 3%;">
+                                <img src="../image/IconNome12.png" alt="Icon Nome">
+                                <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
+                                <input type="text" class="form-control" id="TxtNomeModal"
+                                    placeholder="Fulano da Silva Junior">
+                            </div>
+
+                            <div class="row" style="margin-bottom: 5%;">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="../image/imagem_12px.png" alt="Icon Email">
+                                        <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                        <input type="email" class="form-control texto Campos"
+                                            placeholder="fulano@gmail.com" id="TxtEmailModal">
+                                    </div>
+
+                                    <div class="col-lg-6 position-relative">
+                                        <img src="../image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                        <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
+                                        <input type="text" class="form-control" placeholder="Titulo do Email"
+                                            id="TxtAssunto">
+                                    </div>
+
+                            </div>
+
+                            <div class="col-lg-12 position-relative">
+                                <img src="../image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
+                                <label for="validationTooltip01" class="form-label"><b>Mensagem</b></label>
+                                <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                    id="TxtMensagemModal"></textarea>
+                            </div>
+
+                            <div class="botoes" style="padding-top: 5%;">
+                                <button class="button" id="enviar" type="submit">Enviar</button>
+                                <button class="button" id="fechar">Fechar</button>
+                            </div>
+                        </form>
+                </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
