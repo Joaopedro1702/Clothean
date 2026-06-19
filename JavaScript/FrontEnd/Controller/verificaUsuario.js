@@ -1,19 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const btnLogin = document.getElementById("btnLogin");
-    const btnUsuario = document.getElementById("btnUsuario")
+    const btnLoginUsuario = document.getElementById("btnLoginUsuario");
+    const btnLoginAdmin = document.getElementById("btnLoginAdmin");
+    const btnUsuario = document.getElementById("btnContaUsuario");
+    const btnAdmin = document.getElementById("btnContaAdmin");
+    
+    if (!btnLoginUsuario || !btnUsuario || !btnLoginAdmin || !btnAdmin){
+        return;
+    }
+
     const token = localStorage.getItem("token");
-    const nome = localStorage.getItem("usuarioNome");
+    const perfil = localStorage.getItem("usuarioPerfil");
 
-    console.log(token)
-    console.log(nome)
-    console.log(btnUsuario)
-    console.log(btnLogin)
+    const estaLogado = token !== null && token !== undefined && token !== "";
 
-    if (token !== null || token !== undefined || token !== "") {
-        // Se está logado, transforma o botão no botão de perfil
-        mudarLayoutLogin(btnLogin, btnUsuario, true)
+    if (estaLogado) {
+     const perfilNormalizado = perfil ? perfil.toLowerCase() : "";
+
+        // Verifique se a página atual é a index.html. Se for, precisa colocar o "HTML/" na frente do caminho
+        const naRaiz = !window.location.pathname.includes("/HTML/");
+
+        btnAdmin.href = naRaiz ? "./HTML/UsuarioAdmin.html" : "./UsuarioAdmin.html";
+        btnUsuario.href = naRaiz ? "./HTML/UsuarioComum.html" : "./UsuarioComum.html";
+        
+        // Passa os elementos mapeados e o estado de login para o layout tratar visualmente
+        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnLoginAdmin, btnAdmin, estaLogado, perfilNormalizado);
     } else {
-        // Se NÃO está logado, garante que ele seja o botão de login
-        mudarLayoutLogin(btnLogin, btnUsuario, false)
+        // Se não estiver logado, passa falso para restaurar os botões de Login padrão
+        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnLoginAdmin, btnAdmin, false, "");
     }
 });

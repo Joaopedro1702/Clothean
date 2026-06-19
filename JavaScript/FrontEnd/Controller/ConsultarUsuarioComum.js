@@ -2,6 +2,8 @@ const btnConsultarUsu = document.getElementById("BtnConsultar");
 const btnEditarUsu = document.getElementById("BtnEditar");
 const btnExcluirUsu = document.getElementById("BtnExcluir");
 
+let dadosOriginaisUsuario = null;
+
 const txtNome = document.getElementById("TxtNovoNome");
 const txtEmail = document.getElementById("TxtNovoEmail");
 const txtCPF = document.getElementById("TxtNovoCpf");
@@ -28,6 +30,13 @@ function consultaUsuario() {
                 txtCPF.value = usuario.cpf, 
                 txtTelefone.value = usuario.telefone, 
                 txtPerfil.value = usuario.perfil
+
+                dadosOriginaisUsuario = {
+                    nome: usuario.nome,
+                    email: usuario.email,
+                    cpf: usuario.cpf,
+                    telefone: usuario.telefone
+                }
             })
         }
     });

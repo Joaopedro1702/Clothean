@@ -5,7 +5,6 @@ const txtNovoCPF = document.getElementById("TxtNovoCpf");
 const txtNovoTelefone2 = document.getElementById("TxtNovoTelefone");
 const txtNovaSenha = document.getElementById("TxtNovaSenha");
 
-
 function editarUsuario() {
 
     const strNovoNome = document.getElementById("TxtNovoNome").value.trim()
@@ -15,7 +14,10 @@ function editarUsuario() {
     const strNovaSenha = document.getElementById("TxtSenha").value.trim();
     const strPerfil = document.getElementById("TxtPerfil").value.trim();
 
-    if (isNull(strNovoNome) === true || isNull(strNovoEmail || isNull(strNovoCpf) || isNull(strNovoTelefone) || isNull(strNovaSenha))) {
+    if (!dadosOriginaisUsuario) {
+        mensagemErro("Por favor, clique em consultar antes para não colocar informações iguais")
+    }
+    else if (isNull(strNovoNome) === true || isNull(strNovoEmail || isNull(strNovoCpf) || isNull(strNovoTelefone) || isNull(strNovaSenha))) {
         mensagemErro("Todos os campos precisam estar preenchidos!");
     }
     else if (validarTelefone(strNovoTelefone) === false) {
@@ -26,6 +28,9 @@ function editarUsuario() {
     }
     else if (validarCpf(strNovoCpf) === false) {
         mensagemErro("Cpf inválido!");
+    }
+    else if (strNovoNome === dadosOriginaisUsuario.nome && strNovoEmail === dadosOriginaisUsuario.email && strNovoCpf === dadosOriginaisUsuario.cpf && strNovoTelefone === dadosOriginaisUsuario.telefone) {
+        mensagemErro("Dados iguais aos antigos, não é necessário editar!");
     }
     else {
         const id = btnEditar.dataset.id;

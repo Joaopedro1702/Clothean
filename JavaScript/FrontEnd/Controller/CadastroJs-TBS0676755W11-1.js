@@ -12,7 +12,6 @@
 // - Colocar a api para validar o email digitado como existente: https://www.npmjs.com/package/verifalia-widget: Não obrigatório agora
 // - Colocar a api para validar o cpf digitado como existente: Não obrigatório agora 
 
-
 function cadastrar(event) {
     event.preventDefault();
     let strNome = document.getElementById("TxtNome").value.trim();
@@ -75,10 +74,6 @@ function cadastrar(event) {
 
                     mensagemSucesso("Usuario cadastrado com sucesso! Seja bem-vindo " + strNome + "!"); // Mostra a mensagem
                     clearCadastro();
-
-                    setTimeout(() => {
-                        window.location.href = "./Index.html"
-                    }, 2000);
                 })
                 .catch(erro => {
                     console.error("Erro na requisição de cadastro:", erro);

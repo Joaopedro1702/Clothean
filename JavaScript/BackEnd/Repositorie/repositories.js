@@ -14,15 +14,20 @@ exports.listar = (callback) => {
 };
 
 exports.inserirUsuario = (usuario, callback) => {
-    const sql = "INSERT INTO Tbl_Usuario (nome, email, cpf, telefone, senha) VALUES (?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO Tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES (?, ?, ?, ?, ?, ?)";
 
-    conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha], (erro, resultado) => {
-        if (erro) {
-            throw erro;
+    // Se o frontend não mandou perfil, definimos como 'Usuario' por padrão
+    const perfil = usuario.perfil || 'Usuario';
+
+    conexao.query(
+        sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha, perfil], (erro, resultado) => {
+            if (erro) {
+                console.error("Erro real dentro do MySQL:", erro.message);
+                return callback(erro, null); // Passa o erro para o service
+            }
+            callback(null, resultado); // Sucesso absoluto
         }
-
-        callback(resultado);
-    });
+    );
 };
 
 exports.excluirUsuario = (id, callback) => {
@@ -51,7 +56,7 @@ exports.editarUsuario = (usuario, callback) => {
 };
 
 exports.buscaEmail = (email, callback) => {
-    const sql = "SELECT * FROM tbl_Usuario WHERE email = ?";
+    const sql = "SELECT * FROM Tbl_Usuario WHERE email = ?";
 
     conexao.query(sql, [email], (erro, resultado) => {
         if (erro) {

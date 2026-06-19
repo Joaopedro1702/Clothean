@@ -14,8 +14,8 @@ exports.cadastrar = (usuario, callback) => {
 
     usuario.senha = bcrypt.hashSync(usuario.senha, saltRounds);
 
-    repositories.inserirUsuario(usuario, (resultado) => {
-        callback(resultado)
+    repositories.inserirUsuario(usuario, (erro, resultado) => {
+        callback(erro, resultado)
     });
 };
 
@@ -38,15 +38,15 @@ exports.editarAdm = (usuario, callback) => {
     repositories.editarAdm(usuario, callback);
 };
 
-exports.loginUsuario = (usuario, callback) => {
-    console.log("--> 1. Dados recebidos no Service:", usuario);
+exports.loginUsuario = (usuario, perfil, callback) => {
+    console.log("--> 1. Dados recebidos no Service:", usuario, "Perfil esperado:", perfilEsperado);
 
     repositories.buscaEmail(usuario.email, (usuarioEncontrado) => {
         console.log("--> 2. Retorno do Banco de Dados:", usuarioEncontrado);
 
         if (!usuarioEncontrado) {
             console.log("--> BLOQUEIO: Usuário não foi encontrado no banco.");
-            return callback({ erro: "Email ou Senha inválidos!" });
+            return callback({ erro: "Email ou Senha inválidos! 1" });
         }
 
         console.log("--> 3. Comparando Senha digitada:", usuario.senha, "com Senha do Banco:", usuarioEncontrado.senha);

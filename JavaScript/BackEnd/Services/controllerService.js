@@ -12,8 +12,13 @@ exports.listar = (req, res) => {
 
 exports.cadastrar = (req, res) => {
     const usuario = req.body;
-    modelBackSer.cadastrar(usuario, () => {
-        res.status(201).json({
+    modelBackSer.cadastrar(usuario, (erro, resultado) => {
+        if(erro) {
+            return res.status(400).json({
+                mensagem: "Erro ao gravar no banco de dados: " + erro.message
+            });
+        }
+        return res.status(201).json({
             mensagem: "Usuario Inserido com Sucesso!"
         });
     });
@@ -108,7 +113,12 @@ exports.login = (req, res) => {
         return res.status(200).json({
             mensagem: "Login efetuado com Sucesso!",
             token: token,
-            usuario: usuario
+            usuario: {
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email,
+                perfil: usuario.perfil
+            }
         });
     });
 };

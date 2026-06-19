@@ -14,6 +14,8 @@ router.post("/usuarios/login", validation.validarLogin, controllerBack.login);
 // Rotas ADM:
 router.put("/adm/:id", controllerBack.editarAdm)
 router.delete("/adm/:id", controllerBack.excluir)
+router.post("/adm/login", validation.validarLogin, controllerBack.login);
+
 
 
 module.exports = router;

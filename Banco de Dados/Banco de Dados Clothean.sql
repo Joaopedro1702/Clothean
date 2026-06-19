@@ -5,7 +5,7 @@ CREATE TABLE tbl_Usuario
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(255) NOT NULL,
-	email VARCHAR(255) NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL,
 	cpf CHAR(14) NOT NULL,
 	telefone CHAR(15) NOT NULL,
 	senha VARCHAR(255) NOT NULL,
@@ -13,8 +13,7 @@ CREATE TABLE tbl_Usuario
 );
 
 INSERT INTO Tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES 
-#('Otávio', 'otavio.augusttocc@gmail.com', '50916371840', '(11) 99218-1213', 'Ota_01');
-('Otávio', 'otavio.augusttocc@gmail.com', '50916371840', '(11) 99218-1213', 'Ota_01', 'Adm');
+('Otávio', 'otav@gmail.com', '50916371840', '(11) 99218-1213', 'Ota_01', 'Adm');
 
 SELECT * FROM tbl_Usuario
 WHERE email = 'otavio.augusttocc@gmail.com';

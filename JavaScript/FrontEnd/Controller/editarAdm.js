@@ -14,7 +14,8 @@ function editarUsuarios() {
     const txtNovoEmail = document.getElementById("novoEmail").value.trim();
     const txtNovoCpf = document.getElementById("novoCPF").value.trim();
     const txtNovoTelefone = document.getElementById("novoCPF").value.trim();
-    const txtNovoPerfil = document.getElementById("opcoes").value.trim();
+    const NovoPerfil = document.getElementById("opcoes");
+    const TxtNovoPerfil = NovoPerfil.options[NovoPerfil.selectedIndex].text;
 
     if (isNull(txtNovoNome) === true || isNull(txtNovoCpf) === true || isNull(txtNovoTelefone) === true) {
         mensagemErro("Todos os campos precisam estar preenchidos!");
@@ -42,14 +43,13 @@ function editarUsuarios() {
                 email: txtNovoEmail,
                 cpf: txtNovoCpf,
                 telefone: txtNovoTelefone,
-                perfil: txtNovoPerfil
+                perfil: TxtNovoPerfil
             })
         })
             .then(response => response.json())
             .then(dados => {
-                // Se o servidor deletou com sucesso, remove a linha da tela na hora
                 mensagemSucesso("Usuario Editado com Sucesso!");
-                obterUsuarios();
+                consultaUsuarios();
             })
             .catch(erro => {
                 console.log(erro);

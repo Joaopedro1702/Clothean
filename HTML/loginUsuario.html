@@ -31,7 +31,7 @@
     <!--== JavaScript ==-->
     <!--Model-->
     <script src="../JavaScript/FrontEnd/Model/validacoes.js" defer></script>
-    
+
     <!--View-->
     <script src="../JavaScript/FrontEnd/View/funcoesModal.js" defer></script>
     <script src="../JavaScript/FrontEnd/View/mostrarMensagem.js" defer></script>
@@ -67,12 +67,26 @@
                     <li class="nav-item"><a class="nav-link" id="btnFaleConosco">Fale
                             Conosco</a></li>
                     <li class="nav-item mt-3">
-                        <a href="./login.html">
-                            <button type="button" class="btn btn-outline-primary btnlogin" id="btnLogin">Login</button>
+                        <a href="./loginUsuario.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginUsuario">Login
+                                Usuario</button>
                         </a>
-                        <a href="./reserva.html">
+                        <a href="./loginADM.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario" id="btnLoginAdmin">Login
+                                Adm</button>
+                        </a>
+                        <a href="./UsuarioAdmin.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaAdmin">Usuario Admin</button>
+                        </a>
+                        <a href="./UsuarioComum.html">
+                            <button type="button" class="btn btn-outline-primary btnUsuario esconder"
+                                id="btnContaUsuario">Usuario</button>
+                        </a>
+                        <a href="reserva.html">
                             <button class="btn-reservar w-100">Reservar</button>
                         </a>
+
                     </li>
                 </ul>
             </div>
@@ -184,7 +198,8 @@
                                     </div>
 
                                     <div class="col-lg-6 position-relative">
-                                        <img src="../image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                        <img src="../image/title.png" alt="Icon Titulo"
+                                            style="width: 12px; height: 12px;">
                                         <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
                                         <input type="text" class="form-control" placeholder="Titulo do Email"
                                             id="TxtAssunto">

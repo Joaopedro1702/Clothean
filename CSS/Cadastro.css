@@ -1,7 +1,7 @@
 .Ocultar {
-    display: none;
+    display: none !important;
 }
 
 .Mostrar {
-    display: block;
+    display: block !important;
 }
