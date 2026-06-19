@@ -7,15 +7,16 @@
     "postinstall": "cd JavaScript/server && npm install",
     "start": "cd JavaScript/server && node server.js"
   },
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "firebase": "^12.14.0",
-    "firebase-admin": "^13.10.0",
-    "jsonwebtoken": "^9.0.3",
-    "mysql2": "^3.22.5"
+    "dependencies": {
+      "bcrypt": "^6.0.0",
+      "bcryptjs": "^2.4.3",
+      "cookie-parser": "^1.4.7",
+      "cors": "^2.8.6",
+      "dotenv": "^17.4.2",
+      "express": "^5.2.1",
+      "firebase": "^12.14.0",
+      "firebase-admin": "^13.10.0",
+      "jsonwebtoken": "^9.0.3",
+      "mysql2": "^3.22.5"
   }
 }
