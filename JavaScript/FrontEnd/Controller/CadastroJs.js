@@ -11,7 +11,7 @@
 // - Colocar api para fazer login com o google e o facebook:
 // - Colocar a api para validar o email digitado como existente: https://www.npmjs.com/package/verifalia-widget: Não obrigatório agora
 // - Colocar a api para validar o cpf digitado como existente: Não obrigatório agora 
-
+// const baseUrl = "https://clothean-r1xw.onrender.com/"
 
 function cadastrar(event) {
     event.preventDefault();
@@ -49,7 +49,7 @@ function cadastrar(event) {
             mensagemErro("O telefone não foi digitado corretamente, verifique");
         }
         else {
-            fetch("http://localhost:3000/usuarios", {
+            fetch(`${baseUrl}usuarios`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

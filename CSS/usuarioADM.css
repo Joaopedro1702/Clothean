@@ -14,3 +14,19 @@
     margin-left: 10%;
 
 }
+
+.Botoes {
+    display: flex;
+    justify-content: end;
+    width: 7%;
+    background-color: red;
+}
+
+#BtnSair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-left: 90%;
+    margin-right: 3%;
+}

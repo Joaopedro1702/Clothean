@@ -11,64 +11,17 @@ body {
     padding: 20px;
 }
 
-/* ============ HEADER ============ */
-header {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-container img {
-    max-height: 60px;
-    width: auto;
-}
-
-.logo-text h1 {
-    font-size: 24px;
-    color: #2BA2DD;
-    margin: 0;
-    font-weight: 700;
-}
-
-.logo-text p {
-    font-size: 12px;
-    color: #7CBF5C;
-    margin: 0;
-}
-
-.user-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.user-icon {
-    width: 40px;
-    height: 40px;
-    background: #BDFFA6;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 20px;
-}
-
 /* ============ CONTAINER PRINCIPAL ============ */
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 130px;
 }
 
 /* ============ PROGRESS BAR ============ */
@@ -261,7 +214,7 @@ textarea {
 
 /* ============ SIDEBAR ============ */
 .summary-section {
-    
+
     background: white;
     padding: 30px;
     border-radius: 20px;

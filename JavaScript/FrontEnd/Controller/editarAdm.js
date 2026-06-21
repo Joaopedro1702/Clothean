@@ -33,7 +33,7 @@ function editarUsuarios() {
         const id = btnEditarModal.dataset.idUsuarioAtual;
         console.log(id)
         
-        fetch(`http://localhost:3000/adm/${id}`, {
+        fetch(`${baseUrl}/adm/{id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
