@@ -26,6 +26,10 @@ async function loginAdmin(e) {
 
         localStorage.setItem("adminLogado", JSON.stringify(data.usuario));
         alert(data.mensagem);
+
+        if(data.usuario.perfil === "admin"){
+            window.location.href = "#"
+        }
     } catch (error) {
         alert(error.message);
     } finally {
