@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const db = require("../conexao");
 const { verificarToken } = require("../autorizacao");
 
-router.post("/cadastro", verificarToken, async (req, res) => {
+router.post("/cadastro", async (req, res) => {
     try {
         const { nome, email, cpf, telefone, senha } = req.body;
 
