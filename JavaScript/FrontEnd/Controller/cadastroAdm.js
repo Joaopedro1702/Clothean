@@ -29,7 +29,7 @@ async function enviar(event) {
     try {
         const response = await fetch("https://clothean-g1s8.onrender.com/admin/cadastro", {
             method: "POST",
-            credentials: true,
+            credentials: "include",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome, email, cpf, telefone, senha })
         });
