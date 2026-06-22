@@ -28,7 +28,7 @@ async function loginAdmin(e) {
         alert(data.mensagem);
 
         if(data.usuario.perfil === "admin"){
-            window.location.href = "#"
+            window.location.href = "UsuarioAdmin.html"
         }
     } catch (error) {
         alert(error.message);
