@@ -55,9 +55,12 @@ router.post("/", async (req, res) => {
             {expiresIn: '1h'}
         );
 
+        const isProduction = process.env.NODE_ENV === "production" || process.env.RENDER;
+
         res.cookie('token', token, {
             httpOnly: true,
-            secure: false, //QUANDO FOR PRA PRODUÇÃO MUDAR PRA TRUE
+            secure: isProduction,
+            sameSite: isProduction ? "none" : "lax",
             maxAge: 3600000 //1 HORA
         })
 
@@ -101,9 +104,12 @@ router.post("/cliente", async (req,res) => {
         
         );
 
+        const isProduction = process.env.NODE_ENV === "production" || process.env.RENDER;
+
         res.cookie('token', token, {
             httpOnly: true,
-            secure: false,
+            secure: isProduction,
+            sameSite: isProduction ? "none" : "lax",
             maxAge: 3600000
         });
 

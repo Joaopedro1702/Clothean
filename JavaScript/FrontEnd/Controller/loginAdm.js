@@ -11,6 +11,7 @@ async function loginAdmin(e) {
     try {
         const response = await fetch("https://clothean-g1s8.onrender.com/login", {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json"
             },
