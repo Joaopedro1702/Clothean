@@ -5,7 +5,25 @@ const bcrypt = require('bcrypt');
 const db = require("../BackEnd/DataBase/conexao");
 const { verificarToken } = require("../middleware/autorizacao");
 
-router.post("/cadastro", verificarToken,async (req, res) => {
+async function permitirPrimeiroAdmin(req, res, next) {
+    try {
+        const [admins] = await db.query(
+            "SELECT id FROM tbl_Usuario WHERE perfil = ? LIMIT 1",
+            ["admin"]
+        );
+
+        if (admins.length === 0) {
+            return next();
+        }
+
+        return verificarToken(req, res, next);
+    } catch (error) {
+        console.error("Erro ao verificar administradores:", error);
+        return res.status(500).json({ error: "Erro ao verificar administradores." });
+    }
+}
+
+router.post("/cadastro", permitirPrimeiroAdmin, async (req, res) => {
     try {
         const { nome, email, cpf, telefone, senha } = req.body;
 
