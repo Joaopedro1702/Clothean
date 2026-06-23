@@ -5,7 +5,7 @@ function efeturarLogout() {
     localStorage.removeItem("usuarioPerfil");
 
     setTimeout(() => {
-       window.location.href("./index.html")     
+       window.location.href = "./index.html"     
     }, 2000);
 }
 

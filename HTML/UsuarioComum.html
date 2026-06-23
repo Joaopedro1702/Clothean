@@ -24,6 +24,10 @@
     <!--EmailJS-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         defer></script>
+    
+        <!--JWToken-->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js" defer></script>
+    
     <!--CSS-->
     <link rel="stylesheet" href="../CSS/stylePadrao.css">
     <link rel="stylesheet" href="../CSS/styleResposivo.css">
@@ -32,8 +36,8 @@
     <!--JavaScript-->
 
     <!--Model-->
-    <script src="../JavaScript/FrontEnd/Model/validacoes.js"></script>
-    <script src="../JavaScript/FrontEnd/Model/obterUsuarios.js"></script>
+    <script src="../JavaScript/FrontEnd/Model/validacoes.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Model/obterUsuarioEmail.js" defer></script>
 
     <!--View-->
     <script src="../JavaScript/FrontEnd/View/funcoesSenha.js" defer></script>
@@ -42,11 +46,14 @@
     <script src="../JavaScript/FrontEnd/View/apagarTexto.js" defer></script>
 
     <!--Controller-->
+    <script src="../JavaScript/FrontEnd/Controller/urlBase.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/acaoOlho.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/EditarUsuarioComum.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/ExcluirUsuariosComum.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/ConsultarUsuarioComum.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/verificaUsuario.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/SairUsuario.js" defer></script>
 
 
 </head>
@@ -74,7 +81,7 @@
                             Conosco</a>
                     </li>
                     <li class="nav-item mt-3">
-                        <a href="./UsuarioLogin.html">
+                        <a href="./UsuarioComum.html">
                             <button type="button" class="btn btn-outline-primary btnUsuario esconder">Usuario</button>
                         </a>
                         <a href="./reserva.html">
@@ -154,8 +161,7 @@
                                         <img src="../image/hidden.png" alt="Ocutar Senha" class="EyeFechado esconder"
                                             id="ImgOlhoFechadoS">
                                         <input type="password" class="form-control Cadastro Campos placeSenha"
-                                            id="TxtSenha" required
-                                            placeholder="Não digite para senha atual">
+                                            id="TxtSenha" required placeholder="Não digite para senha atual">
                                     </div>
                                     <label for="TxtSenha" class="Descricao">
                                         <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _),
@@ -180,8 +186,7 @@
                                     id="BtnEditar"><b>Editar</b></button>
                             </div>
                             <div class="col-lg-3 position-relative locBotaoLogin">
-                                <button type="" class="btn btn-primary BotaoUsuario"
-                                    id="BtnSair"><b>Sair</b></button>
+                                <button type="" class="btn btn-primary BotaoUsuario" id="BtnSair"><b>Sair</b></button>
                             </div>
                         </div>
                     </div>
@@ -251,7 +256,8 @@
                                     </div>
 
                                     <div class="col-lg-6 position-relative">
-                                        <img src="../image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                        <img src="../image/title.png" alt="Icon Titulo"
+                                            style="width: 12px; height: 12px;">
                                         <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
                                         <input type="text" class="form-control" placeholder="Titulo do Email"
                                             id="TxtAssunto">

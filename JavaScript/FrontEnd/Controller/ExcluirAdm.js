@@ -8,7 +8,7 @@ tabela.addEventListener("click", function (e) {
 
     const id = linha.dataset.id // Pegamos o Id guardado na linha
 
-    fetch(`${baseUrl}/adm/${id}`, {
+    fetch(`${baseUrl}adm/${id}`, {
         method: "DELETE"
     })
         .then(response => response.json())

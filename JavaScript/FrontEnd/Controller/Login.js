@@ -55,10 +55,11 @@ function logar(event) {
                     setTimeout(() => {
                         if (dados.usuario.perfil === "Admin" || dados.usuario.perfil === "Adm") {
                             window.location.href = "./UsuarioAdmin.html"
+
                         }
                         else if (dados.usuario.perfil === "Usuario") {
-                              window.location.href = "./index.html"
-                          
+                            window.location.href = "./UsuarioComum.html"
+
                         }
                     }, 2000);
                 })

@@ -14,7 +14,7 @@ BtnExcluir.addEventListener("click", function (e) {
     }
 
     else {
-        fetch(`${baseUrl}usuarios/{id}`, {
+        fetch(`${baseUrl}usuarios/${id}`, {
             method: "DELETE"
         })
             .then(response => response.json())

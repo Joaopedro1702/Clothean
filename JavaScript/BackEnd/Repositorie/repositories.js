@@ -55,10 +55,26 @@ exports.editarUsuario = (usuario, callback) => {
     });
 };
 
-exports.buscaEmail = (email, callback) => {
+exports.buscaUsuarioComumId= (id, callback) => {
+    const sql = "SELECT * FROM tbl_Usuario WHERE id = ?";
+
+    conexao.query(sql, [id], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        if (resultado.length === 0) {
+            return callback(null);
+        }
+
+        callback(resultado[0]);
+    });
+};
+
+exports.buscaEmail = (usuario, callback) => {
     const sql = "SELECT * FROM tbl_Usuario WHERE email = ?";
 
-    conexao.query(sql, [email], (erro, resultado) => {
+    conexao.query(sql, [usuario.email], (erro, resultado) => {
         if (erro) {
             throw erro;
         }

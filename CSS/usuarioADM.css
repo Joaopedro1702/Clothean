@@ -1,32 +1,89 @@
-.Centro {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin-left: 10%;
-    width: 70%;
-    height: 100%;
-    margin-bottom: 5%;
+body {
+    background-color: #f4f6f9; /* Cinza bem sutil de fundo para destacar os elementos */
 }
 
-.Lista {
-    position: relative;
-    margin-top: 2%;
-    margin-left: 10%;
-
+/* Novo container da Tabela em estilo Card Flutuante */
+.tabela-card-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra elegante e bem suave */
+    border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.Botoes {
-    display: flex;
-    justify-content: end;
-    width: 7%;
-    background-color: red;
+/* Estilização do cabeçalho da tabela */
+.table thead tr {
+    background-color: #f8f9fa;
 }
 
+.table th {
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Linhas e dados da tabela */
+.table td {
+    padding: 1rem;
+    color: #495057;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #efefef;
+}
+
+/* Ajustes finos nos botões padrão que entram dinamicamente */
+.table .btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Botão Excluir mais elegante (Tons pastéis/fechados) */
+.table .btn-danger, .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Botão Editar condizente com a paleta do logo */
+.table .btn-info, .btn-info {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #ffffff !important;
+}
+
+/* Botão Sair reposicionado */
 #BtnSair {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    margin-left: 90%;
-    margin-right: 3%;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 0.25rem 1rem;
+}
+
+/* Suavização Crítica do Footer (Removendo o verde limão berrante) */
+footer {
+    background-color: #ffffff !important; /* Branco puro corporativo */
+    border-top: 1px solid #e5e7eb;
+    color: #374151 !important;
+    margin-top: 5rem;
+}
+
+.footer-container h3 {
+    color: #1f2937 !important;
+    font-weight: 600;
+}
+
+.footer-contato a, .footer-contato address {
+    color: #4b5563 !important;
+    text-decoration: none;
+}
+
+.footer-barra-final {
+    background-color: #f3f4f6 !important; /* Barra final em cinza neutro */
+    color: #6b7280 !important;
+    border-top: 1px solid #e5e7eb;
 }

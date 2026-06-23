@@ -1,1 +1,1 @@
-const baseUrl = "https://clothean-r1xw.onrender.com/"
+const baseUrl = "https://clothean-r1xw.onrender.com"

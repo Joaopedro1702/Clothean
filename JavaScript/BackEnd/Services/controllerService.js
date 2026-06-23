@@ -10,10 +10,17 @@ exports.listar = (req, res) => {
     })
 }
 
+exports.listarId = (req, res) => {
+    const IdUrl = parseInt(req.params.id);    
+    modelBackSer.listarUsuarioId(IdUrl, (resultado) => {
+        res.json(resultado);
+    })
+}
+
 exports.cadastrar = (req, res) => {
     const usuario = req.body;
     modelBackSer.cadastrar(usuario, (erro, resultado) => {
-        if(erro) {
+        if (erro) {
             return res.status(400).json({
                 mensagem: "Erro ao gravar no banco de dados: " + erro.message
             });
@@ -34,8 +41,8 @@ exports.excluir = (req, res) => {
 };
 
 exports.editar = (req, res) => {
-    const idUrl = parseInt(req.params.id); 
-    const dadosUsuario = req.body; 
+    const idUrl = parseInt(req.params.id);
+    const dadosUsuario = req.body;
     dadosUsuario.id = idUrl;
 
     if (!dadosUsuario.id) {
@@ -45,8 +52,8 @@ exports.editar = (req, res) => {
     modelBackSer.editar(dadosUsuario, (resultado) => {
         // Agora que sabemos que o afetado é 1, ele vai pular esse IF direto para o sucesso!
         if (resultado.affectedRows === 0) {
-            return res.status(404).json({ 
-                mensagem: "Não foi possível editar: Usuario não encontrado com o ID informado." 
+            return res.status(404).json({
+                mensagem: "Não foi possível editar: Usuario não encontrado com o ID informado."
             });
         }
 
@@ -58,8 +65,8 @@ exports.editar = (req, res) => {
 };
 
 exports.editarAdm = (req, res) => {
-    const idUrl = parseInt(req.params.id); 
-    const dadosUsuario = req.body; 
+    const idUrl = parseInt(req.params.id);
+    const dadosUsuario = req.body;
     dadosUsuario.id = idUrl;
 
     if (!dadosUsuario.id) {
@@ -69,8 +76,8 @@ exports.editarAdm = (req, res) => {
     modelBackSer.editarAdm(dadosUsuario, (resultado) => {
         // Agora que sabemos que o afetado é 1, ele vai pular esse IF direto para o sucesso!
         if (resultado.affectedRows === 0) {
-            return res.status(404).json({ 
-                mensagem: "Não foi possível editar: Usuario não encontrado com o ID informado." 
+            return res.status(404).json({
+                mensagem: "Não foi possível editar: Usuario não encontrado com o ID informado."
             });
         }
 
@@ -82,7 +89,7 @@ exports.editarAdm = (req, res) => {
 };
 
 exports.excluirAdm = (req, res) => {
-   const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id);
     modelBackSer.excluir(id, () => {
         res.status(201).json({
             mensagem: "Usuario Deletado com Sucesso!"
@@ -90,23 +97,23 @@ exports.excluirAdm = (req, res) => {
     });
 };
 
-exports.login = (req, res) => { 
-    const dadosUsuario = req.body; 
+exports.login = (req, res) => {
+    const dadosUsuario = req.body;
 
     modelBackSer.loginUsuario(dadosUsuario, (erro, usuario) => {
         // Agora que sabemos que o afetado é 1, ele vai pular esse IF direto para o sucesso!
         if (erro) {
-            return res.status(401).json({ 
-                mensagem: erro.erro 
+            return res.status(401).json({
+                mensagem: erro.erro
             });
         }
 
         const segredoJWT = "senhaToken";
 
         const token = jwt.sign(
-            {id: usuario.id, email: usuario.email, perfil: usuario.perfil, nome: usuario.nome},
+            { id: usuario.id, email: usuario.email, perfil: usuario.perfil, nome: usuario.nome },
             segredoJWT,
-            {expiresIn: "1h"}
+            { expiresIn: "1h" }
         )
 
         // O Node vai responder isso aqui para o seu Frontend:

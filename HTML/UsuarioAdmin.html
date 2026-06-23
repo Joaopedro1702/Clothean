@@ -47,9 +47,11 @@
     <script src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/addTabela.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/ConsultarAdm.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/LoginAdm.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/editarAdm.js" defer></script>
-    <script src="../JavaScript/FrontEnd/Controller/verificaAdm.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/ExcluirAdm.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/SairUsuario.js" defer></script>
+
 
 </head>
 
@@ -74,7 +76,7 @@
                     <li class="nav-item"><a class="nav-link" href="./index.html#sobre">Sobre nós</a></li>
 
                     <li class="nav-item mt-3">
-                        <a href="./UsuarioLogin.html">
+                        <a href="./UsuarioAdmin.html">
                             <button type="button" class="btn btn-outline-primary btnUsuario esconder">Usuario</button>
                         </a>
                         <a href="./reserva.html">
@@ -93,29 +95,36 @@
 
     </header>
 
-    <main>
+    <main class="container my-10">
         <section>
-            <h2 id="TituloTabela" class="Lista">Lista de Usuarios</h2>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 id="TituloTabela" class="m-0 fw-bold text-secondary">Painel de Administração</h2>
+                <div>
+                    <button class="btn btn-outline-danger btn-sm px-3" id="BtnSair">
+                        Sair
+                    </button>
+                </div>
+            </div>
 
-            <div class="Centro">
-                <table class="table">
-                    <thead>
-                        <tr class="Cabeçalho">
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">CPF</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">Perfil</th>
-                            <th scope="col">Excluir</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col"> <button class="btn btn-warning" id="BtnSair">Sair</button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-group-divider" id="CorpoTabela">
-                    </tbody>
-                </table>
+            <div class="tabela-card-container">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle m-0">
+                        <thead>
+                            <tr class="Cabeçalho">
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">CPF</th>
+                                <th scope="col">Telefone</th>
+                                <th scope="col">Perfil</th>
+                                <th scope="col" class="text-center">Excluir</th>
+                                <th scope="col" class="text-center">Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="CorpoTabela">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     </main>

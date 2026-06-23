@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const btnLoginUsuario = document.getElementById("btnLoginUsuario");
-    const btnLoginAdmin = document.getElementById("btnLoginAdmin");
     const btnUsuario = document.getElementById("btnContaUsuario");
     const btnAdmin = document.getElementById("btnContaAdmin");
     
-    if (!btnLoginUsuario || !btnUsuario || !btnLoginAdmin || !btnAdmin){
+    if (!btnLoginUsuario || !btnUsuario || !btnAdmin){
         return;
     }
 
@@ -23,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         btnUsuario.href = naRaiz ? "./HTML/UsuarioComum.html" : "./UsuarioComum.html";
         
         // Passa os elementos mapeados e o estado de login para o layout tratar visualmente
-        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnLoginAdmin, btnAdmin, estaLogado, perfilNormalizado);
+        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnAdmin, estaLogado, perfilNormalizado);
     } else {
         // Se não estiver logado, passa falso para restaurar os botões de Login padrão
-        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnLoginAdmin, btnAdmin, false, "");
+        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnAdmin, false, "");
     }
 });
