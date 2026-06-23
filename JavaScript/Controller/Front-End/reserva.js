@@ -127,7 +127,7 @@ async function preencherDadosUsuario(){
     }
 
     try{
-        const res = await fetch(`http://localhost:3002/ListaUsuarios/${id}`, {
+        const res = await fetch(`https://servclothean.onrender.com/ListaUsuarios`, {
             headers: {'Authorization': `Bearer ${token}`}
         });
 
