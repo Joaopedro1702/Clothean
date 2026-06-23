@@ -54,10 +54,10 @@ function bindPagamento() {
 
         try {
             // Servidor local do Mercado Pago
-            const urlPagamento = 'http://localhost:3000/criar_preferencia';
+            //const urlPagamento = 'http://localhost:3000/criar_preferencia';
 
             // Servidor publicado no Render - ativar depois
-            // const urlPagamento = 'https://servclothean.onrender.com/criar_preferencia';
+            const urlPagamento = 'https://servclothean.onrender.com/criar_preferencia';
 
             const response = await fetch(urlPagamento, {
                 method: 'POST',
