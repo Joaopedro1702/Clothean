@@ -1,42 +1,100 @@
+// Armazena os dados do sistema (Banco de Dados)
 const conexao = require("../DataBase/conexao");
 
-exports.listar = async (callback) => {
+exports.listar = (callback) => {
     const sql = "SELECT * FROM tbl_Usuario";
-    const [resultado] = await conexao.query(sql);
-    callback(resultado);
+
+    conexao.query(sql, (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        callback(resultado);
+    });
 };
 
-exports.inserirUsuario = async (usuario, callback) => {
-    const sql = "INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha) VALUES (?, ?, ?, ?, ?)";
-    const [resultado] = await conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha]);
-    callback(resultado);
+exports.inserirUsuario = (usuario, callback) => {
+    const sql = "INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, perfil) VALUES (?, ?, ?, ?, ?, ?)";
+
+    // Se o frontend não mandou perfil, definimos como 'Usuario' por padrão
+    const perfil = usuario.perfil || 'Usuario';
+
+    conexao.query(
+        sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha, perfil], (erro, resultado) => {
+            if (erro) {
+                console.error("Erro real dentro do MySQL:", erro.message);
+                return callback(erro, null); // Passa o erro para o service
+            }
+            callback(null, resultado); // Sucesso absoluto
+        }
+    );
 };
 
-exports.excluirUsuario = async (id, callback) => {
+exports.excluirUsuario = (id, callback) => {
     const sql = "DELETE FROM tbl_Usuario WHERE id = ?";
-    const [resultado] = await conexao.query(sql, [id]);
-    callback(resultado);
+
+    conexao.query(sql, [id], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        callback(resultado);
+    });
 };
 
-exports.editarUsuario = async (usuario, callback) => {
+
+exports.editarUsuario = (usuario, callback) => {
     const sql = "UPDATE tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, senha = ? WHERE id = ?";
-    const [resultado] = await conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha, usuario.id]);
-    callback(resultado);
+
+    conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.senha, usuario.id], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        callback(resultado);
+    });
 };
 
-exports.buscaEmail = async (email, callback) => {
+exports.buscaUsuarioComumId= (id, callback) => {
+    const sql = "SELECT * FROM tbl_Usuario WHERE id = ?";
+
+    conexao.query(sql, [id], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        if (resultado.length === 0) {
+            return callback(null);
+        }
+
+        callback(resultado[0]);
+    });
+};
+
+exports.buscaEmail = (usuario, callback) => {
     const sql = "SELECT * FROM tbl_Usuario WHERE email = ?";
-    const [resultado] = await conexao.query(sql, [email]);
 
-    if (resultado.length === 0) {
-        return callback(null);
-    }
+    conexao.query(sql, [usuario.email], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
 
-    callback(resultado[0]);
+        if (resultado.length === 0) {
+            return callback(null);
+        }
+
+        callback(resultado[0]);
+    });
 };
 
-exports.editarAdm = async (usuario, callback) => {
+exports.editarAdm = (usuario, callback) => {
     const sql = "UPDATE tbl_Usuario SET nome = ?, email = ?, cpf = ?, telefone = ?, perfil = ? WHERE id = ?";
-    const [resultado] = await conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.perfil, usuario.id]);
-    callback(resultado);
+
+    conexao.query(sql, [usuario.nome, usuario.email, usuario.cpf, usuario.telefone, usuario.perfil, usuario.id], (erro, resultado) => {
+        if (erro) {
+            throw erro;
+        }
+
+        callback(resultado);
+    });
 };

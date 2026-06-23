@@ -8,7 +8,7 @@ tabela.addEventListener("click", function (e) {
 
     const id = linha.dataset.id // Pegamos o Id guardado na linha
 
-    fetch(`https://clothean-g1s8.onrender.com/usuarios/${id}`, {
+    fetch(`${baseUrl}adm/${id}`, {
         method: "DELETE"
     })
         .then(response => response.json())
@@ -16,6 +16,7 @@ tabela.addEventListener("click", function (e) {
             // Se o servidor deletou com sucesso, remove a linha da tela na hora
             linha.remove();
             mensagemSucesso("Aluno removido!");
+            consultaUsuarios()
         })
         .catch(erro => {
             console.log(erro);

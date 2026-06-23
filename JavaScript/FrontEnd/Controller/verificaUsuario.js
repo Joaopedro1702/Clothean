@@ -1,55 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
     const btnLoginUsuario = document.getElementById("btnLoginUsuario");
-    const btnLoginAdmin = document.getElementById("btnLoginAdmin");
-    const btnContaUsuario = document.getElementById("btnContaUsuario");
-    const btnContaAdmin = document.getElementById("btnContaAdmin");
-    const btnSairUsuario = document.getElementById("btnSairUsuario");
+    const btnUsuario = document.getElementById("btnContaUsuario");
+    const btnAdmin = document.getElementById("btnContaAdmin");
+    
+    if (!btnLoginUsuario || !btnUsuario || !btnAdmin){
+        return;
+    }
 
     const token = localStorage.getItem("token");
-    const adminLogado = localStorage.getItem("adminLogado");
+    const perfil = localStorage.getItem("usuarioPerfil");
 
-    if (token) {
-        esconderElemento(btnLoginUsuario);
-        esconderElemento(btnLoginAdmin);
-        esconderElemento(btnContaAdmin);
-        mostrarElemento(btnContaUsuario);
-        mostrarElemento(btnSairUsuario);
-    } else if (adminLogado) {
-        esconderElemento(btnLoginUsuario);
-        esconderElemento(btnLoginAdmin);
-        esconderElemento(btnContaUsuario);
-        mostrarElemento(btnContaAdmin);
-        mostrarElemento(btnSairUsuario);
+    const estaLogado = token !== null && token !== undefined && token !== "";
+
+    if (estaLogado) {
+     const perfilNormalizado = perfil ? perfil.toLowerCase() : "";
+
+        // Verifique se a página atual é a index.html. Se for, precisa colocar o "HTML/" na frente do caminho
+        const naRaiz = !window.location.pathname.includes("/HTML/");
+
+        btnAdmin.href = naRaiz ? "./HTML/UsuarioAdmin.html" : "./UsuarioAdmin.html";
+        btnUsuario.href = naRaiz ? "./HTML/UsuarioComum.html" : "./UsuarioComum.html";
+        
+        // Passa os elementos mapeados e o estado de login para o layout tratar visualmente
+        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnAdmin, estaLogado, perfilNormalizado);
     } else {
-        mostrarElemento(btnLoginUsuario);
-        mostrarElemento(btnLoginAdmin);
-        esconderElemento(btnContaUsuario);
-        esconderElemento(btnContaAdmin);
-        esconderElemento(btnSairUsuario);
-    }
-
-    if (btnSairUsuario) {
-        btnSairUsuario.addEventListener("click", encerrarSessao);
+        // Se não estiver logado, passa falso para restaurar os botões de Login padrão
+        mudarLayoutLogin(btnLoginUsuario, btnUsuario, btnAdmin, false, "");
     }
 });
-
-function mostrarElemento(elemento) {
-    if (elemento) {
-        elemento.classList.remove("esconder");
-    }
-}
-
-function esconderElemento(elemento) {
-    if (elemento) {
-        elemento.classList.add("esconder");
-    }
-}
-
-function encerrarSessao() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("usuarioNome");
-    localStorage.removeItem("usuarioId");
-    localStorage.removeItem("adminLogado");
-
-    window.location.href = "index.html";
-}

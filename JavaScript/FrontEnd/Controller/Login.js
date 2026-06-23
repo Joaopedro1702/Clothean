@@ -24,7 +24,7 @@ function logar(event) {
             mensagemErro("Senha inválida!");
         }
         else {
-            fetch("https://clothean-g1s8.onrender.com/usuarios/login", {
+            fetch(`${baseUrl}usuarios/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -48,20 +48,24 @@ function logar(event) {
                     localStorage.setItem("token", dados.token);
                     localStorage.setItem("usuarioNome", dados.usuario.nome);
                     localStorage.setItem("usuarioId", dados.usuario.id);
+                    localStorage.setItem("usuarioPerfil", dados.usuario.perfil);
 
                     mensagemSucesso("Usuario Logado com sucesso! Seja bem-vindo " + dados.usuario.nome + "!"); // Mostra a mensagem
 
                     setTimeout(() => {
-                        if (dados.usuario.perfil === "Usuario") {
-                            window.location.href = "../../../HTML/UsuarioLogin.html"
+                        if (dados.usuario.perfil === "Admin" || dados.usuario.perfil === "Adm") {
+                            window.location.href = "./UsuarioAdmin.html"
+
                         }
-                        else if (dados.usuario.perfil === "Admin") {
-                            window.location.href = "../../../HTML/UsuarioAdmin.html"
+                        else if (dados.usuario.perfil === "Usuario") {
+                            window.location.href = "./UsuarioComum.html"
+
                         }
                     }, 2000);
                 })
 
                 .catch(erro => {
+                    console.log(erro)
                     mensagemErro(erro.mensagem);
                 });
         }
@@ -69,8 +73,8 @@ function logar(event) {
 }
 
 function clearLogin() {
-    const txtEmail = document.getElementById("floatingInput");
-    const txtSenha = document.getElementById("floatingPassword");
+    const txtEmail = document.getElementById("txtEmail");
+    const txtSenha = document.getElementById("txtSenha");
 
     clear(txtEmail);
     clear(txtSenha);
@@ -101,13 +105,3 @@ btnImgOlhoFechadoLogin.addEventListener("click", function () {
     mostrarSenha(btnImgOlhoAbertoLogin);
 })
 
-/*document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("token");
-    const perfil = localStorage.getItem("usuarioPerfil");
-
-    // Se não tiver token OU o perfil não for de administrador, expulsa o usuário
-    if (!token || perfil === "Admin") {
-        alert("Acesso negado! Esta área é exclusiva para o Usuário.");
-        window.location.href = "login.html"; // Chuta de volta pro login
-    }
-});*/

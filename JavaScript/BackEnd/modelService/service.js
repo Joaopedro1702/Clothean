@@ -9,13 +9,19 @@ exports.listar = (callback) => { // req: O que o cliente pediu, como parâmetros
     }); // Variável que contém o array gerado pela função
 }
 
+exports.listarUsuarioId = (id, callback) => { // req: O que o cliente pediu, como parâmetros, header e body ; res: O que o servidor vai responder 
+    repositories.buscaUsuarioComumId(id, (resultado) => {
+        callback(resultado)
+    }); // Variável que contém o array gerado pela função
+}
+
 exports.cadastrar = (usuario, callback) => {
     const saltRounds = 10;
 
     usuario.senha = bcrypt.hashSync(usuario.senha, saltRounds);
 
-    repositories.inserirUsuario(usuario, (resultado) => {
-        callback(resultado)
+    repositories.inserirUsuario(usuario, (erro, resultado) => {
+        callback(erro, resultado)
     });
 };
 
@@ -38,7 +44,7 @@ exports.editarAdm = (usuario, callback) => {
     repositories.editarAdm(usuario, callback);
 };
 
-exports.loginUsuario = (usuario, callback) => {
+exports.loginUsuario = (usuario,  callback) => {
     console.log("--> 1. Dados recebidos no Service:", usuario);
 
     repositories.buscaEmail(usuario.email, (usuarioEncontrado) => {

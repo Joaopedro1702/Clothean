@@ -9,15 +9,21 @@ BtnExcluir.addEventListener("click", function (e) {
     if (id === undefined) {
         mensagemErro("Não tem nenhum Usuario cadastrado no servidor ainda!");
     }
+    if (!dadosOriginaisUsuario) {
+        mensagemErro("Por favor, clique em consultar antes para não colocar informações iguais")
+    }
 
     else {
-        fetch(`https://clothean-g1s8.onrender.com/usuarios/${id}`, {
+        fetch(`${baseUrl}usuarios/${id}`, {
             method: "DELETE"
         })
             .then(response => response.json())
             .then(dados => {
                 // Se o servidor deletou com sucesso, remove a linha da tela na hora
-
+                localStorage.removeItem("token");
+                localStorage.removeItem("usuarioNome");
+                localStorage.removeItem("usuarioId");
+                localStorage.removeItem("usuarioPerfil");
 
                 const strNovoNome = document.getElementById("TxtNovoNome");
                 const strNovoEmail = document.getElementById("TxtNovoEmail");
@@ -34,6 +40,10 @@ BtnExcluir.addEventListener("click", function (e) {
                 clear(strPerfil)
 
                 mensagemSucesso("Aluno removido!");
+
+                setTimeout(() => {
+                    window.location.href = "./index.html"
+                }, 2000);
             })
             .catch(erro => {
                 console.log(erro);
