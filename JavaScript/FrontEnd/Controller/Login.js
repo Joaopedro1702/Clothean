@@ -24,7 +24,7 @@ function logar(event) {
             mensagemErro("Senha inválida!");
         }
         else {
-            fetch(`${baseUrl}usuarios/login`, {
+            fetch(`${baseUrl}/usuarios/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
