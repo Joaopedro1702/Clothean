@@ -6,3 +6,131 @@
     display: flex;
     justify-content: center;
 }
+
+.quadrado {
+    display: grid;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    min-width: 390px;
+    margin: auto
+}
+
+.imagemUsuario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-position: 20%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../image/smiley-man-with-basket-full-clothes.jpg);
+    background-repeat: no-repeat;
+    background-position: 20% center;
+    filter: blur();
+
+}
+
+.Formulario {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+    height: 100%;
+    background-color: white;
+}
+
+
+.Cadastro {
+    display: flex;
+    justify-content: center;
+}
+
+.Titulo {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 3%;
+    margin-top: 5%;
+    color: #1a73b5;
+}
+
+.Campos {
+    border-radius: 13px;
+}
+
+.conteiner {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.ImagemEye {
+    position: relative;
+}
+
+.EyeFechado {
+    display: flex;
+    position: absolute;
+    left: 87%;
+    top: 27%;
+    cursor: pointer;
+}
+
+.EyeAberto {
+    display: flex;
+    position: absolute;
+    left: 87%;
+    top: 27%;
+    cursor: pointer;
+}
+
+.EyeAbertoUsuario {
+    display: flex;
+    position: absolute;
+    left: 80%;
+    bottom: 120%;
+    cursor: pointer;
+}
+
+.EyeFechadoUsuario {
+    display: flex;
+    position: absolute;
+    left: 73%;
+    bottom: 115%;
+    cursor: pointer;
+}
+
+.ImagemEye {
+    position: relative;
+}
+
+.locBotaoLogin {
+    margin-top: 7%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BotaoUsuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    width: 100%;
+    font-size: x-large;
+}
+
+@media (max-width: 900px) {
+    .imagemUsuario {
+        display: none;
+    }
+
+    .conteiner {
+        grid-template-columns: 100%;
+    }
+
+}

@@ -42,4 +42,6 @@ function consultaUsuario() {
     });
 };
 
-btnConsultarUsu.addEventListener("click", consultaUsuario)
+document.addEventListener("DOMContentLoaded", function () {
+    consultaUsuario(); // chama sua função de consultar automaticamente
+});

@@ -263,7 +263,7 @@ footer {
     border: none;
     border-radius: 25px;
     font-weight: bold;
-    padding: 10px -50px;
+    padding: 10px 3px;
 }
 
 .btn-reservar:hover {

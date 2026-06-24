@@ -65,8 +65,8 @@ function cadastrar(event) {
             })
                 .then(response => {
                     if (!response.ok) {
-                        return response.json().json().then(erro => {
-                            throw new Error(erro.mensagem);
+                        return response.json().then(erro => {
+                            throw mensagemErro("Email já cadastrado no sistema!");
                         })
                     }
                     return response.json();
@@ -77,7 +77,7 @@ function cadastrar(event) {
                     clearCadastro();
 
                     setTimeout(() => {
-                        window.location.href = "./Index.html"
+                        window.location.href = "./index.html"
                     }, 2000);
                 })
                 .catch(erro => {

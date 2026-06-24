@@ -39,7 +39,7 @@ BtnExcluir.addEventListener("click", function (e) {
                 clear(strNovaSenha)
                 clear(strPerfil)
 
-                mensagemSucesso("Aluno removido!");
+                mensagemSucesso("Usuario removido com Sucesso!");
 
                 setTimeout(() => {
                     window.location.href = "./index.html"

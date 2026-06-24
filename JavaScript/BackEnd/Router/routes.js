@@ -6,11 +6,12 @@ const validation = require("../Validations/validation")
 
 // Rotas Usuário Comum:
 router.get("/usuarios", controllerBack.listar);
-router.get("/usuarios/:id", controllerBack.listarId);
+router.post("/usuarios/login", validation.validarLogin, controllerBack.login);
 router.post("/usuarios", validation.validarUsuario, controllerBack.cadastrar);
+router.get("/usuarios/:id", controllerBack.listarId);
 router.delete("/usuarios/:id", controllerBack.excluir);
 router.put("/usuarios/:id", controllerBack.editar);
-router.post("/usuarios/login", validation.validarLogin, controllerBack.login);
+
 
 // Rotas ADM:
 router.put("/adm/:id", controllerBack.editarAdm)

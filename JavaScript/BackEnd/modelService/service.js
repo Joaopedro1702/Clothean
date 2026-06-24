@@ -45,26 +45,26 @@ exports.editarAdm = (usuario, callback) => {
 };
 
 exports.loginUsuario = (usuario,  callback) => {
-    console.log("--> 1. Dados recebidos no Service:", usuario);
+    repositories.buscaEmail(usuario.email, (erro, usuarioEncontrado) => {
+        console.log("--> 2. Erro:", erro, "| Usuário:", usuarioEncontrado);
 
-    repositories.buscaEmail(usuario.email, (usuarioEncontrado) => {
-        console.log("--> 2. Retorno do Banco de Dados:", usuarioEncontrado);
+        if (erro) {
+            return callback({ erro: "Erro interno no servidor." });
+        }
 
         if (!usuarioEncontrado) {
-            console.log("--> BLOQUEIO: Usuário não foi encontrado no banco.");
             return callback({ erro: "Email ou Senha inválidos!" });
         }
 
-        console.log("--> 3. Comparando Senha digitada:", usuario.senha, "com Senha do Banco:", usuarioEncontrado.senha);
-        const senhaValida = bcrypt.compareSync(usuario.senha, usuarioEncontrado.senha)
+        console.log("--> 3. Senha digitada:", usuario.senha, "| Hash do banco:", usuarioEncontrado.senha);
+        const senhaValida = bcrypt.compareSync(usuario.senha, usuarioEncontrado.senha);
 
-        console.log("--> 4. O Bcrypt validou? ", senhaValida);
+        console.log("--> 4. Bcrypt validou?", senhaValida);
         if (!senhaValida) {
-            console.log("--> BLOQUEIO: Senha incorreta segundo o Bcrypt.");
-            return callback({ erro: "Email ou Senha inválidos!" })
+            return callback({ erro: "Email ou Senha inválidos!" });
         }
 
         const { senha, ...usuarioSeguro } = usuarioEncontrado;
-        callback(null, usuarioSeguro)
-    })
-}
+        callback(null, usuarioSeguro);
+    });
+};

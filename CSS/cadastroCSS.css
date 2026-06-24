@@ -27,8 +27,8 @@ form {
 
 button {
     width: 100%;
-    background-color: #BDFFA6;
-    color: #3420E6;
+    background-color: #1a9fd4;
+    color: #fff;
     border: none;
 
 }
@@ -56,6 +56,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #f0f0f0;
+
     /* cinza bem claro */
 }
 
@@ -68,15 +69,16 @@ footer {
 .quadrado {
     display: grid;
     background-color: white;
-    border-radius: 16px;
+    overflow: hidden;
+    border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 70%;
     min-width: 390px;
     margin: auto
 }
 
-button:hover {
-    background-color: #67B0E5;
+.Botao:hover {
+    background-color: #8CC15A;
     color: white;
     transform: scale(1.05);
 }
@@ -98,7 +100,7 @@ button:hover {
     object-fit: cover;
     background-size: cover;
     object-position: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/Casal\ lavando.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../image/Casal\ lavando.jpg);
     background-repeat: no-repeat;
     background-position: center;
     filter: blur();
@@ -113,7 +115,7 @@ button:hover {
     object-fit: cover;
     background-size: cover;
     object-position: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/smiley-man-with-basket-full-clothes.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../image/smiley-man-with-basket-full-clothes.jpg);
     background-repeat: no-repeat;
     background-position: center;
     filter: blur();
@@ -136,10 +138,9 @@ button:hover {
 .Titulo {
     display: flex;
     justify-content: end;
-    margin-right: 15%;
     padding-bottom: 3%;
     margin-top: 5%;
-    color: white;
+    color: #1a73b5;
 }
 
 .texto {
@@ -157,13 +158,10 @@ button:hover {
 
 .Formulario {
     padding-left: 3%;
+    padding-right: 3%;
     padding-bottom: 2%;
     height: 100%;
-    object-fit: cover;
-    background-size: cover;
-    object-position: top;
-    background-image: url(../image/Fundo\ de\ lavanderia\ Imagens\ –\ Download\ Grátis\ no\ Freepik.jpg);
-    background-repeat: no-repeat;
+    background-color: white;
 }
 
 .Campos {
@@ -208,6 +206,8 @@ button:hover {
     border-radius: 20px;
     width: 82%;
     font-size: x-large;
+    background-color: #1a9fd4;
+    color: white;
 
 }
 
@@ -272,11 +272,11 @@ button:hover {
 }
 
 .esconder {
-    display: none;
+    display: none !important;
 }
 
 .mostrar {
-    display: block;
+    display: block !important;
 }
 
 .placeSenha::placeholder {

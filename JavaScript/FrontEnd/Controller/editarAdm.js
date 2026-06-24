@@ -32,8 +32,8 @@ function editarUsuarios() {
     else {
         const id = btnEditarModal.dataset.idUsuarioAtual;
         console.log(id)
-        
-        fetch(`${baseUrl}adm/{id}`, {
+
+        fetch(`${baseUrl}adm/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

@@ -53,7 +53,7 @@ function editarUsuario() {
             .then(response => response.json())
             .then(dados => {
                 // Se o servidor deletou com sucesso, remove a linha da tela na hora
-                mensagemSucesso("Aluno Editado!");
+                mensagemSucesso("Usuario Editado com Sucesso!");
             })
             .catch(erro => {
                 console.log(erro);

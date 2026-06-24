@@ -24,6 +24,9 @@ function logar(event) {
             mensagemErro("Senha inválida!");
         }
         else {
+            console.log("Email enviado:", txtEmail);
+            console.log("Senha enviada:", txtSenha);
+
             fetch(`${baseUrl}usuarios/login`, {
                 method: "POST",
                 headers: {

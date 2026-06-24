@@ -1,3 +1,5 @@
+let dadosOriginaisUsuario = null;
+
 function consultaUsuarios() {
 
     const linhaUsuario = document.getElementById("CorpoTabela"); // Pega o corpo da tabela para dar mostrar os alunos

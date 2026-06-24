@@ -15,7 +15,7 @@ tabela.addEventListener("click", function (e) {
         .then(dados => {
             // Se o servidor deletou com sucesso, remove a linha da tela na hora
             linha.remove();
-            mensagemSucesso("Aluno removido!");
+            mensagemSucesso("Usuario removido!");
             consultaUsuarios()
         })
         .catch(erro => {
