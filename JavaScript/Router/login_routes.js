@@ -1,17 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const db = require("../BackEnd/DataBase/conexao");
-const jwt = require('jsonwebtoken');
-const { verificarToken } = require("../middleware/autorizacao");
 
-// Rotas de login e autenticação de administrador.
+const db = require("./conexao");
+const { Connection } = require("mysql2/promise");
 
-
-router.get("/", verificarToken,async(req, res) => {
+router.get("/", async(req, res) => {
     try{
-        // Lista todos os usuários; não há parâmetro de filtro nesta rota GET.
-        const [ListaUsuarios] = await db.query("SELECT id, email, senha, perfil FROM tbl_Usuario");
+        const [ListaUsuarios] = await db.query("SELECT * FROM tbl_Usuario");
 
         if(ListaUsuarios.length === 0){
             return res.json({mensagem: "Nenhum usuário encontrado."})
@@ -33,36 +28,14 @@ router.post("/", async (req, res) => {
             return res.status(400).json({ error: "Informe email e senha." });
         }
 
-        // Busca somente o usuário com o email informado e perfil de admin.
         const [usuarios] = await db.query(
-            "SELECT id, nome, email, senha, perfil FROM tbl_Usuario WHERE email = ? AND perfil = ?",
-            [email, "admin"]
+            "SELECT id, nome, email, tipo FROM tbl_Usuario WHERE email = ? AND senha = ? AND tipo = ?",
+            [email, senha, "admin"]
         );
 
         if (usuarios.length === 0) {
-        return res.status(401).json({ error: "Email ou senha de administrador incorretos." });
+            return res.status(401).json({ error: "Email ou senha de administrador incorretos." });
         }
-
-        const senhaSecret = await bcrypt.compare(senha, usuarios[0].senha);
-
-        if(!senhaSecret){
-            return res.status(401).json({error: "Email ou senha do administrador incorretos."});
-        }
-
-        const token = jwt.sign(
-            {id: usuarios[0].id, email: usuarios[0].email, perfil: usuarios[0].perfil},
-            process.env.JWT_SECRET,
-            {expiresIn: '1h'}
-        );
-
-        const isProduction = process.env.NODE_ENV === "production" || process.env.RENDER;
-
-        res.cookie('token', token, {
-            httpOnly: true,
-            secure: isProduction,
-            sameSite: isProduction ? "none" : "lax",
-            maxAge: 3600000 //1 HORA
-        })
 
         res.json({
             mensagem: "Login realizado com sucesso.",
@@ -145,5 +118,5 @@ router.delete("/", verificarToken, async (req, res) => {
         console.error("Erro ao excluir usuário:", error);
         res.status(500).json({error: "Erro ao excluir usuário."});
     }
-});
+})
 module.exports = router;

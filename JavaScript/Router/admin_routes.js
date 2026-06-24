@@ -1,38 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcrypt');
 
-const db = require("../BackEnd/DataBase/conexao");
-const { verificarToken } = require("../middleware/autorizacao");
+const db = require("./conexao");
 
-async function permitirPrimeiroAdmin(req, res, next) {
-    try {
-        const [admins] = await db.query(
-            "SELECT id FROM tbl_Usuario WHERE perfil = ? LIMIT 1",
-            ["admin"]
-        );
-
-        if (admins.length === 0) {
-            return next();
-        }
-
-        return verificarToken(req, res, next);
-    } catch (error) {
-        console.error("Erro ao verificar administradores:", error);
-        return res.status(500).json({ error: "Erro ao verificar administradores." });
-    }
-}
-
-router.post("/cadastro", permitirPrimeiroAdmin, async (req, res) => {
+router.post("/cadastro", async (req, res) => {
     try {
         const { nome, email, cpf, telefone, senha } = req.body;
 
-        const senhaCriptografada = await bcrypt.hash(senha, 10);
-
         await db.query(
-            `INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, perfil)
+            `INSERT INTO tbl_Usuario (nome, email, cpf, telefone, senha, tipo)
              VALUES (?, ?, ?, ?, ?, ?)`,
-            [nome, email, cpf, telefone, senhaCriptografada, "admin"]
+            [nome, email, cpf, telefone, senha, "admin"]
         );
 
         res.status(201).json({ mensagem: "Administrador cadastrado com sucesso." });
@@ -40,12 +18,6 @@ router.post("/cadastro", permitirPrimeiroAdmin, async (req, res) => {
         console.error("Erro ao cadastrar administrador:", error);
         res.status(500).json({ error: "Erro ao cadastrar administrador." });
     }
-});
-
-
-router.get("/dashboard", verificarToken, (req, res) => {
-    // Responde apenas se o token JWT for válido.
-    res.json({mensagem: "Bem-vindo ao dashboard de administração!"});
 });
 
 module.exports = router;

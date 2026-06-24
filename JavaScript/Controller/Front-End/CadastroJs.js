@@ -1,94 +1,148 @@
-function validarEmail(email) {
-  const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
-  return regexEmail.test(email);
+// TAREFAS:
+// - Função para apagar campos: OK
+// - Validação para email com @gmail, pois o campo email não vai: OK
+// - Colocar as mascaras para cpf e telefone: OK
+// - Colocar Ver senha nos campos senha: OK
+// - Colocar validação de confirmarSenha com o campo senha: OK
+// - Colocar a api para mandar um email na aba contatos com um modal: OK
+// - Ver tela login e comparar com cadastro: OK
+// - Função para cadastrar usuários com validação de email, telefone, cpf e senha onde o campo fica verde ou vermelho: **Fazer se tiver tempo
+// - Fazer um sweet alert para erros e sucesso para usuário cadastrado: OK
+// - Colocar api para fazer login com o google e o facebook:
+// - Colocar a api para validar o email digitado como existente: https://www.npmjs.com/package/verifalia-widget: Não obrigatório agora
+// - Colocar a api para validar o cpf digitado como existente: Não obrigatório agora 
+
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[a-z^\s@]{2,}$/i;
+        const regexLetraMaiscula = /.*[A-Z]/;
+        const regexNumero = /.*[0-9]/;
+        const regexCaractereEspecial = /.*[@_-]/;
+
+function cadastrarUser(event) {
+    event.preventDefault()
+    let strNome = document.getElementById("TxtNome").value.trim();
+    let strEmail = document.getElementById("TxtEmail").value.trim();
+    let strCpf = document.getElementById("TxtCpf").value.trim();
+    let strTelefone = document.getElementById("TxtTelefone").value.trim();
+    let strSenha = document.getElementById("TxtSenha").value.trim();
+    let strConfSenha = document.getElementById("TxtConfSenha").value.trim();
+    validacaoInput(strNome, strEmail, strCpf, strTelefone, strSenha, strConfSenha);
+
 }
 
-function validarSenha(senha) {
-  const regexLetraMaiscula = /[A-Z]/;
-  const regexNumero = /[0-9]/;
-  const regexCaractereEspecial = /[@_\-]/;
-  return senha.length >= 8 && regexLetraMaiscula.test(senha) && regexNumero.test(senha) && regexCaractereEspecial.test(senha);
-}
+function validacaoInput(strNome, strEmail, strCpf, strTelefone, strSenha, strConfSenha) {
 
-async function cadastrarUsuario(e) {
-  e.preventDefault();
+    if (strNome === "" || strEmail === "" || strCpf === "" || strTelefone === "" || strSenha === "" || strConfSenha === "") {
 
-  const nome = document.getElementById("nome")?.value.trim();
-  const email = document.getElementById("email")?.value.trim();
-  const cpf = document.getElementById("cpf")?.value.trim();
-  const telefone = document.getElementById("telefone")?.value.trim();
-  const senha = document.getElementById("senha")?.value;
-  const confirmar = document.getElementById("confirmar")?.value;
-  const erroSenha = document.getElementById("err-senha");
-  const btn = document.querySelector(".btn");
-
-  if (!nome || !email || !senha) {
-    alert("Preencha nome, email e senha.");
-    return;
-  }
-
-  if (!validarEmail(email)) {
-    alert("Informe um email válido.");
-    return;
-  }
-
-  if (!validarSenha(senha)) {
-    alert("Senha deve ter ao menos 8 caracteres, uma letra maiúscula, um número e um caractere especial (@, _ ou -).");
-    return;
-  }
-
-  if (confirmar !== undefined && senha !== confirmar) {
-    erroSenha?.classList.add("show");
-    alert("As senhas nao coincidem.");
-    return;
-  }
-
-  erroSenha?.classList.remove("show");
-
-  if (btn) {
-    btn.disabled = true;
-    btn.textContent = "Cadastrando...";
-  }
-
-  try {
-    const response = await fetch("http://localhost:3002/usuarios/cadastro", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        nome,
-        email,
-        cpf,
-        telefone,
-        senha
-      })
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || "Erro ao cadastrar usuario.");
+        Swal.fire("Erro", "Todos os campos precisam estar preenchidos", "error");
     }
+    else {
+        if (!regexEmail.test(strEmail)) {
+            Swal.fire("Erro", "Email inválido, verifique", "error")
+        }
+        else if (!regexLetraMaiscula.test(strSenha)) {
+            Swal.fire("Erro", "Senha inválida, verifique se tem alguma letra maiúscula!", "error")
+        }
+        else if (!regexNumero.test(strSenha)) {
+            Swal.fire("Erro", "Senha inválida, verifique se tem algum número!", "error")
+        }
+        else if (!regexCaractereEspecial.test(strSenha)) {
+            Swal.fire("Erro", "Senha inválida, verifique se tem algum caractere especial!", "error")
+        }
+        else if (strSenha != strConfSenha) {
+            Swal.fire("Erro", "As senha digitadas são diferentes uma da outra, verifique!", "error")
+        }
+        else if (strCpf.length < 14){
+            Swal.fire("Erro", "O cpf não foi digitado corretamente, verifique!", "error")
+        }
+        else if (strTelefone.length < 16){
+            Swal.fire("Erro", "O telefone não foi digitado corretamente, verifique", "error")
+        }
+        else {
+            Swal.fire("Sucesso", "Usuário cadastrado com sucesso! Seja bem-vindo " + strNome + "!", "success")
+            clear();
+        }
 
-    alert(data.mensagem);
-    e.target.reset();
-  } catch (error) {
-    alert(error.message);
-  } finally {
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = "Cadastrar";
     }
-  }
 }
 
-async function enviar(e) {
-  return cadastrarUsuario(e);
+fetch("")
+
+function clear() {
+    document.getElementById("TxtNome").value = "";
+    document.getElementById("TxtEmail").value = "";
+    document.getElementById("TxtCpf").value = "";
+    document.getElementById("TxtTelefone").value = "";
+    document.getElementById("TxtSenha").value = "";
+    document.getElementById("TxtConfSenha").value = "";
 }
 
-const formularioCadastro = document.getElementById("form-cadastro");
+const botaoCadastro = document.getElementById("BtnCadastrar");
+const txtCpf = document.getElementById("TxtCpf");
+const txtTelefone = document.getElementById("TxtTelefone")
+const txtEmail = document.getElementById("TxtEmail");
+const txtSenha = document.getElementById("TxtSenha")
+const TxtConfSenha = document.getElementById("TxtConfSenha")
+const btnImgOlhoFechadoCS = document.getElementById("ImgOlhoFechadoCS");
+const btnImgOlhoAbertoCS = document.getElementById("ImgOlhoAbertoCS")
+const btnImgOlhoFechado = document.getElementById("ImgOlhoFechadoS")
+const btnImgOlhoAberto = document.getElementById("ImgOlhoAbertoS")
 
-if (formularioCadastro) {
-  formularioCadastro.addEventListener("submit", cadastrarUsuario);
-}
+botaoCadastro.addEventListener("click", cadastrarUser)
+
+txtCpf.addEventListener('input', function (e) {
+
+    let v = e.target.value.replace(/\D/g, '');
+
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+
+    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2')
+
+    e.target.value = v;
+
+})
+
+txtTelefone.addEventListener('input', function (e) {
+
+    let v = e.target.value.replace(/\D/g, '');
+
+    v = v.replace(/(\d{2})(\d)/, '($1) $2')
+
+    v = v.replace(/(\d{5})(\d{4})/, '$1-$2');
+
+    e.target.value = v;
+})
+
+btnImgOlhoFechado.addEventListener("click", function () {
+    btnImgOlhoFechado.style.display = "none"
+
+    txtSenha.type = "password"
+
+    btnImgOlhoAberto.style.display = "block"
+})
+
+btnImgOlhoAberto.addEventListener("click", function () {
+    btnImgOlhoAberto.style.display = "none"
+
+    txtSenha.type = "text";
+
+    btnImgOlhoFechado.style.display = "block"
+})
+
+btnImgOlhoFechadoCS.addEventListener("click", function () {
+    btnImgOlhoFechadoCS.style.display = "none"
+
+    TxtConfSenha.type = "password"
+
+    btnImgOlhoAbertoCS.style.display = "block"
+})
+
+btnImgOlhoAbertoCS.addEventListener("click", function () {
+    btnImgOlhoAbertoCS.style.display = "none"
+
+    TxtConfSenha.type = "text"
+
+    btnImgOlhoFechadoCS.style.display = "block"
+})
+

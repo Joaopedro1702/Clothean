@@ -1,10 +1,14 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "cookie-parser": "^1.4.7",
+=======
+>>>>>>> BackEnd-Editar-Consultar
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "firebase": "^12.14.0",
+<<<<<<< HEAD
     "firebase-admin": "^13.10.0",
     "jsonwebtoken": "^9.0.3",
     "mysql2": "^3.22.5"
@@ -20,4 +24,8 @@
   "author": "",
   "license": "ISC",
   "description": ""
+=======
+    "firebase-admin": "^13.10.0"
+  }
+>>>>>>> BackEnd-Editar-Consultar
 }
