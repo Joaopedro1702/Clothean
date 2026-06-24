@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname, "..")));
 app.use("/login", loginRoutes);
 app.use("/ListaUsuarios", userRoutes);
 app.use("/admin", adminRoutes);
-app.use("/usuarios", uRoutes);
+app.use("/usuarios", userRoutes);
 
-
-app.listen(3002, ()=>{
-    console.log("Servidor a todo vapor em http://localhost:3002");
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, ()=>{
+    console.log(`Servidor a todo vapor na porta ${PORT}`);
 })
