@@ -29,7 +29,8 @@
 
     <!--Controller-->
     <script src="../JavaScript/FrontEnd/Controller/urlBase.js" defer></script>
-    <script src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
+    <script src="../JavaScript/FrontEnd/Controller/config.js" defer></script>
+    <script type="module" src="../JavaScript/FrontEnd/Controller/FaleConoscoJs.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/verificaUsuario.js" defer></script>
 
 
@@ -337,9 +338,9 @@
             <h1 class="TituloModal"><b>Mensagem</b></h1>
 
             <section>
-                <form id="formularioContato" method="post" novalidate>
+                <form id="formularioContato" method="post" class="needs-validation" novalidate>
                     <div>
-                        <form class="col-lg-12 needs-validation" novalidate>
+                        <div class="col-lg-12">
                             <div class="col-lg-12 position-relative" style="margin-bottom: 5%; margin-top: 3%;">
                                 <img src="../image/IconNome12.png" alt="Icon Nome">
                                 <label for="validationTooltip01" class="form-label"><b>Nome Completo</b></label>
@@ -347,43 +348,39 @@
                                     placeholder="Fulano da Silva Junior">
                             </div>
 
-                            <div class="row" style="margin-bottom: 5%;">
-                                <form class="row g-3 needs-validation" novalidate>
-                                    <div class="col-lg-6 position-relative">
-                                        <img src="../image/imagem_12px.png" alt="Icon Email">
-                                        <label for="validationTooltip01" class="form-label"><b>Email</b></label>
-                                        <input type="text" class="form-control texto Campos"
-                                            placeholder="fulano@gmail.com" id="TxtEmailModal">
-                                    </div>
+                            <div class="row g-3" style="margin-bottom: 5%;">
+                                <div class="col-lg-6 position-relative">
+                                    <img src="../image/imagem_12px.png" alt="Icon Email">
+                                    <label for="validationTooltip01" class="form-label"><b>Email</b></label>
+                                    <input type="text" class="form-control texto Campos" placeholder="fulano@gmail.com"
+                                        id="TxtEmailModal">
+                                </div>
 
-                                    <div class="col-lg-6 position-relative">
-                                        <img src="../image/title.png" alt="Icon Titulo"
-                                            style="width: 12px; height: 12px;">
-                                        <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
-                                        <input type="text" class="form-control" placeholder="Titulo do Email"
-                                            id="TxtAssunto">
-                                    </div>
+                                <div class="col-lg-6 position-relative">
+                                    <img src="../image/title.png" alt="Icon Titulo" style="width: 12px; height: 12px;">
+                                    <label for="validationTooltip01" class="form-label"><b>Assunto</b></label>
+                                    <input type="text" class="form-control" placeholder="Titulo do Email"
+                                        id="TxtAssunto">
+                                </div>
 
-                                    <div class="col-lg-12 position-relative">
-                                        <img src="../image/chat.png" alt="Icon Mensagem"
-                                            style="width: 12px; height: 12px;">
-                                        <label for="validationTooltip01" class="form-label"
-                                            style="margin-top: 5%;"><b>Mensagem</b></label>
-                                        <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
-                                            id="TxtMensagemModal"></textarea>
-                                    </div>
+                                <div class="col-lg-12 position-relative">
+                                    <img src="../image/chat.png" alt="Icon Mensagem" style="width: 12px; height: 12px;">
+                                    <label for="validationTooltip01" class="form-label"
+                                        style="margin-top: 5%;"><b>Mensagem</b></label>
+                                    <textarea name="text" class="form-control" placeholder="Digite sua Mensagem"
+                                        id="TxtMensagemModal"></textarea>
+                                </div>
 
-                                    <div class="botoes" style="padding-top: 5%;">
-                                        <button class="button" id="enviar" type="submit">Enviar</button>
-                                        <button class="button" id="fechar">Fechar</button>
-                                    </div>
+                                <div class="botoes" style="padding-top: 5%;">
+                                    <button class="button" id="enviar" type="button">Enviar</button>
+                                    <button class="button" id="fechar">Fechar</button>
+                                </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </form>
+            </section>
         </div>
-
-
     </div>
 
 </body>
