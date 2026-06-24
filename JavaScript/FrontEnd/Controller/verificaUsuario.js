@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnLoginUsuario = document.getElementById("btnLoginUsuario");
     const btnUsuario = document.getElementById("btnContaUsuario");
     const btnAdmin = document.getElementById("btnContaAdmin");
-    const mudarLayoutLogin = window.location.href = ("")
     
     if (!btnLoginUsuario || !btnUsuario || !btnAdmin){
         return;
