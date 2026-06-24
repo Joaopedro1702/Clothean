@@ -1,18 +1,4 @@
 {
-  "dependencies": {
-<<<<<<< HEAD
-    "cookie-parser": "^1.4.7",
-=======
->>>>>>> BackEnd-Editar-Consultar
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "firebase": "^12.14.0",
-<<<<<<< HEAD
-    "firebase-admin": "^13.10.0",
-    "jsonwebtoken": "^9.0.3",
-    "mysql2": "^3.22.5"
-  },
   "name": "server",
   "version": "1.0.0",
   "main": "server.js",
@@ -23,9 +9,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
-=======
-    "firebase-admin": "^13.10.0"
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase": "^12.14.0",
+    "firebase-admin": "^13.10.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.22.5"
   }
->>>>>>> BackEnd-Editar-Consultar
 }
