@@ -15,21 +15,24 @@ const TxtConfSenha = document.getElementById("TxtConfSenha")
 // =-=-= Senha Padrão: =-=-=
 
 // Mostrar Senha:
-btnImgOlhoAberto.addEventListener("click", function () {
-    esconderSenha(btnImgOlhoAberto);
-    alterarTipoSenhaTexto(txtSenha);
-    mostrarSenha(btnImgOlhoFechado);
-})
+if(btnImgOlhoAberto && btnImgOlhoFechado && txtSenha){
+    btnImgOlhoAberto.addEventListener("click", function () {
+        esconderSenha(btnImgOlhoAberto);
+        alterarTipoSenhaTexto(txtSenha);
+        mostrarSenha(btnImgOlhoFechado);
+    });
+
 // Ocultar Senha:
 btnImgOlhoFechado.addEventListener("click", function () {
    esconderSenha(btnImgOlhoFechado);
    alterarTipoSenhaOculto(txtSenha);
    mostrarSenha(btnImgOlhoAberto);
-})
-
+});
+}
 // =-=-= Confirmar Senha: =-=-=
 
 // Mostrar Confirmar Senha:
+if(btnImgOlhoAbertoCS && btnImgOlhoFechadoCS && TxtConfSenha){
 btnImgOlhoAbertoCS.addEventListener("click", function () {
     esconderSenha(btnImgOlhoAbertoCS);
     alterarTipoSenhaTexto(TxtConfSenha);
@@ -41,5 +44,5 @@ btnImgOlhoFechadoCS.addEventListener("click", function () {
    alterarTipoSenhaOculto(TxtConfSenha);
    mostrarSenha(btnImgOlhoAbertoCS);
 })
-
+}
 
