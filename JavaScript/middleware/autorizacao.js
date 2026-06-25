@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const verificarToken = (req, res, next) => {
     console.log("cookies:", req.cookies);
     const token = req.cookies?.token || req.headers.authorization?.split(" ")[1];
-    const token = req.headers.authorization?.split(" ")[1];
 
     if (!token){
         return res.status(401).json({error: "Acesso negado. Token não não fornecido."});
