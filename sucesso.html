@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento aprovado | Clothean</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <style>
+        :root {
+            --azul: #2BA2DD;
+            --verde: #7CBF5C;
+            --verde-claro: #BDFFA6;
+            --fundo: #F8F8FF;
+            --texto: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--fundo);
+            color: var(--texto);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 20px 24px;
+        }
+
+        header a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--texto);
+        }
+
+        header img {
+            height: 36px;
+        }
+
+        header span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--azul);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 48px 40px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            animation: entrar .5s ease-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card {
+                animation: none;
+            }
+        }
+
+        @keyframes entrar {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .icone {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--verde-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icone svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0 0 8px;
+            color: var(--texto);
+        }
+
+        p.subtitulo {
+            margin: 0 0 24px;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .detalhes {
+            background: var(--fundo);
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 28px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .detalhes div {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+        }
+
+        .detalhes span:first-child {
+            color: #777;
+        }
+
+        .detalhes span:last-child {
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            width: 100%;
+            padding: 13px;
+            border-radius: 8px;
+            background: var(--azul);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: opacity .2s;
+        }
+
+        .btn-voltar:hover {
+            opacity: 0.88;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html">
+            <img src="image/logo.png" alt="Logo da Clothean">
+            <span>CLOTHEAN</span>
+        </a>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="icone">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 13l4 4L19 7" stroke="#3420E6" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <h1>Pagamento aprovado!</h1>
+            <p class="subtitulo">Seu pedido foi confirmado. Em breve sua roupa será coletada para a lavagem.</p>
+
+            <div class="detalhes" id="detalhes">
+                <div id="linhaPedido" class="oculto">
+                    <span>Pedido</span>
+                    <span id="valorPedido">—</span>
+                </div>
+                <div id="linhaStatus" class="oculto">
+                    <span>Status</span>
+                    <span id="valorStatus">—</span>
+                </div>
+            </div>
+
+            <a class="btn-voltar" href="./index.html">Voltar para o início</a>
+        </div>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const paymentId = params.get("payment_id") || params.get("collection_id");
+        const status = params.get("status") || params.get("collection_status");
+
+        if (paymentId) {
+            document.getElementById("linhaPedido").classList.remove("oculto");
+            document.getElementById("valorPedido").textContent = paymentId;
+        }
+        if (status) {
+            document.getElementById("linhaStatus").classList.remove("oculto");
+            document.getElementById("valorStatus").textContent = status;
+        }
+    </script>
+</body>
+
+</html>
