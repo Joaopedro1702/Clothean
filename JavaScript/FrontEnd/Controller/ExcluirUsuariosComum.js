@@ -15,7 +15,10 @@ BtnExcluir.addEventListener("click", function (e) {
 
     else {
         fetch(`${baseUrl}/usuarios/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"), 
+            }
         })
             .then(response => response.json())
             .then(dados => {
