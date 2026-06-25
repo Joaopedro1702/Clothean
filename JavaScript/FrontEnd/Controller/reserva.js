@@ -34,7 +34,7 @@ document.querySelector('.btn-continue').addEventListener('click', async () => {
 
         const data = await response.json();
         console.log(data);
-        window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=${data.id}`;
+        window.location.href = "https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=" + data.id;
 
     } catch (error) {
         console.error('Erro:', error);
