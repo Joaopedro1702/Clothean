@@ -42,4 +42,4 @@ function consultaUsuario() {
     });
 };
 
-btnConsultarUsu.addEventListener("click", consultaUsuario)
+btnConsultarUsu.addEventListener("click", consultaUsuario);

@@ -2,8 +2,7 @@ const btnEditar = document.getElementById("BtnEditar")
 const txtNovoNome = document.getElementById("TxtNovoNome");
 const txtNovoEmail = document.getElementById("TxtNovoEmail");
 const txtNovoCPF = document.getElementById("TxtNovoCpf");
-const txtNovoTelefone2 = document.getElementById("TxtNovoTelefone");
-const txtNovaSenha = document.getElementById("TxtNovaSenha");
+const txtNovaSenha = document.getElementById("TxtSenha");
 
 
 function editarUsuario() {
@@ -34,6 +33,7 @@ function editarUsuario() {
         fetch(`https://clothean-g1s8.onrender.com/usuarios/${id}`, {
             method: "PUT",
             headers: {
+                "Authorization": "Bearer" + localStorage.getItem("token"), 
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
