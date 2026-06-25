@@ -24,10 +24,10 @@
     <!--EmailJS-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         defer></script>
-    
-        <!--JWToken-->
+
+    <!--JWToken-->
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js" defer></script>
-    
+
     <!--CSS-->
     <link rel="stylesheet" href="CSS/stylePadrao.css">
     <link rel="stylesheet" href="CSS/styleResposivo.css">
@@ -53,15 +53,13 @@
     <script src="JavaScript/FrontEnd/Controller/EditarUsuarioComum.js" defer></script>
     <script src="JavaScript/FrontEnd/Controller/ExcluirUsuariosComum.js" defer></script>
     <script src="JavaScript/FrontEnd/Controller/ConsultarUsuarioComum.js" defer></script>
-    <script src="../JavaScript/FrontEnd/View/layoutUsuario.js" defer></script>
     <script src="../JavaScript/FrontEnd/Controller/verificaUsuario.js" defer></script>
     <script src="JavaScript/FrontEnd/Controller/SairUsuario.js" defer></script>
-
 
 </head>
 
 <body>
-    <header class=border 3>
+    <header class="border">
         <button class="btn-hamburguer" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
             <span></span>
@@ -79,9 +77,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="./index.html#Serviços">Como funcionamos</a></li>
                     <li class="nav-item"><a class="nav-link" href="./index.html#sobre">Sobre nós</a></li>
-                    <li class="nav-item"><a class="nav-link" id="btnFaleConosco">Fale
-                            Conosco</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" id="btnFaleConosco">Fale Conosco</a></li>
                     <li class="nav-item mt-3">
                         <a href="./UsuarioComum.html">
                             <button type="button" class="btn btn-outline-primary btnUsuario esconder">Usuario</button>
@@ -139,7 +135,7 @@
                             </div>
 
                             <div class="col-lg-5 position-relative">
-                                <img src="../image/telephone-handle-silhouette.png" style=width:12px height:12px;
+                                <img src="../image/telephone-handle-silhouette.png" style="width:12px; height:12px;"
                                     alt="Icon Telefone">
                                 <label for="TxtNovoTelefone" class="form-label"><b>Telefone</b></label>
                                 <input type="tel" class="form-control Cadastro Campos" id="TxtNovoTelefone" required
@@ -148,26 +144,26 @@
 
                             <div class="row">
                                 <div class="col-lg-5 position-relative">
-                                    <img src="../image/telephone-handle-silhouette.png" style=width:12px height:12px;
-                                        alt="Icon Telefone">
+                                    <img src="../image/telephone-handle-silhouette.png"
+                                        style="width:12px; height:12px;" alt="Icon Telefone">
                                     <label for="TxtPerfil" class="form-label"><b>Perfil</b></label>
                                     <input type="tel" class="form-control Cadastro Campos" id="TxtPerfil" required
                                         readonly>
                                 </div>
                                 <div class="col-lg-5 position-relative">
-                                    <img src="../image/padlock.png" style=width:12px; height:12px; alt="Icon Senha">
+                                    <img src="../image/padlock.png" style="width:12px; height:12px;"
+                                        alt="Icon Senha">
                                     <label for="validationTooltip01" class="form-label"><b>Senha</b></label>
                                     <div class="ImagemEye">
                                         <img src="../image/eye.png" alt="Ver Senha" class="EyeAberto"
-                                            id="ImgOlhoAbertoS" ;>
+                                            id="ImgOlhoAbertoS">
                                         <img src="../image/hidden.png" alt="Ocutar Senha" class="EyeFechado esconder"
                                             id="ImgOlhoFechadoS">
                                         <input type="password" class="form-control Cadastro Campos placeSenha"
                                             id="TxtSenha" required placeholder="Não digite para senha atual">
                                     </div>
                                     <label for="TxtSenha" class="Descricao">
-                                        <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _),
-                                            letra
+                                        <p>A senha precisa conter pelo menos 1 caractere especial (@ ou _), letra
                                             maiúscula, minúscula e número</p>
                                     </label>
                                 </div>
@@ -176,16 +172,13 @@
                         </form>
                         <div class="row linhaBotoes">
                             <div class="col-lg-3 position-relative locBotaoLogin">
-                                <button type="" class="btn btn-warning BotaoUsuario"
-                                    id="BtnConsultar"><b>Consultar</b></button>
+                                <button type="" class="btn btn-warning BotaoUsuario" id="BtnConsultar"><b>Consultar</b></button>
                             </div>
                             <div class="col-lg-3 position-relative locBotaoLogin">
-                                <button type="" class="btn btn-danger BotaoUsuario"
-                                    id="BtnExcluir"><b>Excluir</b></button>
+                                <button type="" class="btn btn-danger BotaoUsuario" id="BtnExcluir"><b>Excluir</b></button>
                             </div>
                             <div class="col-lg-3 position-relative locBotaoLogin">
-                                <button type="" class="btn btn-primary BotaoUsuario"
-                                    id="BtnEditar"><b>Editar</b></button>
+                                <button type="" class="btn btn-primary BotaoUsuario" id="BtnEditar"><b>Editar</b></button>
                             </div>
                             <div class="col-lg-3 position-relative locBotaoLogin">
                                 <button type="" class="btn btn-primary BotaoUsuario" id="BtnSair"><b>Sair</b></button>
@@ -208,8 +201,7 @@
                     </div>
                     <div class="email">
                         <img src="../image/email.png" alt="email SAC: clotheansac@clothean.com">
-                        <a
-                            href="mailto:otavio.augusttocc@gmail.com?subject=Contato com a Empresa&body=Olá, isso é um teste">clotheansac@clothean.com</a>
+                        <a href="mailto:otavio.augusttocc@gmail.com?subject=Contato com a Empresa&body=Olá, isso é um teste">clotheansac@clothean.com</a>
                     </div>
                 </address>
             </section>
@@ -264,7 +256,7 @@
                                         <input type="text" class="form-control" placeholder="Titulo do Email"
                                             id="TxtAssunto">
                                     </div>
-
+                                </form>
                             </div>
 
                             <div class="col-lg-12 position-relative">
@@ -279,7 +271,9 @@
                                 <button class="button" id="fechar">Fechar</button>
                             </div>
                         </form>
+                    </div>
                 </form>
+            </section>
         </div>
     </div>
 
