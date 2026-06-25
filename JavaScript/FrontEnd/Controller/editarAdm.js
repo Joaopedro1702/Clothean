@@ -35,6 +35,7 @@ function editarUsuarios() {
         
         fetch(`${baseUrl}/usuarios/${id}`, {
             method: "PUT",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json"
             },
