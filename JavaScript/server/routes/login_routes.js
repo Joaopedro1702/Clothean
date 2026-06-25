@@ -20,6 +20,25 @@ router.get("/", verificarToken, async (req, res) => {
     }
 });
 
+router.get("/:id", verificarToken, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [usuarios] = await db.query(
+            "SELECT id, nome, email, cpf, telefone, perfil FROM tbl_Usuario WHERE id = ?",
+            [id]
+        );
+
+        if (usuarios.length === 0) {
+            return res.status(404).json({ error: "Usuario nao encontrado." });
+        }
+
+        res.json(usuarios[0]);
+    } catch (error) {
+        console.error("Erro ao buscar usuario:", error);
+        res.status(500).json({ error: "Erro ao buscar usuario." });
+    }
+});
+
 router.post("/", async (req, res) => {
     try {
         const { email, senha } = req.body;
